@@ -1,0 +1,178 @@
+.saved_images_pane {
+  height: 100%;
+  width: 100%;
+  padding: 62px 130px 10px 130px;
+  position: relative;
+}
+
+.title {
+  font-size: 22px;
+  text-align: left;
+  color: #479dda;
+  text-transform: uppercase;
+  padding-bottom: 14px;
+}
+
+.sub_title{
+  color: #6b7083;
+  font-size: 14px;
+  padding-bottom: 20px;
+
+  &::first-letter {
+    text-transform: capitalize;
+  }
+}
+
+.search{
+  margin-bottom: 19px;
+  position: relative;
+
+  :global {
+    // a hack to override standard Select-control border, uses the added specificity of div element
+    div.Select-control {
+        border: none;
+        padding: 0;
+    }
+
+    .Select {
+      width: 278px;
+
+      &.is-focused input {
+        outline: none;
+      }
+
+      .option {
+        color: #565c65;
+        text-transform: capitalize;
+        font-size: 14px;
+      }
+
+      div.Select-input {
+        padding: 0;
+      }
+
+      .Select-input {
+        border-radius: 3px;
+        height: 100%;
+        width: 100%;
+
+        input {
+          box-sizing: content-box;
+          height: 25px;
+          border: solid 1px #d4d6d9;
+          border-radius: 3px;
+          padding-left: 35px;
+          width: 246px
+        }
+      }
+
+      .Select-placeholder {
+        position: absolute;
+        padding-left: 40px;
+        padding-top: 0px;
+        color: #858d99;
+        font-style: italic;
+        font-size: 14px;
+        width: 100%;
+        line-height: 45px;
+      }
+
+      .Select-menu-outer {
+        width: 283px;
+        background: #fff;
+        border: solid 1px #d4d6d9;
+        position: absolute;
+        top: 48px;
+        box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.09);
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
+
+      .Select-value-label {
+        position: absolute;
+        left: 40px;
+        top: 15px;
+      }
+
+      .Select-value {
+        height: 100%;
+      }
+
+      .Select-clear {
+        margin-left: -20px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .Select-option {
+        line-height: 35px;
+        padding-left: 12px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .Select-option.is-focused {
+        background: #f2f5f7;
+      }
+
+      .Select-arrow {
+        display: none;
+      }
+    }
+  }
+}
+
+.table {
+  tbody {
+    tr {
+      .avatar {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+
+      .username {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .appTemplateImg {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+      }
+
+      .tag {
+        background: #858d99;
+        font-size: 11px;
+      }
+
+      .iconsContainer {
+        text-align: right;
+        padding-right: 30px;
+
+        .icon {
+          padding-right: 24px;
+          font-size: 20px;
+
+          &::last {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.icon_search {
+  position: absolute;
+  top: 15px;
+  left: 13px;
+  color: #97a0af;
+}

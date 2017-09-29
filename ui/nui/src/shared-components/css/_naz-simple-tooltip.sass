@@ -1,0 +1,44 @@
+$alert-tooltip-background-color: #cc5669
+
+.Naz-simple-tooltip
+  background: $alert-tooltip-background-color
+  position: absolute
+  width: 150px
+  line-height: 20px
+  color: #ffffff
+  padding: 15px
+  border-radius: 3px
+
+  +element('inside')
+    +element('title')
+      border-bottom: 1px solid #fff
+      margin-bottom: 10px
+      &::first-letter
+        text-transform: uppercase
+    +element('error')
+      &::first-letter
+        text-transform: uppercase
+        
+.Naz-tooltip
+  z-index: 1
+  &:after, &:before
+  	right: 100%
+  	top: 50%
+  	border: solid transparent
+  	content: " "
+  	height: 0
+  	width: 0
+  	position: absolute
+  	pointer-events: none
+
+  &:after
+    border-color: rgba(136, 183, 213, 0)
+    border-right-color: $alert-tooltip-background-color
+    border-width: 10px
+    margin-top: -10px
+
+  &:before
+    border-color: rgba(194, 225, 245, 0)
+    // border-right-color: #d4d6d9
+    border-width: 12px
+    margin-top: -12px

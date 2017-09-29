@@ -1,0 +1,2283 @@
+# Copyright (c) [2017] Dell Inc. or its subsidiaries. All Rights Reserved.
+---
+swagger: '2.0'
+info:
+  title: Hub WebApp API
+  version: 1.0.2
+  description: This Swagger describes the API of Hub WebApp
+host: localhost:8080
+basePath: /hub-web-api
+tags:
+- name: HubWebAppTestDevWeb
+- name: HubWebAppWeb
+- name: HubWebAppImageStoreWeb
+- name: HubWebAppUserWeb
+schemes:
+- http
+paths:
+  /app-instance:
+    get:
+      tags:
+      - HubWebAppWeb
+      summary: List application instances
+      description: ''
+      operationId: listAppInstances
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/UIAppInstance'
+  /app-instance/{appInstanceId}/logs:
+    get:
+      tags:
+      - HubWebAppWeb
+      summary: Ask for WebSockets that emit logs for a specific application.
+      description: ''
+      operationId: getLogsWebSockets
+      produces:
+      - application/json
+      parameters:
+      - name: appInstanceId
+        in: path
+        required: true
+        type: string
+        format: uuid
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/UILogsWebSocketInfo'
+  /app-instance/{appInstanceId}:
+    get:
+      tags:
+      - HubWebAppWeb
+      summary: Get application instance
+      description: ''
+      operationId: getAppInstance
+      produces:
+      - application/json
+      parameters:
+      - name: appInstanceId
+        in: path
+        required: true
+        type: string
+        format: uuid
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/UIAppInstance'
+  /app-instance/{appInstanceId}/app-copy/{appCopyId}:
+    get:
+      tags:
+      - HubWebAppWeb
+      summary: Get application instance copy
+      description: ''
+      operationId: getAppInstanceCopy
+      produces:
+      - application/json
+      parameters:
+      - name: appInstanceId
+        in: path
+        required: true
+        type: string
+        format: uuid
+      - name: appCopyId
+        in: path
+        required: true
+        type: string
+        format: uuid
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/UIAppInstanceCopy'
+  /app-instance/{appInstanceId}/copy-history:
+    get:
+      tags:
+      - HubWebAppWeb
+      summary: Get copy history
+      description: ''
+      operationId: getCopyHistory
+      produces:
+      - application/json
+      parameters:
+      - name: appInstanceId
+        in: path
+        required: true
+        type: string
+        format: uuid
+      - name: period
+        in: query
+        required: false
+        type: string
+        default: week
+        enum:
+        - day
+        - week
+        - month
+        - year
+      - name: interval
+        in: query
+        required: false
+        type: integer
+        default: 0
+        format: int32
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/UICopyHistoryData'
+  /app-instance/{appInstanceId}/dashboard-stats:
+    get:
+      tags:
+      - HubWebAppWeb
+      summary: Get dashboard statistics
+      description: ''
+      operationId: getDashboardStatistics
+      produces:
+      - application/json
+      parameters:
+      - name: appInstanceId
+        in: path
+        required: true
+        type: string
+        format: uuid
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/UIDashboardStats'
+  /app-instance/{appInstanceId}/state:
+    get:
+      tags:
+      - HubWebAppWeb
+      summary: Get application instance state
+      description: ''
+      operationId: getAppInstanceState
+      produces:
+      - application/json
+      parameters:
+      - name: appInstanceId
+        in: path
+        required: true
+        type: string
+        format: uuid
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/UIAppInstanceState'
+  /app-template:
+    get:
+      tags:
+      - HubWebAppWeb
+      summary: List application templates
+      description: ''
+      operationId: listAppTemplates
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/UIApplicationTemplate'
+  /app-template/{appTemplateId}:
+    get:
+      tags:
+      - HubWebAppWeb
+      summary: Get application template
+      description: ''
+      operationId: getAppTemplate
+      produces:
+      - application/json
+      parameters:
+      - name: appTemplateId
+        in: path
+        required: true
+        type: string
+        format: uuid
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/UIApplicationTemplate'
+    delete:
+      tags:
+      - HubWebAppWeb
+      summary: Delete application template
+      description: ''
+      operationId: deleteAppTemplate
+      parameters:
+      - name: appTemplateId
+        in: path
+        required: true
+        type: string
+        format: uuid
+      responses:
+        200:
+          description: successful operation
+        404:
+          description: 'unknown (possibly already deleted) appTemplateId'
+
+  /commands/create-app-copy:
+    post:
+      tags:
+      - HubWebAppWeb
+      summary: Create application copy
+      description: ''
+      operationId: createAppCopy
+      consumes:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: '#/definitions/UICommandCreateAppCopy'
+      responses:
+        default:
+          description: successful operation
+
+  /commands/create-app-template:
+    post:
+      tags:
+      - HubWebAppWeb
+      summary: Create application template
+      description: Creates a nazgul application template
+      operationId: createAppTemplate
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/UICommandCreateAppTemplate'
+      responses:
+        default:
+          description: successful operation
+          schema:
+            type: string
+            format: uuid
+
+  /share-image-integrations:
+    get:
+      tags:
+      - HubWebAppWeb
+      summary: List integrations (connected apps) for image sharing
+      description: Lists integration connectivity details for supporting the share image options
+      operationId: listIntegrations
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/UIIntegrationDetails'
+
+  /commands/add-maven-artifact-registry:
+    post:
+      tags:
+      - HubWebAppWeb
+      summary: Configure maven artifact registry
+      description: Add maven artifact registry to a site allowing it to download app binaries from that repo
+      operationId: addMavenArtifactRegistry
+      consumes:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/UICommandAddMavenArtifactRegistry'
+      responses:
+        default:
+          description: successful operation
+
+  /commands/add-docker-artifact-registry:
+    post:
+      tags:
+      - HubWebAppWeb
+      summary: Configure docker artifact registry
+      description: Add docker artifact registry to a site allowing it to download app binaries from that repo
+      operationId: addDockerArtifactRegistry
+      consumes:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/UICommandAddDockerArtifactRegistry'
+      responses:
+        default:
+          description: successful operation
+
+  /commands/add-site:
+    post:
+      tags:
+      - HubWebAppWeb
+      summary: Register a site to the hub
+      description: Registering and adding a site to the hub
+      operationId: addSite
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/UICommandAddSite'
+      responses:
+        default:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/UISite'
+
+
+  /commands/add-dsb:
+    post:
+      tags:
+      - HubWebAppWeb
+      summary: Register a DSB to a site
+      description: Registering and adding Data Service Broker to a site
+      operationId: addDsb
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/UICommandAddDsb'
+      responses:
+        default:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/UISiteDsb'
+
+
+  /commands/add-crb:
+    post:
+      tags:
+      - HubWebAppWeb
+      summary: Register a CRB to a site
+      description: Registering and adding Copy repository Broker to a site
+      operationId: addCrb
+      consumes:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/UICommandAddCrb'
+      responses:
+        default:
+          description: successful operation
+
+  /commands/add-psb:
+    post:
+      tags:
+      - HubWebAppWeb
+      summary: Register a PSB to a site
+      description: Registering and adding Paas Broker to a site
+      operationId: addPsb
+      consumes:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/UICommandAddPsb'
+      responses:
+        default:
+          description: successful operation
+
+  /commands/add-copy-repository:
+    post:
+      tags:
+      - HubWebAppWeb
+      summary: Add a copy repository
+      description: Adding a copy repository to an existing CRB on a site
+      operationId: addCopyRepository
+      consumes:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/UICommandAddCopyRepository'
+      responses:
+        default:
+          description: successful operation
+
+  /commands/remove-dsb:
+    post:
+      tags:
+      - HubWebAppWeb
+      summary: Detach DSB from a site
+      description: Detaching dsb from a site
+      operationId: removeDsb
+      consumes:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/UICommandRemoveDsb'
+      responses:
+        default:
+          description: successful operation
+
+  /commands/remove-crb:
+    post:
+      tags:
+      - HubWebAppWeb
+      summary: Detach CRB from a site
+      description: Detaching copy repository broker from a site
+      operationId: removeCrb
+      consumes:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/UICommandRemoveCrb'
+      responses:
+        default:
+          description: successful operation
+
+  /commands/add-custom-artifact-registry:
+    post:
+      tags:
+      - HubWebAppWeb
+      summary: Configure custom artifact registry
+      description: Add custom artifact registry to a site allowing it to download app binaries from that repo via http
+      operationId: addCustomArtifactRegistry
+      consumes:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/UICommandAddCustomArtifactRegistry'
+      responses:
+        default:
+          description: successful operation
+
+  /commands/remove-artifact-registry:
+    post:
+      tags:
+      - HubWebAppWeb
+      summary: Remove artifact registry
+      description: Remove artifact registry from a site
+      operationId: removeArtifactRegistry
+      consumes:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/UICommandRemoveArtifactRegistry'
+      responses:
+        default:
+          description: successful operation
+
+  /commands/add-jira-integration:
+    post:
+      tags:
+      - HubWebAppWeb
+      summary: Adding Jira Integration
+      description: Adding Jira details allowing to share images via jira
+      operationId: addJiraIntegration
+      consumes:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/UICommandAddJiraIntegration'
+      responses:
+        default:
+          description: successful operation
+
+  /commands/add-pivotal-tracker-integration:
+    post:
+      tags:
+      - HubWebAppWeb
+      summary: Adding Pivotal Tracker Integration
+      description: Adding Pivotal Tracker details allowing to share images via Pivotal Tracker
+      operationId: addPivotalTrackerIntegration
+      consumes:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/UICommandAddPivotalTrackerIntegration'
+      responses:
+        default:
+          description: successful operation
+
+  /commands/create-saved-image:
+    post:
+      tags:
+      - HubWebAppWeb
+      summary: Create saved image
+      description: ''
+      operationId: createSavedImage
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: '#/definitions/UICommandCreateSavedImage'
+      responses:
+        default:
+          description: successful operation
+          schema:
+            type: string
+            format: uuid
+
+  /commands/deploy-saved-image:
+    post:
+      tags:
+      - HubWebAppWeb
+      summary: Deploy saved image
+      description: ''
+      operationId: deploySavedImage
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: '#/definitions/UIDeploySavedImageCommandArgs'
+      responses:
+        default:
+          description: successful operation
+          schema:
+            type: string
+            format: uuid
+
+  /commands/deploy-test-dev-app:
+    post:
+      tags:
+      - HubWebAppWeb
+      summary: Deploy TestDev application
+      description: ''
+      operationId: deployTestDevAppCommand
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: '#/definitions/UICommandDeployTestDevAppArgs'
+      responses:
+        default:
+          description: successful operation
+          schema:
+            type: string
+            format: uuid
+
+  /commands/repurpose-app:
+    post:
+      tags:
+      - HubWebAppWeb
+      summary: Repurpose application
+      description: ''
+      operationId: rePurposeApp
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: '#/definitions/UICommandRePurposeApp'
+      responses:
+        default:
+          description: successful operation
+          schema:
+            type: string
+            format: uuid
+
+  /commands/sign-in2:
+    post:
+      tags:
+      - HubWebAppUserWeb
+      summary: Sign in (2)
+      description: ''
+      operationId: signIn2
+      consumes:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: '#/definitions/UISignInInfo'
+      responses:
+        default:
+          description: successful operation
+
+  /commands/sign-in:
+    post:
+      tags:
+      - "HubWebAppUserWeb"
+      summary: "Sign in"
+      description: ""
+      operationId: "signIn"
+      consumes:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: false
+        schema:
+          $ref: "#/definitions/UISignInInfo"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: "string"
+        401:
+          description: unauthorized user
+
+  /commands/sign-out:
+    post:
+      tags:
+      - HubWebAppUserWeb
+      summary: Sign out
+      description: ''
+      operationId: signOut
+      parameters: []
+      responses:
+        default:
+          description: successful operation
+
+  /commands/stop-app:
+    post:
+      tags:
+      - HubWebAppWeb
+      summary: Stop application
+      description: ''
+      operationId: stopApp
+      consumes:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: '#/definitions/UIStopAppCommandArgs'
+      responses:
+        default:
+          description: successful operation
+
+  /images/{iconType}/{iconId}:
+    get:
+      tags:
+      - HubWebAppImageStoreWeb
+      summary: Get image
+      description: ''
+      operationId: getImage
+      produces:
+      - image/webp
+      parameters:
+      - name: iconType
+        in: path
+        required: true
+        type: string
+      - name: iconId
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Response'
+    post:
+      tags:
+      - HubWebAppImageStoreWeb
+      summary: Upload icon
+      description: ''
+      operationId: uploadIcon
+      consumes:
+      - application/octet-stream
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: '#/definitions/InputStream'
+      - name: iconType
+        in: path
+        required: true
+        type: string
+      - name: iconId
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: successful operation
+
+  /logged-in-user:
+    get:
+      tags:
+      - HubWebAppUserWeb
+      summary: Get the currently logged in user
+      description: ''
+      operationId: getLoggedInUser
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/UIUser'
+  /site:
+    get:
+      tags:
+      - HubWebAppWeb
+      summary: List sites
+      description: ''
+      operationId: listSites
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/UISite'
+  /site-topology:
+    get:
+      tags:
+      - HubWebAppWeb
+      summary: List site topologies
+      description: ''
+      operationId: listSiteTopologies
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/UISiteTopology'
+
+  /site-topology/{siteId}:
+    get:
+      tags:
+      - HubWebAppWeb
+      summary: Get site topology
+      description: ''
+      operationId: getSiteTopology
+      produces:
+      - application/json
+      parameters:
+      - name: siteId
+        in: path
+        required: true
+        type: string
+        format: uuid
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/UISiteTopology'
+
+  /site-config:
+    get:
+      tags:
+      - HubWebAppWeb
+      summary: List site configurations
+      description: ''
+      operationId: listSiteConfigurations
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/UISiteConfig'
+  /site-config/{siteId}:
+    get:
+      tags:
+      - HubWebAppWeb
+      summary: Get site configuration
+      description: ''
+      operationId: getSiteConfiguration
+      produces:
+      - application/json
+      parameters:
+      - name: siteId
+        in: path
+        required: true
+        type: string
+        format: uuid
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/UISiteConfig'
+
+  /test-dev/jira-query:
+    post:
+      tags:
+      - HubWebAppTestDevWeb
+      summary: Get Jira projects and issue types
+      description: ''
+      operationId: queryJira
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/UIJiraLoginArgs'
+      responses:
+        default:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/UIJiraLoginResponse'
+
+  /test-dev/pivotal-tracker-add:
+    post:
+      tags:
+      - HubWebAppTestDevWeb
+      summary: user rest call to Nazagul to add bug in pivotal tracker
+      description: ''
+      operationId: pivotalTrackerAdd
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: '#/definitions/UIPivotalTrackerAdd'
+      responses:
+        200:
+          description: 'successful operation'
+          schema:
+            type: string
+            format: url
+        400:
+          description: 'Invalid token or bug info'
+
+  /test-dev/app-instance:
+    get:
+      tags:
+      - HubWebAppTestDevWeb
+      summary: Get test-dev instances
+      description: ''
+      operationId: getTestDevInstances
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/UITestDevAppInstance'
+  /test-dev/app-instance/{appInstanceId}/dashboard:
+    get:
+      tags:
+      - HubWebAppTestDevWeb
+      summary: Get application instance dashboard data
+      description: ''
+      operationId: getAppInstanceDashboardData
+      produces:
+      - application/json
+      parameters:
+      - name: appInstanceId
+        in: path
+        required: true
+        type: string
+        format: uuid
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/UITestDevDashboardData'
+  /test-dev/quota/{orgId}:
+    get:
+      tags:
+      - HubWebAppTestDevWeb
+      summary: Get organization quota
+      description: ''
+      operationId: getOrgQuota
+      produces:
+      - application/json
+      parameters:
+      - name: orgId
+        in: path
+        required: true
+        type: string
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/UITestDevQuota'
+  /test-dev/saved-app-images:
+    get:
+      tags:
+      - HubWebAppTestDevWeb
+      summary: Get saved application images
+      description: ''
+      operationId: getSavedIAppImages
+      produces:
+      - application/json
+      parameters:
+      - name: appTemplateId
+        in: query
+        required: false
+        type: string
+        format: uuid
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/UISavedAppImage'
+  /test-dev/saved-app-images/{savedImageId}:
+    get:
+      tags:
+      - HubWebAppTestDevWeb
+      summary: Get saved application image
+      description: ''
+      operationId: getSavedIAppImage
+      produces:
+      - application/json
+      parameters:
+      - name: savedImageId
+        in: path
+        required: true
+        type: string
+        format: uuid
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/UISavedAppImage'
+  /test-dev/saved-app-images/{savedImageId}/details:
+    get:
+      tags:
+      - HubWebAppTestDevWeb
+      summary: Get saved application image details
+      description: ''
+      operationId: getSavedIAppImageDetailed
+      produces:
+      - application/json
+      parameters:
+      - name: savedImageId
+        in: path
+        required: true
+        type: string
+        format: uuid
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/UISavedAppImageDetailed'
+  /test-dev/site/{siteId}/app-template-configuration/{appTemplateId}:
+    get:
+      tags:
+      - HubWebAppTestDevWeb
+      summary: Get application template configuration by site
+      description: ''
+      operationId: getAppTemplateConfigurationBySite
+      produces:
+      - application/json
+      parameters:
+      - name: siteId
+        in: path
+        required: true
+        type: string
+        format: uuid
+      - name: appTemplateId
+        in: path
+        required: true
+        type: string
+        format: uuid
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/UIAppTemplateConfigurationForSite'
+  /user:
+    get:
+      tags:
+      - HubWebAppUserWeb
+      summary: List users
+      description: ''
+      operationId: listUsers
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/UIUser'
+  /user/{userId}:
+    get:
+      tags:
+      - HubWebAppUserWeb
+      summary: Get user
+      description: ''
+      operationId: getUser
+      produces:
+      - application/json
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        type: string
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/UIUser'
+  /user/{userId}/avatar:
+    get:
+      tags:
+      - HubWebAppUserWeb
+      summary: Get user image
+      description: ''
+      operationId: getUserImage
+      produces:
+      - image/*
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Response'
+
+definitions:
+  UISiteLocation:
+    type: object
+    properties:
+      type:
+        type: string
+      geometry:
+        $ref: '#/definitions/UIPoint'
+      properties:
+        type: object
+        additionalProperties:
+          type: string
+  UISiteConfig:
+    type: object
+    properties:
+      id:
+        type: string
+        format: uuid
+      name:
+        type: string
+      urn:
+        type: string
+      location:
+        $ref: '#/definitions/UISiteLocation'
+      dsbs:
+        type: array
+        items:
+          $ref: '#/definitions/UISiteDsb'
+      psbs:
+        type: array
+        items:
+          $ref: '#/definitions/UISitePsb'
+      copyRepos:
+        type: array
+        items:
+          $ref: '#/definitions/UISiteCopyRepoBroker'
+      artifactRegistries:
+        type: array
+        items:
+          $ref: '#/definitions/UISiteArtifactRegistry'
+  UISavedAppImage:
+    type: object
+    properties:
+      id:
+        type: string
+        format: uuid
+      appTemplateId:
+        type: string
+        format: uuid
+      name:
+        type: string
+      baseImageId:
+        type: string
+        format: uuid
+      creationTime:
+        type: string
+        format: date-time
+      description:
+        type: string
+      tags:
+        type: array
+        uniqueItems: true
+        items:
+          type: string
+      createdByUserId:
+        type: string
+        format: uuid
+      state:
+        type: string
+  UISankeyInfo:
+    type: object
+    properties:
+      columns:
+        type: array
+        items:
+          $ref: '#/definitions/UISankeyColumn'
+      sankeyData:
+        type: array
+        items:
+          type: array
+          items:
+            type: object
+  UISitePsb:
+    type: object
+    properties:
+      urn:
+        type: string
+      name:
+        type: string
+      type:
+        type: string
+      version:
+        type: string
+  UIDataServiceConfiguration:
+    type: object
+    properties:
+      dataServiceName:
+        type: string
+      dsbPlans:
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/UIDSBConfiguration'
+  UIAppServiceDeploymentPlan:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+        default: false
+      space:
+        type: string
+      artifactRegistryName:
+        type: string
+      imageVersion:
+        type: string
+  UISignInInfo:
+    type: object
+    properties:
+      username:
+        type: string
+      password:
+        type: string
+  UIAppInstance:
+    type: object
+    properties:
+      id:
+        type: string
+        format: uuid
+      name:
+        type: string
+      appTemplateId:
+        type: string
+        format: uuid
+      appTemplateName:
+        type: string
+      creatorUserId:
+        type: string
+        format: uuid
+      webEntryPointURL:
+        type: string
+      state:
+        type: string
+      stateMessage:
+        type: string
+      deploymentType:
+        type: string
+      dateCreated:
+        type: string
+        format: date-time
+  UISavedAppImageDetailed:
+    type: object
+    properties:
+      id:
+        type: string
+        format: uuid
+      appTemplateId:
+        type: string
+        format: uuid
+      name:
+        type: string
+      baseImageId:
+        type: string
+        format: uuid
+      creationTime:
+        type: string
+        format: date-time
+      description:
+        type: string
+      tags:
+        type: array
+        uniqueItems: true
+        items:
+          type: string
+      createdByUserId:
+        type: string
+        format: uuid
+      state:
+        type: string
+      serviceCopyDetails:
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/UIServiceCopyDetails'
+      appCopyDetails:
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/UIAppServiceCopyDetails'
+  UIDataServiceState:
+    type: object
+    properties:
+      bindName:
+        type: string
+      dsbURN:
+        type: string
+      serviceId:
+        type: string
+      state:
+        type: string
+        enum:
+        - pending
+        - queued
+        - creating
+        - created
+        - errorcreating
+        - binding
+        - errorbinding
+        - bound
+        - errorunbinding
+        - unbinding
+        - unbound
+        - errorremoving
+        - removing
+        - removed
+      stateMessage:
+        type: string
+      iconUrl:
+        type: string
+      stateDate:
+        type: string
+        format: date-time
+
+  UIAppGeography:
+    type: object
+    properties:
+      locations:
+        type: array
+        items:
+          $ref: '#/definitions/UISiteLocation'
+  UIDSBPlanConfiguration:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      protocols:
+        type: array
+        items:
+          type: string
+  UIAppServiceConfiguration:
+    type: object
+    properties:
+      appServiceName:
+        type: string
+      supportedVersions:
+        type: object
+        additionalProperties:
+          type: array
+          items:
+            type: string
+  UIAppServiceState:
+    type: object
+    properties:
+      serviceName:
+        type: string
+      imageName:
+        type: string
+      imageType:
+        type: string
+      imageVersion:
+        type: string
+      entryPointUrl:
+        type: string
+      imageIconUrl:
+        type: string
+      state:
+        type: string
+        enum:
+        - pending
+        - queued
+        - deploying
+        - deployed
+        - error
+        - stopping
+        - errorstopping
+        - stopped
+      stateMessage:
+        type: string
+      stateDate:
+        type: string
+        format: date-time
+      serviceBindings:
+        type: array
+        uniqueItems: true
+        items:
+          type: string
+  UIPoint:
+    type: object
+    properties:
+      type:
+        type: string
+      coordinates:
+        type: array
+        items:
+          type: number
+          format: double
+  UISiteArtifactRegistry:
+    type: object
+    required: [name, type]
+    properties:
+      name:
+        type: string
+      type:
+        type: string
+      parameters:
+        type: object
+        additionalProperties:
+          type: string
+
+  UIStopAppCommandArgs:
+    type: object
+    properties:
+      appInstanceId:
+        type: string
+        format: uuid
+  UIUser:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      firstName:
+        type: string
+      lastName:
+        type: string
+      email:
+        type: string
+  UICopyHistoryData:
+    type: object
+    properties:
+      intervalStart:
+        type: string
+        format: date-time
+      intervalEnd:
+        type: string
+        format: date-time
+      copies:
+        type: array
+        items:
+          $ref: '#/definitions/UIAppInstanceCopy'
+  UIDashboardStats:
+    type: object
+    properties:
+      copySummary:
+        type: object
+        additionalProperties:
+          type: integer
+          format: int32
+      copyDistributionSankey:
+        $ref: '#/definitions/UISankeyInfo'
+      appInstance:
+        $ref: '#/definitions/UIAppInstance'
+      appTemplate:
+        $ref: '#/definitions/UIApplicationTemplate'
+      appGeography:
+        $ref: '#/definitions/UIAppGeography'
+      appQuotaSummary:
+        $ref: '#/definitions/UIAppInstanceQuota'
+
+  UISite:
+    type: object
+    properties:
+      id:
+        type: string
+        format: uuid
+      name:
+        type: string
+      urn:
+        type: string
+      location:
+        $ref: '#/definitions/UISiteLocation'
+  UISiteTopology:
+    type: object
+    properties:
+      id:
+        type: string
+        format: uuid
+      name:
+        type: string
+      location:
+        $ref: '#/definitions/UISiteLocation'
+      spaces:
+        type: array
+        items:
+          type: string
+  UIAppTemplateDeploymentPlan:
+    type: object
+    properties:
+      appServices:
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/UIAppServiceDeploymentPlan'
+      dataServices:
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/UIDataServiceDeploymentPlan'
+  UICommandCreateAppCopy:
+    type: object
+    properties:
+      appInstanceId:
+        type: string
+        format: uuid
+
+  UICommandAddDsb:
+    type: object
+    properties:
+      siteId:
+        type: string
+        format: uuid
+      dsbUrn:
+        type: string
+      dsbUrl:
+        type: string
+
+  UICommandAddSite:
+    type: object
+    properties:
+      urn:
+        type: string
+      url:
+        type: string
+
+  UICommandAddCrb:
+    type: object
+    properties:
+      siteId:
+        type: string
+        format: uuid
+      crbUrn:
+        type: string
+      crbUrl:
+        type: string
+
+  UICommandAddPsb:
+    type: object
+    properties:
+      siteId:
+        type: string
+        format: uuid
+      psbUrn:
+        type: string
+      psbUrl:
+        type: string
+
+  UICommandAddCopyRepository:
+    type: object
+    properties:
+      siteId:
+        type: string
+        format: uuid
+      crbUrn:
+        type: string
+      crName:
+        type: string
+      crProperties:
+        type: object
+        additionalProperties:
+          type: string
+
+  UICommandRemoveDsb:
+    type: object
+    properties:
+      siteId:
+        type: string
+        format: uuid
+      dsbUrn:
+        type: string
+
+  UICommandRemoveCrb:
+    type: object
+    properties:
+      siteId:
+        type: string
+        format: uuid
+      crbUrn:
+        type: string
+
+  UIDeploySavedImageCommandArgs:
+    type: object
+    properties:
+      savedImageId:
+        type: string
+        format: uuid
+      appInstanceName:
+        type: string
+      siteId:
+        type: string
+        format: uuid
+      deploymentPlan:
+        $ref: '#/definitions/UIAppTemplateDeploymentPlan'
+  UIAppTemplateConfigurationForSite:
+    type: object
+    properties:
+      appServiceConfigurations:
+        type: array
+        items:
+          $ref: '#/definitions/UIAppServiceConfiguration'
+      dataServiceConfigurations:
+        type: array
+        items:
+          $ref: '#/definitions/UIDataServiceConfiguration'
+  UISiteDsbPlan:
+    type: object
+    required: [name]
+    properties:
+      name:
+        type: string
+      description:
+        type: string
+      cost:
+        type: string
+      protocols:
+        type: array
+        items:
+          $ref: '#/definitions/UISiteDsbProtocol'
+
+  UISiteDsbProtocol:
+    type: object
+    properties:
+      protocolName:
+        type: string
+      version:
+        type: string
+  UIApplicationServiceTemplate:
+    type: object
+    properties:
+      appServiceName:
+        type: string
+      psbType:
+        type: string
+      imageName:
+        type: string
+      imageType:
+        type: string
+      imageVersion:
+        type: string
+      environmentVariables:
+        type: object
+        additionalProperties:
+          type: string
+      dependencies:
+        type: array
+        items:
+          $ref: '#/definitions/UIAppServiceExternalDependency'
+      exposedPorts:
+        type: array
+        uniqueItems: true
+        items:
+          type: integer
+          format: int32
+      httpPort:
+        type: integer
+        format: int32
+      entryPointUrl:
+        type: string
+      img:
+        type: string
+  UIServiceCopyDetails:
+    type: object
+    properties:
+      copyRepoName:
+        type: string
+      sizeInBytes:
+        type: integer
+        format: int64
+      restoreTimeInSeconds:
+        type: integer
+        format: int64
+      dsbName:
+        type: string
+      facility:
+        type: string
+      iconUrl:
+        type: string
+  UIApplicationTemplate:
+    type: object
+    properties:
+      id:
+        type: string
+        format: uuid
+      name:
+        type: string
+      version:
+        type: string
+      description:
+        type: string
+      appServiceTemplates:
+        type: array
+        items:
+          $ref: '#/definitions/UIApplicationServiceTemplate'
+      entryPointServiceName:
+        type: string
+      img:
+        type: string
+  UITestDevAppInstance:
+    type: object
+    properties:
+      id:
+        type: string
+        format: uuid
+      name:
+        type: string
+      appTemplateId:
+        type: string
+        format: uuid
+      appTemplateName:
+        type: string
+      creatorUserId:
+        type: string
+        format: uuid
+      webEntryPointURL:
+        type: string
+      state:
+        type: string
+      stateMessage:
+        type: string
+      deploymentType:
+        type: string
+      dateCreated:
+        type: string
+        format: date-time
+      quota:
+        $ref: '#/definitions/UITestDevQuota'
+      numberOfAppServices:
+        type: integer
+        format: int32
+      numberOfInfraServices:
+        type: integer
+        format: int32
+  UISankeyColumn:
+    type: object
+    properties:
+      name:
+        type: string
+      type:
+        type: string
+  UITestDevDashboardData:
+    type: object
+    properties:
+      imageHistory:
+        type: array
+        items:
+          $ref: '#/definitions/UISavedAppImage'
+  UIAppServiceExternalDependency:
+    type: object
+    properties:
+      type:
+        type: string
+        enum:
+        - database
+        - objectStore
+        - messaging
+        - cache
+        - scheduler
+        - logging
+        - volume
+        - other
+      name:
+        type: string
+      description:
+        type: string
+      img:
+        type: string
+  UIApplicationPolicyInfo:
+    type: object
+    properties:
+      policyName:
+        type: string
+      policySettings:
+        type: object
+        additionalProperties:
+          type: string
+  InputStream:
+    type: object
+  UISiteDsb:
+    type: object
+    properties:
+      urn:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      img:
+        type: string
+      plans:
+        type: array
+        items:
+          $ref: '#/definitions/UISiteDsbPlan'
+  UIAppServiceCopyDetails:
+    type: object
+    properties:
+      imageName:
+        type: string
+      imageVersion:
+        type: string
+      imageIconUrl:
+        type: string
+      serviceBindings:
+        type: array
+        uniqueItems: true
+        items:
+          type: string
+  UIAppInstanceCopy:
+    type: object
+    properties:
+      copyId:
+        type: string
+        format: uuid
+      timeStamp:
+        type: string
+        format: date-time
+      status:
+        type: string
+      purpose:
+        type: string
+  UIAppInstanceState:
+    type: object
+    properties:
+      id:
+        type: string
+        format: uuid
+      appInstanceName:
+        type: string
+      state:
+        type: string
+        enum:
+        - deploying
+        - pending
+        - running
+        - error
+        - stopped
+        - stopping
+        - errorstopping
+      stateMessage:
+        type: string
+      webEntryPointURL:
+        type: string
+      appServices:
+        type: array
+        items:
+          $ref: '#/definitions/UIAppServiceState'
+      dataServices:
+        type: array
+        items:
+          $ref: '#/definitions/UIDataServiceState'
+  UICommandRePurposeApp:
+    type: object
+    properties:
+      originAppInstanceId:
+        type: string
+        format: uuid
+      appInstanceName:
+        type: string
+      copyId:
+        type: string
+        format: uuid
+      purpose:
+        type: string
+  UICommandAddMavenArtifactRegistry:
+    type: object
+    required: [siteId, name, url]
+    properties:
+      siteId:
+        type: string
+        format: uuid
+      name:
+        type: string
+      url:
+        type: string
+      username:
+        type: string
+      password:
+        type: string
+
+  UICommandAddDockerArtifactRegistry:
+    type: object
+    required: [siteId, name, url]
+    properties:
+      siteId:
+        type: string
+        format: uuid
+      name:
+        type: string
+      url:
+        type: string
+      username:
+        type: string
+      password:
+        type: string
+
+  UICommandAddCustomArtifactRegistry:
+    type: object
+    required: [siteId, name, url]
+    properties:
+      siteId:
+        type: string
+        format: uuid
+      name:
+        type: string
+      url:
+        type: string
+  UICommandRemoveArtifactRegistry:
+    type: object
+    required: [siteId, name]
+    properties:
+      siteId:
+        type: string
+        format: uuid
+      name:
+        type: string
+  UICommandAddJiraIntegration:
+    type: object
+    required: [url, projectId, issueTypeId]
+    properties:
+      url:
+        type: string
+      projectId:
+        type: string
+      issueTypeId:
+        type: string
+  UICommandAddPivotalTrackerIntegration:
+    type: object
+    required: [url, projectId, issueTypeId, token]
+    properties:
+      url:
+        type: string
+      projectId:
+        type: string
+      issueTypeId:
+        type: string
+      token:
+        type: string
+  UIDSBConfiguration:
+    type: object
+    properties:
+      name:
+        type: string
+      description:
+        type: string
+      plans:
+        type: array
+        items:
+          $ref: '#/definitions/UIDSBPlanConfiguration'
+  UICommandCreateSavedImage:
+    type: object
+    properties:
+      name:
+        type: string
+      appInstanceId:
+        type: string
+        format: uuid
+      tags:
+        type: array
+        uniqueItems: true
+        items:
+          type: string
+      comment:
+        type: string
+  UITestDevQuota:
+    type: object
+    properties:
+      orgId:
+        type: string
+      psbQuota:
+        type: integer
+        format: int32
+      dsbQuota:
+        type: object
+        additionalProperties:
+          type: integer
+          format: int32
+
+  UIAppInstanceQuota:
+    type: object
+    properties:
+      appServiceQuotas:
+        type: array
+        items:
+          type: object
+          required: [name]
+          properties:
+            name:
+              type: string
+            usagePercentage:
+              type: number
+              format: double
+            usage:
+              type: number
+              format: double
+            usageTotalCapacity:
+              type: number
+              format: double
+            usageUnits:
+              type: string
+      dataServiceQuotas:
+        type: array
+        items:
+          type: object
+          required: [name]
+          properties:
+            name:
+              type: string
+            usagePercentage:
+              type: number
+              format: double
+            usage:
+              type: number
+              format: double
+            usageTotalCapacity:
+              type: number
+              format: double
+            usageUnits:
+              type: string
+
+  UISiteCopyRepoBroker:
+    type: object
+    required: [crPropertyTypes]
+    properties:
+      urn:
+        type: string
+      name:
+        type: string
+      type:
+        type: string
+      version:
+        type: string
+      copyRepositories:
+        type: array
+        items:
+          $ref: '#/definitions/UISiteCopyRepo'
+      crPropertyTypes:
+        type: array
+        items:
+          type: object
+          required: [name, title, type, mandatory]
+          properties:
+            name:
+              type: string
+            title:
+              type: string
+            description:
+              type: string
+            type:
+              type: string
+              enum:
+              - string
+              - boolean
+              - password
+            mandatory:
+              type: boolean
+
+
+  UISiteCopyRepo:
+    type: object
+    required: [copyProtocols]
+    properties:
+      name:
+        type: string
+      copyProtocols:
+        type: array
+        items:
+          type: object
+          required: [protocolName]
+          properties:
+            protocolName:
+              type: string
+            version:
+              type: string
+  UIDataServiceDeploymentPlan:
+    type: object
+    properties:
+      dsbURN:
+        type: string
+      enabled:
+        type: boolean
+        default: false
+      dsbPlan:
+        type: string
+      dsbProtocol:
+        type: string
+  UICommandDeployTestDevAppArgs:
+    type: object
+    properties:
+      appInstanceName:
+        type: string
+      appTemplateId:
+        type: string
+        format: uuid
+      siteId:
+        type: string
+        format: uuid
+      deploymentPlan:
+        $ref: '#/definitions/UIAppTemplateDeploymentPlan'
+
+  UICommandCreateAppTemplate:
+    type: object
+    properties:
+      name:
+        type: string
+      version:
+        type: string
+      description:
+        type: string
+      entryPointServiceName:
+        type: string
+      appServiceTemplates:
+        type: array
+        items:
+          $ref: '#/definitions/UICreateApplicationServiceTemplate'
+
+  UICreateApplicationServiceTemplate:
+    type: object
+    properties:
+      appServiceName:
+        type: string
+      psbType:
+        type: string
+      imageName:
+        type: string
+      imageType:
+        type: string
+      imageVersion:
+        type: string
+      psbSettings:
+        type: object
+        additionalProperties:
+          type: string
+      environmentVariables:
+        type: object
+        additionalProperties:
+          type: string
+      dependencies:
+        type: array
+        items:
+          $ref: '#/definitions/UICreateAppServiceExternalDependency'
+      exposedPorts:
+        type: array
+        uniqueItems: true
+        items:
+          type: integer
+          format: int32
+      httpPort:
+        type: integer
+        format: int32
+      entryPointUrl:
+        type: string
+
+  UICreateAppServiceExternalDependency:
+    type: object
+    required: [protocols]
+    properties:
+      type:
+        type: string
+        enum:
+        - database
+        - objectStore
+        - messaging
+        - cache
+        - scheduler
+        - logging
+        - volume
+        - other
+      name:
+        type: string
+      description:
+        type: string
+      protocols:
+        type: array
+        items:
+          type: object
+          required: [protocolName]
+          properties:
+            protocolName:
+              type: string
+            version:
+              type: string
+            conditions:
+              type: object
+              additionalProperties:
+                type: string
+            settings:
+              type: object
+              additionalProperties:
+                type: string
+
+  UIIntegrationDetails:
+    type: object
+    required: [integrationName]
+    properties:
+      integrationName:
+        type: string
+      imageUrl:
+        type: string
+      connectionDetails:
+        type: object
+        additionalProperties:
+          type: string
+
+  Response:
+    type: object
+  UILogsWebSocketInfo:
+    type: object
+    properties:
+      address:
+        type: string
+      serialization:
+        type: string
+        enum:
+        - protobuf-cf-log
+        - json
+      tags:
+        type: array
+        items:
+          type: string
+
+  UIPivotalTrackerAdd:
+    type: object
+    required: [name, description]
+    properties:
+      name:
+        type: string
+      description:
+        type: string
+  UIJiraLoginArgs:
+    type: object
+    properties:
+      jiraUrl:
+        type: string
+        format: url
+      username:
+        type: string
+      password:
+          type: string
+  UIJiraLoginResponse:
+    type: object
+    properties:
+      projects:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+      issueTypes:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.emc.ocopea.site</groupId>
+        <artifactId>site-parent</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>site-domain</artifactId>
+    <name>Site Domain</name>
+
+
+    <dependencies>
+
+        <!-- Microservice api -->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice.api</groupId>
+            <artifactId>microservice-api</artifactId>
+            <version>${microservice.api.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>microservice-timer</artifactId>
+            <version>${ocopea.util.version}</version>
+        </dependency>
+
+        <!-- Site repository api -->
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>site-repository-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- Artifact registry -->
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>artifact-registry</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- DSB web API for communicating with DSBs -->
+        <dependency>
+            <groupId>com.emc.ocopea.dsb</groupId>
+            <artifactId>dsb-java-web-api</artifactId>
+            <version>${ocopea.dsb.version}</version>
+        </dependency>
+
+        <!-- copy repository web API for communicating with copy repositories -->
+        <dependency>
+            <groupId>com.emc.ocopea.crb</groupId>
+            <artifactId>crb-java-web-api</artifactId>
+            <version>${ocopea.crb.version}</version>
+        </dependency>
+
+        <!-- PSB web API for communicating with PSBs -->
+        <dependency>
+            <groupId>com.emc.ocopea.psb</groupId>
+            <artifactId>psb-java-web-api</artifactId>
+            <version>${ocopea.psb.version}</version>
+        </dependency>
+
+        <!-- Protection policy web api -->
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>protection-java-web-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.util</groupId>
+            <artifactId>rest-util</artifactId>
+            <version>${ocopea.util.version}</version>
+        </dependency>
+    </dependencies>
+</project>
+

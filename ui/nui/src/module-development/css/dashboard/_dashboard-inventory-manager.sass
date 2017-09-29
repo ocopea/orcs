@@ -1,0 +1,91 @@
+.Dashboard
+  +element('inside')
+
+    +element('inventory-manager')
+      float: left
+      width: 100%
+
+      +element('title')
+        line-height: 48px
+        text-transform: capitalize
+
+        +element('span')
+          font-size: 14px
+          color: #354151
+          font-weight: bold
+          padding-left: 18px
+
+      +element('inside')
+        padding-top: 30px
+
+        +element('container')
+          width: 80%
+          margin: auto
+          display: flex
+          justify-content: space-around
+
+          +element('circle')
+            float: left
+            border: 1px solid #d7e9f5
+            height: 96px
+            width: 96px
+            +border-radius(50%)
+            text-align: center
+
+            +element('number')
+              font-size: 22px
+              color: #354151
+              font-weight: bold
+              width: 100%
+              height: 0
+              line-height: 77px
+              float: left
+
+            +element('span')
+              text-transform: capitalize
+              color: #6b7083
+              font-size: 13px
+              float: left
+              width: 100%
+              line-height: 120px
+
+        +element("footer")
+          position: relative
+          top: 20px
+          & > div
+            display: flex
+            justify-content: space-between
+            width: 133px
+            margin: 20px
+            color: #479dda
+
+          & label
+            margin-left: 7px
+            font-size: 14px
+            text-transform: capitalize
+            &.open
+              position: relative
+              top: -1px
+            &:hover
+              cursor: pointer
+          +element('logs')
+            position: relative
+            top: 2px
+            +element('icon')
+              position: relative
+              top: 2px
+              +element('image')
+                path
+                  fill: #479dda
+
+          +element('entryPointUrl')
+            text-align: center
+            font-size: 16px
+            text-decoration: none
+
+            & .icon-link
+              position: relative
+              top: 2px
+
+              +element('link')
+                text-decoration: none

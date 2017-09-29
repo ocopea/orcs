@@ -1,0 +1,30 @@
+.Dashboard
+  height: 100%
+  +element('inside')
+    width: 1021px
+    height: 100%
+    margin: auto
+
+    +element('right-container')
+      +border-radius(3px)
+      width: 289px
+      height: 531px
+      background-color: #ffffff
+      border: solid 1px #d4d6d9
+      float: right
+      margin-top: 24px
+      margin-right: -1px
+
+    +element('card')
+      background: #ffffff
+      border: solid 1px #d4d6d9
+      +border-radius(3px)
+
+      +element('title')
+        +dialog-title
+        text-transform: uppercase
+        padding-left: 26px
+        width: calc(100% - 26px)
+
+        +element('span')
+          font-weight: 500

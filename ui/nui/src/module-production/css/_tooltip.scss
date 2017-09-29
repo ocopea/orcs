@@ -1,0 +1,206 @@
+//copyHistory tooltip
+.tooltip {
+    bottom: 100%;
+    color: #fff;
+    display: flex;
+    padding: 20px;
+    position: absolute;
+    background: #373839;
+    box-shadow: 1px 3px 6px 0px rgba(0, 0, 0, 0.3);
+    width: 412px;
+    height: 72px;
+    z-index: 999;
+    display: -webkit-flex;
+    padding: 0;
+    border-radius: 3px;
+}
+
+#copy-history .tooltip{
+  height: 75px!important;
+}
+
+.tooltip:after {
+    border-left: solid transparent 10px;
+    border-right: solid transparent 10px;
+    border-bottom: solid #373839 10px;
+    top: -10px;
+    content: " ";
+    height: 0;
+    left: 50%;
+    margin-left: -13px;
+    position: absolute;
+    width: 0;
+}
+
+.tooltip-title{
+	font-size: 13px;
+	color: #bababa;
+	padding-bottom: 10px;
+    padding-top: 7px;
+}
+
+.tooltip .section{
+	float: left;
+	display: inline-block;
+	padding: 10px;
+}
+
+.tooltip .copy-size-container{
+	width: 20%;
+    border-right: 1px solid #303132;
+}
+
+.tooltip #copy-size{
+    color: #83bd5c;
+}
+
+.tooltip .time-to-restore-container{
+	width: 50%;
+    border-right: 1px solid #303132;
+}
+
+.tooltip #time-to-restore{
+    color: #e37941;
+}
+
+.tooltip .restore-btn-container{
+	width: 43%;
+}
+
+#btn-restore{
+    border-radius: 2px;
+    background-color: #5c9abd;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+    width: 110px;
+    height: 33px;
+    margin-top: 10px;
+}
+
+#btn-restore-popup{
+	text-transform: uppercase;
+}
+
+#btn-restore:hover{
+    cursor: pointer;
+}
+
+.tooltip .btn-failover{
+  height: 45px;
+  border-radius: 2px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+  width: 110px;
+  height: 33px;
+  margin-top: 10px;
+}
+
+//settings tooltip
+.settings-tooltip{
+	position: absolute;
+  top: 50px;
+	right: -15px;
+	color: #565c65;
+	padding: 5px;
+	@include border-radius(3px);
+  z-index: 999;
+  width: 188px;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.09);
+  border: solid 1px #e1e4e6;
+
+	& table{
+		width: 100%;
+
+		& td svg,
+		img{
+			position: relative;
+			top: 4px;
+		}
+
+		& tr{
+      height: 32px;
+      &:hover{
+        cursor: pointer;
+  			background: #62ade1;
+  			color: #fff;
+
+        [class^="icon-"], [class*=" icon-"]{
+          color: #fff!important;
+        }
+
+      }
+      &.modes{
+        .open-button,
+        .close-button{
+          right: 10px;
+          top: 18px;
+        }
+        &:hover{
+          .open-button,
+          .close-button{
+            span{
+              background: #fff
+            }
+          }
+        }
+      }
+
+      [class^="icon-"], [class*=" icon-"]{
+        color: rgb(98, 173, 225)!important;
+      }
+
+      .icon-user-settings{
+        font-size: 15px;
+      }
+
+      .icon-activities{
+        // font-size: 10px
+      }
+
+      .icon-reports{
+        // font-size: 18px;
+      }
+
+      .icon-modes{
+        // font-size: 8px;
+      }
+
+		}
+
+		& td{
+			padding-left: 5px;
+			text-transform: capitalize;
+      vertical-align: middle;
+		}
+
+	}
+
+  &:before, &:after{
+    bottom: 100%;
+  	left: 50%;
+  	border: solid transparent;
+  	content: " ";
+  	height: 0;
+  	width: 0;
+  	position: absolute;
+  	pointer-events: none;
+  }
+
+  &:before{
+    border-color: rgba(194, 225, 245, 0);
+    border-bottom-color: #c2e1f5;
+    border-width: 10px;
+    margin-left: -9px;
+  }
+
+  &:after{
+    border-color: rgba(136, 183, 213, 0);
+    border-bottom-color: #fff;
+    border-width: 8px;
+    margin-left: -7px;
+  }
+}
+
+.settings-tooltip tr.selected{
+    border: 1px solid $primary-color;
+    @include border-radius(3px);
+}

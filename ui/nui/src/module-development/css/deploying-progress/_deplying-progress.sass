@@ -1,0 +1,74 @@
+.Deploying-progress, .Prod-deploying-progress
+
+  .Topology__container__inside
+    background: #fff
+
+  +element('inside')
+    padding: 29px 0 29px 0
+    width: 1020px
+    margin: auto
+
+    +element('loader')
+      +center-element
+
+    +element('top-container')
+      padding: 13px 19px 13px 19px
+      +border-radius(3px)
+      background-color: #ffffff
+      box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.09)
+      border: solid 1px #e1e4e6
+      height: 47px
+
+      +element('success')
+        display: inline-block
+        line-height: 46px
+        +element('check-container')
+          margin: 0
+          float: left
+          margin-right: 15px
+
+          +element('icon-check')::before
+            left: 13px!important
+
+        +element('success-msg')
+          float: left
+
+    & .Progress-bar-quantity, .deploying-loader
+      margin-top: 15px
+
+    & .deploying-loader .icon-delete
+      float: right
+
+    & .deploying-loader .check-container
+      @extend .state-bar-check-container
+      float: left
+      margin-top: -10px
+      margin-right: 20px
+      border: 2px solid red
+
+      .icon-close
+        position: absolute
+        left: 7px
+        top: 6px
+        color: red!important
+
+  & .Topology
+    height: 586px
+    +element('container')
+      border: solid 1px #d4d6d9!important
+
+    & .icon-check, & .icon-close
+      color: #ffffff!important
+      font-size: 10px
+      line-height: 8px
+
+    & .icon-close::before
+      // margin-left: 1px
+
+.Prod-deploying-progress .btn-go-to-dashboard
+  float: right
+  height: 40px
+  padding: 0 14px
+  border-radius: 3px
+  background: #d7e9f5
+  margin-top: -10px

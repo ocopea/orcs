@@ -1,0 +1,303 @@
+.development.wrapper{
+
+  .main-screen{
+
+    & > div{
+        position: relative;
+    }
+
+    height: 100%;
+
+    .inside{
+        width: calc(100% - 40px);
+        height: calc(100% - 171px);
+        padding: 20px;
+
+        .gm-scroll-view{
+          position: relative;
+        }
+    }
+
+    .General-menu-container.sort-by-menu{
+      top: 47px;
+      right: 119px;
+      height: 160px;
+
+      li.selected{
+        background: #e1e4e6;
+        &:hover{
+          color: inherit;
+        }
+      }
+    }
+
+    .cards-container{
+        float: left;
+        width: 100%;
+
+        table.list-view-table{
+          width: calc(100% - 40px);
+          border: solid 1px #d4d6d9;
+          margin-top: 20px;
+          color: #858d99;
+          margin-left: 20px;
+
+          thead{
+            @include dialog-title;
+            text-transform: uppercase;
+            th{
+              font-weight: bold;
+            }
+          }
+          th, td{
+            text-align: left;
+            padding-left: 12px;
+          }
+          tbody{
+            text-transform: capitalize;
+
+            tr{
+              line-height: 66px;
+              border-bottom: 1px solid #edf0f2;
+              &:nth-last-child(1){
+                border-bottom: none;
+              }
+              .open-icon{
+                float: right;
+                margin-right: 20px;
+              }
+              &:hover{
+                & td span, td{font-weight: bold;}
+                cursor: pointer;
+                & .open-icon path{
+                  fill: #479dda
+                }
+              }
+            }
+
+            td{
+              .dot{
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                display: inline-block;
+                margin: 0 5px 2px 0;
+              }
+
+              .psb-quota .dot{
+                background: #479dda;
+              }
+
+              .dsb-quota{
+                margin-left: 10px;
+               .dot{
+                  background: #3ac187
+               }
+              }
+
+            }
+          }
+        }
+
+        img.appTemplateIcon{
+          width: 30px;
+          height: 30px;
+          @include border-radius(50%)
+          margin-bottom: -10px;
+          margin-right: 10px;
+        }
+
+    }
+
+    .card{
+      width: 33.33333%;
+      height: 314px;
+      float: left;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+      padding-bottom: 42px;
+      padding-right: 0;
+      position: relative;
+
+      .inside{
+        border-radius: 3px;
+        border-width: 1px;
+        background-color: #ffffff;
+        border: solid 1px #d4d6d9;
+        box-shadow: none;
+        height: 314px;
+        margin: auto;
+        text-align: center;
+        @include center-element;
+
+        .title{
+          margin-top: -6px;
+        }
+
+        .avatar{
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            float: left;
+        }
+
+        .username{
+            float: left;
+            text-align: left;
+            padding-left: 10px;
+            text-transform: capitalize;
+            padding-top: 3px;
+        }
+
+        .icon-container{
+            @include center-element;
+            top: -100px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+
+            img{
+                width: 100%;
+                height: 100%;
+                @include center-element;
+            }
+
+            .open-icon-container{
+              position: absolute;
+              width: 18px;
+              height: 18px;
+              right: -2px;
+              background: #fff;
+              border-radius: 50%;
+              z-index: 999;
+
+              .icon-logs{
+                font-size: 10px!important;
+                position: absolute;
+                top: 3px;
+                right: 3px;
+              }
+            }
+        }
+
+        .date-created{
+          display: inline;
+          float: right;
+          color: #858d99;
+          font-size: 13px;
+          padding-top: 5px;
+
+          .date-icon{
+            width: 15px;
+            height: 15px;
+            float: left;
+            padding-right: 5px;
+          }
+        }
+
+        .instance-name{
+            margin-top: 100px;
+            color:  #555c65;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: capitalize;
+        }
+
+				.app-breakdown{
+					float: left;
+					width: calc(100% + 30px);
+					margin-left: -17.5px;
+          margin-top: 63px;
+          height: 35px;
+          font-size: 15px;
+
+					.box{
+						width: calc(50% - 20px);
+						float: left;
+						padding: 10px;
+
+						.inside{
+							height: 36px;
+							width: 100%;
+							padding: 10px;
+							position: static;
+							border: none;
+							color:  #555c65;
+							font-size: 15px;
+							text-transform: uppercase;
+              box-shadow: none;
+							&:hover{
+								outline: none;
+							}
+						}
+					}
+				}
+
+				.progress-bars{
+					float: left;
+					width: 100%;
+					position: relative;
+
+  				.psb-quota{
+  					width: calc(50% - 20px);
+  					color: #8cc9ea;
+  					font-size: 12px;
+  					position: absolute;
+  					left: 0;
+  					top: 16px;
+  					left: 3px;
+
+  					.precent{
+  						padding: 5px;
+  						padding-top: 1px;
+  					}
+
+            .progress-bar{
+              margin-top: -3px;
+              .progress-bar-container{
+                  width: 100%;
+                  height: 6.5px;
+                  float: left;
+                  fill: #ebeff5;
+              }
+
+              .progress{
+                  fill: #8cc9ea;
+              }
+            }
+
+			    }/* ./psb-quota */
+			    .range{
+						width: calc(50% - 16px);
+						position: absolute;
+						right: 0;
+						top: 16px;
+
+						.outer-range{
+							fill: #ebeff5;
+							height: 7px;
+						}
+
+						.psb-range{
+							fill: #7fc893;
+							height: 7px;
+						}
+
+						.tick{
+							fill: #fff
+						}
+
+						.precent-range{
+							color: #7fc893;
+							font-size: 12px;
+							width: 80px;
+							text-align: left;
+							height: 10px;
+						}
+
+					}/* ./range */
+				}/* ./progress bars */
+      }/* ./card inside */
+    }/* ./card */
+  }/* ./main-screen */
+}

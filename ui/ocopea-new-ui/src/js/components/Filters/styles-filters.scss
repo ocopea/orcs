@@ -1,0 +1,33 @@
+.Filters{
+  min-height: 45px;
+  .filter{
+    margin-right: 10px;
+    margin-bottom: 10px;
+    float: left;
+    position: relative;
+    color: #6b7083;
+    font-size: 11px;
+    line-height: 33px!important;
+
+    &:first-child{
+      margin-left: 0;
+    }
+
+    > div{
+      position: absolute;
+      right: 5px;
+      top: 5px;
+    }
+    span{
+      width: 76px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: block;
+    }
+  }
+}
+
+::i-block-chrome, .Filters {
+ width: 1035px;
+}

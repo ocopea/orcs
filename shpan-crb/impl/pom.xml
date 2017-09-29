@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.emc.ocopea.orcs</groupId>
+        <artifactId>shpan-crb-parent</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>shpan-crb-service</artifactId>
+    <name>Shpan Copy Repo Service</name>
+    <description>ShpanCopyRepo Reference Implementation Copy Repository</description>
+
+    <dependencies>
+
+        <!-- Copy repository API we need to implement -->
+        <dependency>
+            <groupId>com.emc.ocopea.crb</groupId>
+            <artifactId>crb-java-web-api</artifactId>
+            <version>${ocopea.crb.version}</version>
+        </dependency>
+
+        <!-- ms library for implementing our service -->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice.api</groupId>
+            <artifactId>microservice-api</artifactId>
+            <version>${microservice.api.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.emc.ocopea.util</groupId>
+            <artifactId>common-util</artifactId>
+            <version>${ocopea.util.version}</version>
+        </dependency>
+
+        <!-- for counting stream -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.5</version>
+        </dependency>
+
+        <!--For StreamingOutputProvider-->
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-jaxrs</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <!-- for implementing rest resources -->
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+        </dependency>
+
+        <!-- For testing -->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>microservice-test-utils</artifactId>
+            <version>${ocopea.util.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.spec.javax.servlet</groupId>
+            <artifactId>jboss-servlet-api_3.1_spec</artifactId>
+            <scope>provided</scope>
+            <version>1.0.0.Final</version>
+        </dependency>
+
+    </dependencies>
+</project>
+

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.emc.ocopea.orcs</groupId>
+        <artifactId>orcs-parent</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+
+    <properties>
+        <ocopea.util.version>${project.version}</ocopea.util.version>
+    </properties>
+    <artifactId>shpan-crb-parent</artifactId>
+    <name>Shpan Copy Repo Reference Impl Parent</name>
+    <packaging>pom</packaging>
+    <modules>
+        <module>impl</module>
+        <module>tester</module>
+        <module>remote-dev-runner</module>
+    </modules>
+
+</project>
+

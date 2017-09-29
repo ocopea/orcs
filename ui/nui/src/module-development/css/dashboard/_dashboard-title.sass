@@ -1,0 +1,129 @@
+.development .Dashboard
+
+  +element('title')
+    height: 95px
+    box-shadow: 1px 2px 2px 0px rgba(4, 4, 4, 0.15)
+
+    +element('inside')
+      width: 1021px
+      height: 61px
+      margin: auto
+      padding-top: 18px
+
+      +element('section')
+        height: 100%
+        float: left
+        padding-top: 16px
+
+        +modifier('left')
+          width: 188px
+          padding-top: 0
+
+        +modifier('middle')
+          width: 587px
+
+        +modifier('right')
+          width: 246px
+
+        +element('inside')
+          height: 100%
+
+        //section left
+        +element('inside')
+          +modifier('left')
+            margin-right: -3px
+            +element('icon-container')
+              height: 100%
+              border-right: 1px solid #d9dee1
+
+              +element('image')
+                width: 48px
+                height: 48px
+                border-radius: 50%
+                float: left
+                margin-right: 22px
+                margin-top: 8px
+
+              +element('label')
+                float: left
+                width: calc(100% - 70px)
+                line-height: 23px
+                text-transform: capitalize
+
+                +modifier('instance-name')
+                  font-size: 18px
+                  color: #354151
+                  margin-top: 8px
+
+                +modifier('instance-version')
+                  color: #6b7083
+                  font-size: 14px
+
+        //section middle
+        +element('inside')
+          +modifier('middle')
+
+            +element('container')
+              padding-left: 33px
+              +element('image')
+                width: 30px
+                height: 30px
+                float: left
+                +border-radius(50%)
+                margin-right: 16px
+
+              +element('creator-name')
+                line-height: 12px
+                color: #6b7083
+                font-size: 16px
+
+              +modifier('left')
+                width: 42%
+                float: left
+
+                +element('date-created')
+                  line-height: 30px
+                  color: #6b7083
+                  font-size: 12px
+
+              +modifier('right')
+                width: 50%
+                float: left
+                text-transform: capitalize
+
+                +element('size')
+                  line-height: 14px
+
+                +element('restore-time')
+                  line-height: 27px
+
+          //section right
+          +modifier('right')
+            float: left
+            color: #6b7083
+            font-size: 14px
+            text-transform: uppercase
+
+            +element('button')
+              width: 95px
+              line-height: 32px
+              border-radius: 3px
+              background-color: #f0f4fa
+              float: left
+              text-align: center
+              margin-left: 8px
+              color: #6b7083
+              font-size: 11px
+
+              &.disabled
+                opacity: 0.2
+                pointer-events: none
+
+              +modifier('icon-delete')
+                width: 32px
+                height: 32px
+                font-size: 20px
+
+
+              +modifier('first')
+                margin-left: 0

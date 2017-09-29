@@ -1,0 +1,43 @@
+.Dispose-image-dialog
+  +center-element
+  +border-radius(3px)
+  width: 423px
+  height: 197px
+  box-shadow: 0px 4px 14px 0 rgba(0, 0, 0, 0.15)
+  background: #ffffff
+  z-index: 1000
+  margin-top: 214px
+
+  +element('title')
+    +dialog-title
+    +border-radius(3px)
+
+    +element('label')
+      text-transform: uppercase
+      font-weight: 500
+
+  +element('inside')
+    text-align: center
+    font-size: 18px
+    color: #354151
+    padding-top: 31px
+    &::first-letter
+      text-transform: capitalize
+
+    +element('buttons-container')
+      position: absolute
+      bottom: 24px
+      width: 100%
+      display: flex
+      justify-content: center
+
+      +element('wrap')
+        width: 222px
+        display: flex
+        justify-content: space-around
+
+      +element('button')
+        text-transform: uppercase
+        color: #ffffff
+        &:focus
+          border: 1px solid black

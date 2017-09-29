@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  Copyright (c) 2016 EMC Corporation All Rights Reserved
+  -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.emc.ocopea.microservice</groupId>
+        <artifactId>inspector-parent</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>inspector-service</artifactId>
+    <name>Inspector Micro Service</name>
+
+    <description>
+        This service allows visualizing service states by interacting with the registry and
+        with the services lifecycle public api
+    </description>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>microservice-web-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.emc.ocopea.microservice.api</groupId>
+            <artifactId>microservice-api</artifactId>
+            <version>${microservice.api.version}</version>
+        </dependency>
+
+        <!-- Micro service runtime. Inspector uses runtime objects not only api -->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>microservice-runtime</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- Inspector model project  -->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>inspector-model</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- Inspector web api project  -->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>inspector-web-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- messaging stats api - for messaging stats support where available -->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>microservice-messaging-stats</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- Jax RS API - required in order to use jax-rs annotations -->
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-jaxrs</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-jaxrs</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--
+                <dependency>
+                    <groupId>commons-io</groupId>
+                    <artifactId>commons-io</artifactId>
+                    &lt;!&ndash; Letting this be added as it is not getting picked-up from jboss &ndash;&gt;
+                </dependency>
+        -->
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <!-- Test scope dependencies -->
+
+        <!-- Micro-service testing library -->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>microservice-test-utils</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>

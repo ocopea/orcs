@@ -1,0 +1,1 @@
+${project.distributionManagement.repository.url}

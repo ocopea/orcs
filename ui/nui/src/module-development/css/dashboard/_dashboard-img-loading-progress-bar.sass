@@ -1,0 +1,28 @@
+.Dashboard
+  +element('inside')
+    +element('image-loading')
+      line-height: 0px
+      padding-top: 37px
+
+      +element('container')
+        height: 20px
+
+        +element('label')
+          font-size: 14px
+          text-transform: capitalize
+          color: #252d3a
+          font-weight: bold
+          font-style: italic
+          float: left
+          margin-top: 3px
+
+        .progress-bar
+          svg
+            float: right
+          g.progress-bar-container
+            .outer-range
+              fill: #d9dee1
+            .progress
+              fill: #62ade1
+          &~.precent
+            display: none

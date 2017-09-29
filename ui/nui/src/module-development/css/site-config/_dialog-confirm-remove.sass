@@ -1,0 +1,33 @@
+.Dialog-confirm-remove
+  +center-element
+  background: #fff
+  width: 500px
+  height: 250px
+
+  +element('title')
+    +dialog-title
+    text-transform: uppercase
+
+    +element('icon-close')
+      float: right
+      margin-top: 17px
+      margin-right: 15px
+
+  +element('inside')
+    padding: 17px
+    width: calc(100% - 34px)
+    color: #4c515e
+
+    +element('content')
+      &::first-letter
+        text-transform: uppercase
+
+    +element('buttons-container')
+      display: flex
+      justify-content: space-between
+      position: absolute
+      bottom: 17px
+      width: calc(100% - 34px)
+
+      +element('button')
+        width: calc(50% - 10px)

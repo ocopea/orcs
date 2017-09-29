@@ -1,0 +1,78 @@
+.Home{
+
+  .inside{
+    padding: 24px;
+  }
+
+  .topContainer{
+    display: flex;
+    display: -webkit-box;
+    line-height: 107px;
+    background-color: #f7f9fc;
+    border-bottom: 1px solid #e6eaed;
+
+    .org{
+      border-right: 1px solid #e1e3e6;
+      padding: 0 24px;
+      height: 107px;
+      line-height: 55px;
+      display: -webkit-box;
+      display: flex;
+      flex-direction: column;
+      -webkit-box-orient: vertical;
+      line-height: 22px;
+      color: #354151;
+      width: 92px;
+
+      span{
+        position: relative;
+        top: 30%;
+        display: block;
+        &:nth-child(1){
+          font-size: 11px;
+        }
+        &:nth-child(2){
+          font-size: 18.4px;
+        }
+      }
+    }
+  }
+
+  .cardsControllBar{
+    display: flex;
+    justify-content: space-between;
+    .filters{
+      flex: 1;
+    }
+    .sort{
+      flex: 0.1;
+      color: #858d99;
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 30px;
+      [class="icon-arrow-dropdown"]{
+        font-size: 10px;
+        color: #dadee1;
+        padding-left: 10px;
+      }
+    }
+    .layoutSelection{
+      display: flex;
+      display: -webkit-box;
+      justify-content: space-between;
+      border-left: 1px solid #e6eaed;
+      padding: 7px 1px 0 10px;
+      height: 25px;
+      > span{
+        font-size: 15px;
+        margin-left: 10px;
+      }
+    }
+
+  }
+}
+
+::i-block-chrome, .cardsControllBar {
+ display: -webkit-box;
+ .sort{width: 100px}
+}

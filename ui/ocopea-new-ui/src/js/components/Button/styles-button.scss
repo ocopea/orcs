@@ -1,0 +1,40 @@
+.Button {
+  // line-height: 33px;
+  text-align: center;
+  color: #fff;
+  text-transform: capitalize;
+  // width: 100px;
+  // height: 33px;
+  position: relative;
+  border-radius: 3px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.enabled {
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  &.disabled {
+    opacity: 0.5;
+  }
+
+  &.primary {
+    background-color: #5c9abd;
+  }
+
+  &.secondary {
+    background-color: #e6eaed;
+    color: #6b7083;
+    font-weight: 500
+  }
+  .icon{
+    margin-right: 10px;
+  }
+}

@@ -1,0 +1,88 @@
+.Copy-repo-broker
+
+  +element('row')
+    border-bottom: 1px solid #ccc
+    &:nth-last-child(1)
+      border: none
+
+    +element('logo-container')
+      +element('logo')
+        width: auto
+
+    & table
+      pointer-events: none
+      width: 100%
+      & tr
+        line-height: 41px
+
+      & thead > tr
+        background: #f7f9fc
+
+        & th
+          color: #595e64
+
+      & td, th
+        padding-left: 27px
+        text-align: left
+        font-weight: 500
+        font-size: 11px
+
+      & td
+        font-size: 13px
+        color: #858d99
+        &:hover
+          cursor: pointer
+
+      & tr
+        &:hover
+          background: #edfbff
+        &.selected
+          & td
+            color: #565c65
+
+    +modifier('last')
+      padding-left: 0
+
+    +modifier('collapsed')
+      height: 66px
+      line-height: 66px
+      background: inherit
+
+      &:hover
+        background: inherit
+
+    +element('additional')
+      max-height: 0
+      transition: max-height 0.5s ease, opacity 0.3s ease
+      opacity: 0
+      border-bottom: none
+      width: 100%
+      height: 100%
+      display: flex
+      flex-direction: column
+
+      +element('add-cr')
+        border-top: 1px solid #ccc
+        padding: 0 20px
+        text-align: right
+        text-transform: capitalize   
+
+      &:hover
+        background: inherit
+        cursor: auto
+
+      +modifier('collapsed')
+        max-height: 1000px
+        transition: max-height 0.8s ease, opacity 0.3s ease
+        opacity: 1
+        border-bottom: 1px solid #ccc!important
+
+    +element('icons')
+      justify-content: flex-end
+
+    .Plus
+      position: relative
+      top: 9px
+      width: 46px
+      height: 46px
+      margin: 0 28px 0 24px

@@ -1,0 +1,31 @@
+$red: red
+
+.Dashboard
+  +element('inside')
+    +element('fail-image-saved-container')
+      @extend .state-bar-container
+
+      +element('check-container')
+        @extend .state-bar-check-container
+        display: inline-block
+        text-align: center
+        width: 30px !important
+        height: 30px !important
+        border: 2px solid $red
+
+        & .icon-close::before
+          color: $red
+          +center-element
+          top: 7px
+
+      +element('image-name')
+        @extend .state-bar-image-name
+
+      +element('buttons')
+        @extend .state-bar-buttons
+        width: auto
+
+        +element('button')
+          @extend .state-bar-button
+          +modifier('remove-success-msg')
+            @extend .dismiss-state-bar-button

@@ -1,0 +1,68 @@
+.Main,
+.Application,
+.ApplicationWrapper,
+.ApplicationInside{height: 100%; width: 1263px!important;}
+
+.ApplicationWrapper{
+  min-height: 500px;
+  max-width: 1263px;
+  position: relative;
+  margin: auto;
+  display: table;
+}
+
+.ApplicationWrapperDimmed{
+  @extend .ApplicationWrapper;
+  padding-bottom: 65px;
+  opacity: 0.4;
+  pointer-events: none;
+  .ApplicationInside{
+    opacity: 0.4;
+    transition: 0.8s;
+    overflow: hidden;
+
+  }
+}
+
+.dimmed {
+  opacity: 0.2;
+  pointer-events: none;
+  height: 100%;
+}
+
+.ApplicationInside{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  direction: ltr;
+  overflow: hidden;
+  box-shadow: 0px 2px 3px 0 rgba(0, 0, 0, 0.15);
+  & > div:nth-child(2){ width: 100%; }
+  & > [id="minimize"]{
+    width: 81.5%!important;
+  }
+}
+
+.ApplicationInsideMobile{
+
+  & > div{
+    padding: 20px;
+  }
+}
+
+.loader{
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+::i-block-chrome, .ApplicationInside {
+ display: -webkit-box;
+ -webkit-box-pack: space-between;
+}

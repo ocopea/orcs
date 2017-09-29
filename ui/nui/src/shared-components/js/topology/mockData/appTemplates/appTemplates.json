@@ -1,0 +1,362 @@
+[
+  {
+    "id": "b863381f-dd7e-4616-bff9-0017ec8caf4e",
+    "name": "hackathon",
+    "version": "1.0",
+    "description": "Hackathon Registration App",
+    "appServiceTemplates": [
+      {
+        "appServiceName": "hackathon-svc",
+        "psbType": "ShpanPaaS",
+        "imageName": "hackathon",
+        "imageType": "java",
+        "imageVersion": "1.0",
+        "environmentVariables": {},
+        "dependencies": [
+          {
+            "type": "DATABASE",
+            "name": "hackathon-db",
+            "description": "Hackathon ideas DB",
+            "img": "/hub-web-api/images/dsb-protocol/postgres"
+          },
+          {
+            "type": "OBJECTSTORE",
+            "name": "hack-docs",
+            "description": "Hackathon document store",
+            "img": "/hub-web-api/images/dsb-protocol/s3"
+          }
+        ],
+        "exposedPorts": [
+          8080
+        ],
+        "httpPort": 8080,
+        "entryPointUrl": "hackathon-api/html/nui/index.html",
+        "img": "/hub-web-api/images/image-type/java"
+      }
+    ],
+    "entryPointServiceName": "hackathon-svc",
+    "img": "/hub-web-api/images/app-template/b863381f-dd7e-4616-bff9-0017ec8caf4e"
+  },
+  {
+    "id": "b342be32-da0e-49dd-8f24-f9a0b768d27e",
+    "name": "hackathon-pro",
+    "version": "1.0",
+    "description": "Hackathon Pro Registration App",
+    "appServiceTemplates": [
+      {
+        "appServiceName": "committee-svc",
+        "psbType": "ShpanPaaS",
+        "imageName": "committee",
+        "imageType": "java",
+        "imageVersion": "2.1",
+        "environmentVariables": {},
+        "dependencies": [
+          {
+            "type": "DATABASE",
+            "name": "hackathon-db",
+            "description": "Hackathon ideas DB",
+            "img": "/hub-web-api/images/dsb-protocol/postgres"
+          }
+        ],
+        "exposedPorts": [
+          8080
+        ],
+        "httpPort": 8080,
+        "entryPointUrl": "committee-api/html/cui/index.html",
+        "img": "/hub-web-api/images/image-type/java"
+      },
+      {
+        "appServiceName": "hackathon-svc",
+        "psbType": "ShpanPaaS",
+        "imageName": "hackathon",
+        "imageType": "java",
+        "imageVersion": "1.0",
+        "environmentVariables": {
+          "hackathon-pro-mode": "true"
+        },
+        "dependencies": [
+          {
+            "type": "DATABASE",
+            "name": "hackathon-db",
+            "description": "Hackathon ideas DB",
+            "img": "/hub-web-api/images/dsb-protocol/postgres"
+          },
+          {
+            "type": "OBJECTSTORE",
+            "name": "hack-docs",
+            "description": "Hackathon document store",
+            "img": "/hub-web-api/images/dsb-protocol/s3"
+          }
+        ],
+        "exposedPorts": [
+          8080
+        ],
+        "httpPort": 8080,
+        "entryPointUrl": "hackathon-api/html/nui/index.html",
+        "img": "/hub-web-api/images/image-type/java"
+      }
+    ],
+    "entryPointServiceName": "hackathon-svc",
+    "img": "/hub-web-api/images/app-template/b342be32-da0e-49dd-8f24-f9a0b768d27e"
+  },
+  {
+    "id": "3ff13e21-604c-4c82-b410-a6dde6b7a678",
+    "name": "wordpress",
+    "version": "1.0",
+    "description": "Wordpress content management",
+    "appServiceTemplates": [
+      {
+        "appServiceName": "wordpress",
+        "psbType": "ShpanPaaS",
+        "imageName": "wordpress",
+        "imageType": "apache-webserver",
+        "imageVersion": "1.0",
+        "environmentVariables": {},
+        "dependencies": [
+          {
+            "type": "DATABASE",
+            "name": "configuration",
+            "description": "wordpress configuration db",
+            "img": "/hub-web-api/images/dsb-protocol/mysql"
+          },
+          {
+            "type": "OTHER",
+            "name": "documents",
+            "description": "Wordpress documents",
+            "img": "/hub-web-api/images/dsb-protocol/docker-volume"
+          }
+        ],
+        "exposedPorts": [
+          8080
+        ],
+        "httpPort": 8080,
+        "entryPointUrl": "",
+        "img": "/hub-web-api/images/image-type/apache-webserver"
+      }
+    ],
+    "entryPointServiceName": "wordpress",
+    "img": "/hub-web-api/images/app-template/3ff13e21-604c-4c82-b410-a6dde6b7a678"
+  },
+  {
+    "id": "b676eb62-affc-4075-9dbe-6a67e8146c13",
+    "name": "hackathon-bad",
+    "version": "1.0",
+    "description": "Bad Hackathon Registration App",
+    "appServiceTemplates": [
+      {
+        "appServiceName": "hackathon-bad-svc",
+        "psbType": "k8s",
+        "imageName": "hackathon",
+        "imageType": "java",
+        "imageVersion": "1.0",
+        "environmentVariables": {},
+        "dependencies": [
+          {
+            "type": "DATABASE",
+            "name": "hackathon-db",
+            "description": "Hackathon ideas DB",
+            "img": "/hub-web-api/images/dsb-protocol/postgres"
+          },
+          {
+            "type": "OBJECTSTORE",
+            "name": "hack-docs",
+            "description": "Hackathon document store",
+            "img": "/hub-web-api/images/dsb-protocol/s3"
+          }
+        ],
+        "exposedPorts": [
+          8080
+        ],
+        "httpPort": 8080,
+        "entryPointUrl": "hackathon-api/html",
+        "img": "/hub-web-api/images/image-type/java"
+      }
+    ],
+    "entryPointServiceName": "hackathon-bad-svc",
+    "img": "/hub-web-api/images/app-template/b676eb62-affc-4075-9dbe-6a67e8146c13"
+  },
+  {
+    "id": "576101e5-7000-46df-bdcb-5d3b8c8c433a",
+    "name": "complex-app",
+    "version": "1.0",
+    "description": "Complex app that looks like the hackathon",
+    "appServiceTemplates": [
+      {
+        "appServiceName": "submission-evaluator",
+        "psbType": "k8s",
+        "imageName": "hackathon-submission-eval",
+        "imageType": "java",
+        "imageVersion": "1.0",
+        "environmentVariables": {},
+        "dependencies": [
+          {
+            "type": "MESSAGING",
+            "name": "messaging",
+            "description": "Messaging",
+            "img": "/hub-web-api/images/dsb-protocol/rabbitmq"
+          }
+        ],
+        "exposedPorts": [
+          8080
+        ],
+        "httpPort": 8080,
+        "entryPointUrl": null,
+        "img": "/hub-web-api/images/image-type/java"
+      },
+      {
+        "appServiceName": "hackathon-svc",
+        "psbType": "k8s",
+        "imageName": "hackathon",
+        "imageType": "java",
+        "imageVersion": "1.0",
+        "environmentVariables": {},
+        "dependencies": [
+          {
+            "type": "DATABASE",
+            "name": "hackathon-db",
+            "description": "Hackathon ideas DB",
+            "img": "/hub-web-api/images/dsb-protocol/postgres"
+          },
+          {
+            "type": "OBJECTSTORE",
+            "name": "hack-docs",
+            "description": "Hackathon document store",
+            "img": "/hub-web-api/images/dsb-protocol/s3"
+          },
+          {
+            "type": "MESSAGING",
+            "name": "messaging",
+            "description": "Messaging",
+            "img": "/hub-web-api/images/dsb-protocol/rabbitmq"
+          }
+        ],
+        "exposedPorts": [
+          8080
+        ],
+        "httpPort": 8080,
+        "entryPointUrl": "hackathon-api/html",
+        "img": "/hub-web-api/images/image-type/java"
+      }
+    ],
+    "entryPointServiceName": "hackathon-svc",
+    "img": "/hub-web-api/images/app-template/576101e5-7000-46df-bdcb-5d3b8c8c433a"
+  },
+  {
+    "id": "ff6139d3-e04a-4bcc-87fb-013fec7183b4",
+    "name": "complex-app2",
+    "version": "1.0",
+    "description": "Complex app2 that looks like the hackathon",
+    "appServiceTemplates": [
+      {
+        "appServiceName": "gals-nightmare",
+        "psbType": "k8s",
+        "imageName": "gals-nightmare",
+        "imageType": "java",
+        "imageVersion": "1.1",
+        "environmentVariables": {},
+        "dependencies": [
+          {
+            "type": "MESSAGING",
+            "name": "messaging",
+            "description": "Messaging",
+            "img": "/hub-web-api/images/dsb-protocol/rabbitmq"
+          },
+          {
+            "type": "DATABASE",
+            "name": "configuration-db",
+            "description": "Hackathon configuration",
+            "img": "/hub-web-api/images/dsb-protocol/postgres"
+          },
+          {
+            "type": "DATABASE",
+            "name": "customers-db",
+            "description": "Customers database",
+            "img": "/hub-web-api/images/dsb-protocol/postgres"
+          },
+          {
+            "type": "DATABASE",
+            "name": "profile-db",
+            "description": "Mongo db",
+            "img": "/hub-web-api/images/dsb-protocol/mongo"
+          }
+        ],
+        "exposedPorts": [
+          8080
+        ],
+        "httpPort": 8080,
+        "entryPointUrl": "hackathon-api/html",
+        "img": "/hub-web-api/images/image-type/java"
+      },
+      {
+        "appServiceName": "hackathon-svc",
+        "psbType": "k8s",
+        "imageName": "hackathon",
+        "imageType": "java",
+        "imageVersion": "1.0",
+        "environmentVariables": {},
+        "dependencies": [
+          {
+            "type": "DATABASE",
+            "name": "hackathon-db",
+            "description": "Hackathon ideas DB",
+            "img": "/hub-web-api/images/dsb-protocol/postgres"
+          },
+          {
+            "type": "DATABASE",
+            "name": "configuration-db",
+            "description": "Hackathon configuration",
+            "img": "/hub-web-api/images/dsb-protocol/postgres"
+          },
+          {
+            "type": "OBJECTSTORE",
+            "name": "hack-docs",
+            "description": "Hackathon document store",
+            "img": "/hub-web-api/images/dsb-protocol/s3"
+          },
+          {
+            "type": "MESSAGING",
+            "name": "messaging",
+            "description": "Messaging",
+            "img": "/hub-web-api/images/dsb-protocol/rabbitmq"
+          }
+        ],
+        "exposedPorts": [
+          8080
+        ],
+        "httpPort": 8080,
+        "entryPointUrl": "hackathon-api/html",
+        "img": "/hub-web-api/images/image-type/java"
+      },
+      {
+        "appServiceName": "hackathon-submission-eval",
+        "psbType": "k8s",
+        "imageName": "submission evaluator",
+        "imageType": "java",
+        "imageVersion": "1.0",
+        "environmentVariables": {},
+        "dependencies": [
+          {
+            "type": "MESSAGING",
+            "name": "messaging",
+            "description": "Messaging",
+            "img": "/hub-web-api/images/dsb-protocol/rabbitmq"
+          },
+          {
+            "type": "DATABASE",
+            "name": "profile-db",
+            "description": "Mongo db",
+            "img": "/hub-web-api/images/dsb-protocol/mongo"
+          }
+        ],
+        "exposedPorts": [
+          8080
+        ],
+        "httpPort": 8080,
+        "entryPointUrl": "hackathon-eval-api/html",
+        "img": "/hub-web-api/images/image-type/java"
+      }
+    ],
+    "entryPointServiceName": "hackathon-svc",
+    "img": "/hub-web-api/images/app-template/ff6139d3-e04a-4bcc-87fb-013fec7183b4"
+  }
+]

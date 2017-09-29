@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Services Inspector</title>
+
+    <style type="text/css">
+        #mynetwork {
+
+            width: 1200px;
+            height: 800px;
+
+            border: 1px solid lightgray;
+        }
+    </style>
+
+    <script type="text/javascript" src="html/vis.js"></script>
+    <link href="html/vis.css" rel="stylesheet" type="text/css"/>
+
+    <script type="text/javascript">
+        var data = {
+            nodes: new vis.DataSet(),
+            edges: new vis.DataSet()
+        };
+        var graphData; // get the data
+        var refreshHandle = -1;
+
+        function getData(handler) {
+            var request = new XMLHttpRequest();
+            request.open('GET', '.', true);
+
+            request.onload = function () {
+                if (request.status >= 200 && request.status < 400) {
+                    // Success!
+                    console.log(request.responseText);
+                    var graph = JSON.parse(request.responseText);
+                    handler(graph);
+
+
+                } else {
+                    alert('error reading graph' + request.responseText)
+
+                }
+            };
+
+            request.onerror = function () {
+                // There was a connection error of some sort
+                alert('error reading graph' + request.responseText)
+            };
+
+            request.send();
+        }
+
+        function draw() {
+
+            getData(function (graph) {
+                // get the data
+                graphData = graph.data;
+
+
+                /*
+                 var nodes = [
+                 {id: 1, label: 'Node in\nthe center', shape: 'text'},
+                 {id: 2, label: 'Node\nwith\nmultiple\nlines', shape: 'circle'},
+                 {id: 3, label: 'This is a lot of text\nbut luckily we can spread\nover multiple lines', shape: 'database'},
+                 {id: 4, label: 'This is text\non multiple lines', shape: 'box'},
+                 {id: 5, label: 'Little text', shape: 'ellipse'}
+                 ];
+
+                 // create some edges
+                 var edges = [
+                 {from: 1, to: 2, style: 'line', color: 'red', width: 3, length: 200}, // individual length definition is possible
+                 {from: 1, to: 3, style: 'dash-line', width: 1, length: 200},
+                 {from: 1, to: 4, style: 'line', width: 1, length: 200, label:'I\'m an edge!'},
+                 {from: 1, to: 5, style: 'arrow', width: 3, length: 200, label:'arrows\nare cool'}
+                 ];
+                 */
+
+
+                // create a network
+                var container = document.getElementById('mynetwork');
+                data.nodes.add(graph.nodes);
+                data.edges.add(graph.edges);
+                var options = {};
+                var network = new vis.Network(container, data, options);
+
+                // add event listener
+                network.on('select', onGraphSelection);
+            });
+        }
+
+        function doRefresh() {
+            getData(function (graph) {
+                data.nodes.update(graph.nodes);
+                data.edges.update(graph.edges);
+                graphData = graph.data;
+                document.getElementById('lblUpdatedDate').innerHTML = new Date().toString();
+            });
+        }
+
+        function toggleAutoRefresh() {
+            if (refreshHandle == -1) {
+                refreshHandle = window.setInterval(doRefresh, 10000);
+            } else {
+                window.clearInterval(refreshHandle);
+                refreshHandle = -1;
+            }
+        }
+
+        function onGraphSelection(properties) {
+            var htmlToPrint = '';
+            var nodes = properties.nodes;
+            if (nodes != undefined) {
+                for (var currNode in nodes) {
+                    var currNodeId = nodes[currNode];
+                    var tableRows = '';
+                    var props = graphData[currNodeId];
+                    var propsToSkip = {'type': true};
+
+                    htmlToPrint += '<p class="header">' + currNodeId + '</p>'
+                    htmlToPrint += '<table>';
+
+                    if (props != undefined) {
+                        var nodeType = props['type'];
+                        tableRows += '<tr><td class="labelTD">Resource Type</td><td>' + nodeType + '</td></tr>';
+                        if (nodeType == 'service') {
+                            propsToSkip['state'] = true;
+                            var serviceState = props['state'];
+                            if (serviceState == 'RUNNING') {
+                                tableRows += '<tr><td class="labelTD">Service State</td><td class="valueTD, goodState">' + serviceState + '</td></tr>';
+                            } else {
+                                tableRows += '<tr><td class="labelTD">Service State</td><td class="valueTD, badState">' + serviceState + '</td></tr>';
+                            }
+                        }
+
+                        for (var propName in props) {
+                            var suffixInput = '.queues.input.timer.count';
+                            var suffixErr = '.queues.input.errors.count';
+                            var currVarValue = props[propName] === 'null' ? '-' : props[propName];
+
+                            if (propName.indexOf(suffixInput, this.length - suffixInput.length) !== -1) {
+                                propsToSkip[propName] = true;
+                                tableRows += '<tr><td class="labelTD">Messages Processed By Service</td><td class="valueTD">' + currVarValue + '</td></tr>';
+                            } else if (propName.indexOf(suffixErr, this.length - suffixErr.length) !== -1) {
+                                propsToSkip[propName] = true;
+                                tableRows += '<tr><td class="labelTD">Errors Encountered</td><td class="valueTD">' + currVarValue + '</td></tr>';
+                            } else if (propName == 'messagesInQueue') {
+                                propsToSkip[propName] = true;
+                                tableRows += '<tr><td class="labelTD">Messages Currently In Queue</td><td class="valueTD">' + currVarValue + '</td></tr>';
+                            }
+                        }
+
+                        for (var propName in props) {
+                            if (!propsToSkip.hasOwnProperty(propName)) {
+                                var currVarValue = props[propName];
+                                if (currVarValue && currVarValue.trim() != "null") {
+                                    tableRows += '<tr><td class="labelTD">' + propName + '</td><td class="valueTD"> ' + currVarValue + '</td></tr>';
+                                }
+                            }
+                        }
+                    }
+
+                    htmlToPrint += tableRows + '</table>';
+                }
+
+                document.getElementById('info').innerHTML = 'selection: ' + htmlToPrint + '<br/>';
+            }
+        }
+    </script>
+</head>
+
+<body onload="draw()">
+<div id="mynetwork"></div>
+<button onclick="doRefresh()">Refresh</button>
+<input type="checkbox" onclick="toggleAutoRefresh()">AutoRefresh</input> <label id="lblUpdatedDate"></label>
+<div id="info"></div>
+</body>
+</html>

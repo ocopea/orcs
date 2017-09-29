@@ -1,0 +1,45 @@
+.Add-dsb-dialog
+  width: 504px
+  height: 427px
+  background: #fff
+  +center-element
+  margin-top: 80px
+  border-radius: 3px
+
+  +element('title')
+    +dialog-title
+    text-transform: uppercase
+    font-weight: 500
+
+    +element('icon-close')
+      float: right
+      margin: 18px
+
+  +element('inside')
+    padding: 20px
+
+    & section
+      margin-bottom: 20px
+      line-height: 25px
+
+      & label
+        display: inline-block
+        width: 100%
+        color: #252d3a
+        font-size: 14px
+        text-transform: capitalize
+        font-weight: 500
+
+      & input
+        padding-left: 20px
+        width: calc(100% - 20px)
+
+    +element('footer')
+      position: absolute
+      bottom: 15px
+      width: calc(100% - 40px)
+      display: flex
+      justify-content: flex-end
+
+      & .button-primary
+        margin-left: 15px

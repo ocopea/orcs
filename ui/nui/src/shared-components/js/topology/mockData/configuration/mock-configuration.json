@@ -1,0 +1,84 @@
+{
+  "appServiceConfigurations": [
+    {
+      "appServiceName": "hackathon-svc",
+      "supportedVersions": {
+        "shpanRegistry": [
+          "1.0",
+          "1.1",
+          "1.2"
+        ]
+      }
+    }
+  ],
+  "dataServiceConfigurations": [
+    {
+      "dataServiceName": "hack-docs",
+      "dsbPlans": {
+        "shpanblob-dsb": {
+          "name": "shpanblob-dsb",
+          "description": "ShpanBlob DSB Reference implementation",
+          "plans": [
+            {
+              "name": "default",
+              "description": "default"
+            },
+            {
+              "name": "slow",
+              "description": "Slow deployment"
+            },
+            {
+              "name": "fail-create",
+              "description": "Plan fails at create stage"
+            },
+            {
+              "name": "fail-bind",
+              "description": "Plan fails at binding stage"
+            }
+          ]
+        },
+        "shpanblob-dup-dsb": {
+          "name": "shpanblob-dup-dsb",
+          "description": "ShpanBlob Duplicate DSB Reference implementation",
+          "plans": [
+            {
+              "name": "default",
+              "description": "default plan"
+            },
+            {
+              "name": "for gal",
+              "description": "for gal"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "dataServiceName": "hackathon-db",
+      "dsbPlans": {
+        "h2-dsb": {
+          "name": "h2-dsb",
+          "description": "H2 DSB Reference implementation",
+          "plans": [
+            {
+              "name": "default",
+              "description": "default"
+            },
+            {
+              "name": "slow",
+              "description": "Slow deployment"
+            },
+            {
+              "name": "fail-create",
+              "description": "Plan fails at create stage"
+            },
+            {
+              "name": "fail-bind",
+              "description": "Plan fails at binding stage"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

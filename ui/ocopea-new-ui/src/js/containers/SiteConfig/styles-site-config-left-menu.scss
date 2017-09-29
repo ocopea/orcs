@@ -1,0 +1,35 @@
+.SiteConfigLeftMenu {
+  width: 234px;
+  height: 100%;
+  background: #252d3a;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 12px;
+
+  .title {
+    font-size: 14px;
+    line-height: 55px;
+    padding-left: 28px;
+    border-bottom: 1px solid #2c3441;
+  }
+
+  .listItem {
+    line-height: 40px;
+    padding-left: 28px;
+    border-bottom: 1px solid #2c3441;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .last {
+      border-bottom: none;
+    }
+
+    .selected {
+      border-left: 2px solid #479dda;
+      padding-left: 26px;
+    }
+  }
+}
+

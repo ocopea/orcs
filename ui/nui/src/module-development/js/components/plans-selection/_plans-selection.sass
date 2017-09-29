@@ -1,0 +1,60 @@
+$border: 1px solid #d4d6d9
+
+.Plans-selection
+
+  +element('label')
+    display: inline-block
+    width: 100%
+    color: #252d3a
+    text-transform: capitalize
+    font-size: 14px
+    font-weight: bold
+
+  +element('service-select')
+    +element('select')
+      width: 257px
+      & .Select-value-label
+        top: 1px!important
+
+    .Select-value
+      top: 3px!important
+
+    +element('description')
+      font-size: 13px
+      color: #354151
+
+  +element('plans')
+
+    +element('wrapper')
+      border: 1px solid #d4d6d9
+      display: inline-block
+      border-radius: 3px
+      width: 100%
+
+    +element('plans-list')
+      width: 180px
+      float: left
+
+      +element('option')
+        line-height: 42px
+        border-bottom: $border
+        padding-left: 10px
+        cursor: pointer
+
+        +modifier('last')
+          border-bottom: none
+          padding-left: 10px
+          line-height: 39px
+
+        +element('selected')
+          background: #479dda
+          color: #ffffff
+          padding-left: 10px
+
+  +element('description')
+    display: inline-block
+    width: 230px
+    min-height: 4px
+    float: left
+    border-left: $border
+    padding: 0 12px 0 12px

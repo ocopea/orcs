@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.emc.ocopea.psb</groupId>
+        <artifactId>psb-parent</artifactId>
+        <version>0.43</version>
+    </parent>
+
+    <artifactId>psb-java-web-api</artifactId>
+    <name>PSB Java Web API</name>
+    <description>
+        This projects includes java jax-rs web interface signatures contract for implementing PaaS service Broker
+        All communication with PSB will be invoked using this API
+    </description>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
+

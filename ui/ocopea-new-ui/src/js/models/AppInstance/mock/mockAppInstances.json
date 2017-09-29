@@ -1,0 +1,50 @@
+[
+  {
+    "id": "c4b22295-e631-45cc-961e-8394daf6cc53",
+    "name": "test2",
+    "appTemplateId": "2c2f1c71-e923-4482-9a76-83ec67f38ed6",
+    "appTemplateName": "hackathon",
+    "creatorUserId": "0dd243d0-5933-369b-b600-9927d8ab1f95",
+    "webEntryPointURL": "http://localhost:8083/hack-prod-hackathon-svc95809637666/hackathon-api/html/nui/index.html",
+    "state": "running",
+    "stateMessage": null,
+    "deploymentType": "production",
+    "dateCreated": 1495809637634
+  },
+  {
+    "id": "1989417f-410d-4304-b14d-997daa381987",
+    "name": "test1",
+    "appTemplateId": "477be0be-b621-4563-ab57-b0dc905a1969",
+    "appTemplateName": "hackathon",
+    "creatorUserId": "c1873172-1983-32c1-b6dc-435447321e60",
+    "webEntryPointURL": "http://localhost:8083/dd-hackathon-svc95828074714/hackathon-api/html/nui/index.html",
+    "state": "running",
+    "stateMessage": null,
+    "deploymentType": "test-dev",
+    "dateCreated": 1495828074700
+  },
+  {
+    "id": "001",
+    "name": "test3",
+    "appTemplateId": "b26a72c7-0fee-47e5-9695-83e036045646",
+    "appTemplateName": "hackathon",
+    "creatorUserId": "c1873172-1983-32c1-b6dc-435447321e60",
+    "webEntryPointURL": "http://localhost:8083/dd-hackathon-svc95828074714/hackathon-api/html/nui/index.html",
+    "state": "running",
+    "stateMessage": null,
+    "deploymentType": "test-dev",
+    "dateCreated": 1495228074700
+  },
+  {
+    "id": "002",
+    "name": "test4",
+    "appTemplateId": "2c74cfe9-1dce-4de7-a673-e5c0e4ab91e1",
+    "appTemplateName": "hackathon",
+    "creatorUserId": "c1873172-1983-32c1-b6dc-435447321e60",
+    "webEntryPointURL": "http://localhost:8083/dd-hackathon-svc95828074714/hackathon-api/html/nui/index.html",
+    "state": "running",
+    "stateMessage": null,
+    "deploymentType": "test-dev",
+    "dateCreated": 1495228074700
+  }
+]

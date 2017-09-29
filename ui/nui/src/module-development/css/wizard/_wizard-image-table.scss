@@ -1,0 +1,73 @@
+.dev-wizard .image{
+  table{
+    width: 100%;
+    margin-top: 25px;
+    border: solid 1px #d4d6d9;
+    position: relative;
+
+    thead{
+      @include dev-table-header;
+      th{
+        padding-left: 24px;
+        text-transform: uppercase;
+        font-size: 11px;
+        color: #595e64;
+        font-weight: bold;
+      }
+    }
+
+    tbody{
+
+      tr{
+        height: 68px;
+        border-bottom: 1px solid #edf0f2;
+        &:nth-last-child(1){
+          border-bottom: none;
+        }
+        &.image-row{
+          &:hover{
+            cursor: pointer;
+          }
+          &.selected{
+            background-color: #e8f6fa;
+
+            .icon-check-container{
+              display: inline!important;
+            }
+          }
+        }
+      }
+
+      td{
+        padding-left: 24px;
+        vertical-align: middle;
+        color: #858d99;
+        text-transform: capitalize;
+        font-size: 13px;
+        position: relative;
+
+        &:nth-last-child(1){
+          text-align: center;
+          padding-left: 0;
+        }
+
+        img.avatar{
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          margin: 0 0 0 5px;
+        }
+
+        .icon-info{
+          font-size: 20px;
+          color: #d9dee1;
+          &:hover{
+            color: #1a84e0;
+          }
+        }
+
+      }
+    }
+
+  }
+}

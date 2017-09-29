@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.emc.ocopea.dev-tools</groupId>
+        <artifactId>dev-tools-parent</artifactId>
+        <version>0.1</version>
+    </parent>
+
+    <artifactId>checkstyle</artifactId>
+    <name>Ocopea checkstyle definitions</name>
+    <description>
+        This project packages a checkstyle definitions file that can be used
+        by maven-checkstyle-plugin, Intellij and so on to automatically check
+        for compliance with the project's styling convention.
+    </description>
+</project>
+

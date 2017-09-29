@@ -1,0 +1,67 @@
+.Data-service-broker, .Copy-repo-broker
+  margin-top: 24px
+  border-radius: 3px
+  border: 1px solid #d4d6d9
+
+  +element('row')
+    display: flex
+    justify-content: space-between
+    line-height: 66px
+    height: 66px
+    border-bottom: 1px solid #ccc
+    display: flex
+    +modifier('last')
+      border-bottom: none
+
+    &:hover
+      cursor: pointer
+      background: #edfbff
+
+    +element('logo-container')
+        width: 48px
+        height: 48px
+        border-radius: 100%
+        background: #eeeeee
+        position: relative
+        top: 9px
+        margin: 0 28px 0 24px
+        +element('logo')
+          width: 30px
+          +center-element
+
+
+        &.Plus
+          margin-top: 0
+          width: 46px
+          height: 46px
+
+    +element('name')
+      flex: 10
+      font-size: 18px
+      color: #4c515e
+      font-weight: 500
+
+    +element('description')
+      flex: 25
+      color: #858d99
+      font-size: 13px
+
+    +element('icons')
+      justify-content: space-between
+      padding-right: 25px
+      display: flex
+      flex: 3
+      font-size: 18px
+      padding-top: 2px
+
+    +modifier('last')
+      justify-content: flex-start
+      padding-left: 23px
+
+      +element('logo')
+        margin-right: 25px
+
+      +element('name')
+        font-size: 18px
+        color: #4c515e
+        font-weight: 500

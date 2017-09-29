@@ -1,0 +1,75 @@
+.Saved-images
+  height: 100%
+  padding: 62px 130px 10px 130px
+  position: relative
+
+  +element('search')
+    & .Select-control
+      border: none
+      padding: 0
+
+  +element('title')
+    +wizard-title
+    text-transform: uppercase
+    padding-bottom: 14px
+
+  +element('sub-title')
+    color: #6b7083
+    font-size: 14px
+    padding-bottom: 20px
+    &::first-letter
+      text-transform: capitalize
+
+  +element('table')
+    width: 100%
+    border: solid 1px #d4d6d9
+    +border-radius(3px)
+
+    +element('thead')
+      +dev-table-header
+      +element('tr')
+        +element('th')
+          text-transform: uppercase
+          color: #595e64
+          font-weight: bold
+          font-size: 12px
+
+    +element('tbody')
+      +element('tr')
+        border-bottom: 1px solid #edf0f2
+        height: 67px
+        &:nth-last-child(1)
+          border: none
+
+        +element('td')
+          vertical-align: middle
+          color: #858d99
+          font-size: 13px
+          text-transform: capitalize
+          &:nth-child(1)
+            text-align: center
+
+          +element('avatar')
+            width: 30px
+            height: 30px
+            +border-radius(50%)
+
+          +element('app-template-img')
+            width: 48px
+            height: 48px
+            +border-radius(50%)
+
+          +element('tag')
+            background: #858d99
+            font-size: 11px
+
+          +element('icons-container')
+            text-align: right
+            padding-right: 30px
+
+            +element('icon')
+              font-size: 20px
+              padding-right: 24px
+              font-size: 20px!important
+              +modifier('last')
+                padding-right: 0

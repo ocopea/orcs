@@ -1,0 +1,122 @@
+.login-container{
+  width: 470px;
+  height: 592px;
+  background: #fff;
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  border-radius: 3px;
+  box-shadow: 0px 39px 56.4px 3.6px rgba(0, 0, 0, 0.24);
+}
+
+.login-container .title{
+  height: 252px;
+  display: flex;
+  margin: 0;
+  width: 100%;
+  background: #479dda;
+  color: #fff;
+  font-size: 26px;
+  flex-direction: column;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  font-weight: 200;
+  .logo-circle{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background: #fff;
+    margin: auto;
+    .logo-shield{
+      svg{
+        background: #479dda;
+      }
+      path{
+        fill: #fff;
+      }
+    }
+  }
+  .content{
+  }
+  .emc-logo{
+    margin: auto;
+    .emc-logo-img svg{
+      width: 126px;
+      height: auto;
+    }
+    image{
+      fill: #fff
+    }
+  }
+}
+
+.wallpaper{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+.login-container .inside{
+  padding: 10px 20px;
+  line-height: 40px;
+
+  .intro{
+    line-height: 20px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.87);
+    &::first-letter{
+      text-transform: capitalize;
+    }
+  }
+}
+
+.login-container .inputs{
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container .inputs input{
+	display: block;
+	margin: auto;
+	width: calc(100% - 10px);
+	height: 42px;
+	padding-left: 10px;
+	@include border-radius;
+  background-color: #fff!important;
+  border: solid 1px #d4d6d9;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 16px;
+  &::placeholder{
+    color: rgba(0, 0, 0, 0.56);
+    font-size: 16px;
+  }
+  &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 30px white inset;
+  }}
+
+.forgot-password{
+  font-size: 13px;
+  color: #404040;
+  font-size: 12px;
+  a{
+    padding-left: 5px;
+  }
+}
+
+.remember-me{
+	line-height: 45px;
+}
+
+.login-container button{
+	width: calc(100% + 4px);
+  background: #479dda;
+}

@@ -1,0 +1,82 @@
+#cards-container{
+    float: left;
+    width: 100%;
+    height: 115px;
+    margin-top: 10px; 
+}
+
+#main-pane.minimized-full #cards-container{
+    height: 100px;
+}
+
+.card{    
+    width: calc(33.333333% - 20px);
+    float: left;
+    height: 100%;
+    transition: 0.4s;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+#dashboard-container .card{
+    width: calc(33.333333% - 6.7px);
+}
+
+#dashboard-container .card:nth-child(3){
+    padding-right: 0;
+}
+
+.card .inside{
+    padding: $padding-inside;
+    padding-left: 10px;
+    background: #FAFAFA;
+    box-sizing: border-box;
+    height: 100%;
+    box-shadow: 0px 1px 2px 0px rgba(4, 4, 4, 0.09);
+    @include border-radius;
+}
+
+.card .inside:hover{
+    cursor: pointer;
+    outline: 1px solid #91c7e5;
+}
+
+.card.selected .inside{
+    box-shadow: $selected-card-shaddow;
+    outline: 1px solid #91c7e5;
+}
+
+.card h2{
+    text-transform: uppercase;
+    color:  #3b3b3b;
+    font-size: 15px;/* Approximation due to font substitution */
+    font-weight: 400;
+    text-align: left;    
+}
+
+.card h3{
+    color:  #717171;
+    font-size: 13px;
+}
+
+#main-pane.minimized .card{
+    height: 66.666666%;
+}
+
+
+.card .info{
+    width: 60%;
+    float: right;
+    height: 100%;
+}
+
+.card .info .inside-section{
+    padding: 15px;
+}
+
+.card img{
+    width: 40%;
+    height: 100%;
+    float: right;
+    border-radius: $border-radius;        
+}

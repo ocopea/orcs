@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.emc.ocopea.orcs</groupId>
+        <artifactId>orcs-single-jar-parent</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>single-jar-runner</artifactId>
+    <name>Ocopea Orcs Single Jar Runner</name>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <outputDirectory>${project.build.directory}/docker</outputDirectory>
+                    <!-- undocumented parameter, determines the jar's final name -->
+                    <finalName>single-jar-demo</finalName>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>com.emc.ocopea.demo.SingleJarDemoMain</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/docker/lib</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+        </plugins>
+    </build>
+    <dependencies>
+        <!--ShpanPaaS resource provider-->
+        <dependency>
+            <groupId>com.emc.ocopea.orcs</groupId>
+            <artifactId>shpanpaas-resource-provider</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.emc.ocopea.hub</groupId>
+            <artifactId>hub-repository-schema</artifactId>
+            <version>${ocopea.hub.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>protection-repository-schema</artifactId>
+            <version>${ocopea.site.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>site-repository-schema</artifactId>
+            <version>${ocopea.site.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.hub</groupId>
+            <artifactId>hub-auth-util</artifactId>
+            <version>${ocopea.hub.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.hub</groupId>
+            <artifactId>hub-webapp-java-web-api</artifactId>
+            <version>${ocopea.hub.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.hub</groupId>
+            <artifactId>hub-java-web-api</artifactId>
+            <version>${ocopea.hub.version}</version>
+        </dependency>
+        <!-- site manager micro service -->
+        <dependency>
+            <groupId>com.emc.ocopea.orcs</groupId>
+            <artifactId>shpanpaas-psb-service</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>site-service-impl</artifactId>
+            <version>${ocopea.site.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>protection-service-impl</artifactId>
+            <version>${ocopea.site.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.emc.ocopea.hub</groupId>
+            <artifactId>hub-service-impl</artifactId>
+            <version>${ocopea.hub.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.hub</groupId>
+            <artifactId>hub-webapp-service</artifactId>
+            <version>${ocopea.hub.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.emc.ocopea.orcs</groupId>
+            <artifactId>shpan-crb-service</artifactId>
+            <version>${ocopea.shpancrb.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.emc.ocopea.orcs</groupId>
+            <artifactId>shpanpaas-h2-dsb-service</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.orcs</groupId>
+            <artifactId>shpanblob-dsb-service</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>inspector-service</artifactId>
+            <version>${ocopea.util.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>configuration-client</artifactId>
+            <version>${ocopea.util.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>registry-client-resource-manager-api</artifactId>
+            <version>${ocopea.util.version}</version>
+        </dependency>
+
+
+        <!-- for streaming application logs -->
+        <dependency>
+            <groupId>javax.websocket</groupId>
+            <artifactId>javax.websocket-api</artifactId>
+        </dependency>
+
+        <!-- Test scope dependencies -->
+
+        <dependency>
+            <groupId>com.emc.ocopea.orcs</groupId>
+            <artifactId>test-scenarios</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- MAVEN START -->
+        <dependency>
+            <groupId>org.jboss.spec.javax.servlet</groupId>
+            <artifactId>jboss-servlet-api_3.1_spec</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.spec.javax.annotation</groupId>
+            <artifactId>jboss-annotations-api_1.2_spec</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <!-- MAVEN END -->
+
+    </dependencies>
+</project>
+

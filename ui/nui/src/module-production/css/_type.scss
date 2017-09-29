@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'roboto';
+    src: url('../assets/ROBOTO-LIGHT.woff') format('woff');
+    font-weight: lighter;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('../assets/ROBOTO-ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('../assets/ROBOTO-MEDIUM.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'roboto';
+  font-weight: normal;
+  src: url('../assets/ROBOTO-REGULAR.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'roboto';
+  font-weight: bold;
+  src: url('../assets/ROBOTO-BOLD.woff') format('woff');
+}
+
+//icon font
+@font-face {
+    font-family: 'icomoon';
+    src:url('../assets/icomoon.eot');
+    src:url('../assets/icomoon.eot?#iefix') format('embedded-opentype'),
+        url('../assets/icomoon.woff') format('woff'),
+        url('../assets/icomoon.ttf') format('truetype'),
+        url('../assets/icomoon.svg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'new-icomoon';
+    src:url('../assets/new-icomoon.eot');
+    src:url('../assets/new-icomoon.eot?#iefix') format('embedded-opentype'),
+        url('../assets/new-icomoon.woff') format('woff'),
+        url('../assets/new-icomoon.ttf') format('truetype'),
+        url('../assets/new-icomoon.svg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.title{
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.general-title{
+    color:  #3b3b3b;
+    font-size: 23px;
+    text-align: left;
+    padding-bottom: 15px;
+}
+
+.subtitle{
+    color:  #7a7a7a;
+    font-size: 15px;
+    text-align: left;
+}

@@ -1,0 +1,41 @@
+#error-dialog{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: 150px;
+    background: #fff;
+    border-radius: 3px;
+    width: 500px;
+    height: 300px;
+
+    & .gm-scrollbar.-horizontal{display: block;}
+}
+
+#error-dialog .title{
+    line-height: 50px;
+    border-bottom: 1px solid #ddd;
+}
+
+#error-dialog .inside{
+    height: calc(100% - 118px);
+    padding: 20px;
+}
+
+#error-dialog .content{
+    text-align: center;
+    font-size: 18px;
+    height: 177px;
+}
+
+#error-dialog .content span{
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+}
+
+#error-dialog button{
+    width: 100%;
+}

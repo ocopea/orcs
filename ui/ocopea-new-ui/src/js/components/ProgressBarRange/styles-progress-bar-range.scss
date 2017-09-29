@@ -1,0 +1,33 @@
+[class*="range a-"]{
+	width: 50%;
+	position: absolute;
+	right: 0;
+	top: 32px;
+
+  > svg{
+    height: 40px;
+  }
+
+	[class="outer-range"]{
+		fill: #ebeff5;
+		height: 7px;
+	}
+
+	[class="psb-range"]{
+		fill: #7fc893;
+		height: 7px;
+	}
+
+	[class="tick"]{
+		fill: #fff
+	}
+
+	[class*="precent-range"]{
+		color: #43ab60;
+		font-size: 14px;
+		width: 80px;
+		text-align: left;
+		height: 10px;
+	}
+
+}

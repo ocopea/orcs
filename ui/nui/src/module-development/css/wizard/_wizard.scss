@@ -1,0 +1,115 @@
+.dev-wizard{
+    min-height: 600px;
+    padding: 20px;
+    position: relative;
+
+    .navigation{
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+      padding: 50px 0 50px 0;
+
+      .nav-icon{
+        display: inline-block;
+        width: 178px;
+
+        span.isvg.completed path:nth-child(2){
+          fill: #479dda
+        }
+
+        span{
+          width: 100%;
+          display: inline-block;
+          color: #a9b5c8;
+          text-transform: uppercase;
+          padding-top: 13px;
+          font-size: 12px;
+        }
+      }
+
+      .bar svg .bar-container{
+        path.basic-path{
+          stroke: #f7f8fa;
+          stroke-width: 10px;
+        }
+        path.basic-path-inside{
+          stroke: #d9dee1;
+          stroke-width: 2px;
+        }
+        path.completed-line{
+          stroke: #479dda;
+          stroke-width: 2px;
+        }
+        g.dot circle{
+          fill: #f7f8fa;
+        }
+        g.inner-dot circle{
+          fill: #d9dee1;
+        }
+        g.inner-dot.complete circle{
+          fill: #479dda;
+          r: 6
+        }
+        g.inner-dot.selected circle{
+          fill: #479dda;
+          r: 8
+        }
+
+      }
+    }
+
+    .title{
+      @include wizard-title;
+    }
+
+    .sub-title{
+      font-size: 14px;;
+      color: #6b7083;
+    }
+
+    .wizard-main{
+      width: 800px;
+      margin: auto;
+
+      .footer{
+          width: 100%;
+          height: 100px;
+          float: left;
+          margin-top: 20px;
+          border-top: 1px solid #edf0f2;
+          padding: 10px 0 20px 0;
+
+          button{
+              float: right;
+              height: 30px;
+              width: 90px;
+              text-align: center;
+              @include border-radius(3px);
+              text-transform: uppercase;
+              &:active{
+                  opacity: 0.5;
+              }
+              &.disabled{
+                opacity: 0.5;
+              }
+          }
+
+          .inline-error{
+            color: red;
+            &::first-letter{
+              text-transform: capitalize;
+            }
+          }
+      }
+
+    }
+
+}
+
+button.wizard-next{
+    @include wizard-next-btn;
+    margin-left: 10px;
+}
+button.wizard-back{
+    @include wizard-back-btn;
+}

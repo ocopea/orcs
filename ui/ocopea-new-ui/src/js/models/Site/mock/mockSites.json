@@ -1,0 +1,44 @@
+[
+  {
+    "id": "ca1f038a-0739-4594-aee1-c8bc237b8025",
+    "name": "ISENBENHAG1L1C",
+    "location": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.1792126,
+          34.9005128
+        ]
+      },
+      "properties": {
+        "name": "Israel",
+        "siteId": "ca1f038a-0739-4594-aee1-c8bc237b8025"
+      }
+    },
+    "spaces": [
+      "Shpan Space"
+    ]
+  },
+  {
+    "id": "001",
+    "name": "mock site",
+    "location": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.1792126,
+          34.9005128
+        ]
+      },
+      "properties": {
+        "name": "Israel",
+        "siteId": "ca1f038a-0739-4594-aee1-c8bc237b8025"
+      }
+    },
+    "spaces": [
+      "Mock Space"
+    ]
+  }
+]

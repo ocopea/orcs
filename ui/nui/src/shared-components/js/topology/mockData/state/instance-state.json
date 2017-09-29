@@ -1,0 +1,58 @@
+{
+  "id": "6059583f-d1a4-4185-8c9f-165aed05288f",
+  "appInstanceName": "zzz",
+  "state": "RUNNING",
+  "stateMessage": "Oh yeah!",
+  "webEntryPointURL": "http://localhost:8083/zzz-hackathon-svc94651188589/hackathon-api/html/nui/index.html",
+  "appServices": [
+    {
+      "serviceName": "committee-svc",
+      "imageName": "committee",
+      "imageType": "java",
+      "imageVersion": "2.1",
+      "entryPointUrl": "http://localhost:8083/zzz-committee-svc94651188589/committee-api/html/cui/index.html",
+      "imageIconUrl": "/hub-web-api/images/image-type/java",
+      "state": "DEPLOYED",
+      "stateMessage": null,
+      "stateDate": 1494651258907,
+      "serviceBindings": [
+        "hackathon-db"
+      ]
+    },
+    {
+      "serviceName": "hackathon-svc",
+      "imageName": "hackathon",
+      "imageType": "java",
+      "imageVersion": "1.0",
+      "entryPointUrl": "http://localhost:8083/zzz-hackathon-svc94651188589/hackathon-api/html/nui/index.html",
+      "imageIconUrl": "/hub-web-api/images/image-type/java",
+      "state": "DEPLOYED",
+      "stateMessage": null,
+      "stateDate": 1494651258907,
+      "serviceBindings": [
+        "hack-docs",
+        "hackathon-db"
+      ]
+    }
+  ],
+  "dataServices": [
+    {
+      "bindName": "hack-docs",
+      "dsbURN": "shpanblob-dsb",
+      "serviceId": "hack-docs-6059583f-d1a4-4185-8c9f-165aed05288f",
+      "state": "BOUND",
+      "stateMessage": null,
+      "iconUrl": "/hub-web-api/images/dsb-protocol/s3",
+      "stateDate": 1494651248839
+    },
+    {
+      "bindName": "hackathon-db",
+      "dsbURN": "h2-dsb",
+      "serviceId": "hackathon-db-6059583f-d1a4-4185-8c9f-165aed05288f",
+      "state": "BOUND",
+      "stateMessage": null,
+      "iconUrl": "/hub-web-api/images/dsb-protocol/postgres",
+      "stateDate": 1494651248859
+    }
+  ]
+}

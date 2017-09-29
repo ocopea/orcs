@@ -1,0 +1,153 @@
+#menu-left{
+    width: 210px;
+    height: calc(100% - 10px);
+    position: absolute;
+    background: $menu-left-background;
+    z-index: 111;
+    -webkit-transition: 0.8s;
+    transition: 0.8s;
+    padding: 5px;
+}
+
+#menu-left.hide #wizard ul{
+    display: none;
+}
+
+#menu-left.hide{
+    height: 0;
+}
+
+#menu-left.show #wizard ul{
+    display: block;
+}
+
+#add-app{
+    background: $secondary-color;
+    color: #fff;
+    padding: 15px;
+    text-transform: uppercase;
+	font-size: 12px;
+	text-align: center;
+}
+
+#add-app .plus{
+    font-weight: 700;
+    padding-right: 10px;
+}
+
+#menu-left ul{
+    padding: 20px;
+    font-size: 14px;
+}
+
+#menu-left ul li{
+    padding: 10px;
+    border-radius: $border-radius;
+    color: #7a7a7a;
+    display: flex;
+    text-align: left;
+    text-transform: uppercase;
+    line-height: 35px;
+}
+
+#menu-left ul li table{
+    width: 100%;
+}
+
+#menu-left ul li table td{
+    vertical-align: middle;
+}
+
+li.completed table td{
+    color: #91c7e5;
+}
+
+#circle {
+	width: 10px;
+	height: 10px;
+	background: #7a7a7a;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+}
+
+#menu-left ul li.currentStep{
+    color: #fff;
+    line-height: 14px;
+}
+
+#menu-left table td:nth-child(1){
+    width: 30px;
+}
+
+.check-img{
+    margin-left: -4px;
+    margin-bottom: -5px;
+}
+
+#menu-left ul li.currentStep img{
+   margin-left: -8px;
+}
+
+#menu-left ul li a{
+    color: $text-color;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#dashboard-left-menu ul.selected{
+	background: #568eae;
+}
+
+#dashboard-left-menu ul.selected span.description{
+	color: #fff;
+}
+
+#dashboard-left-menu{
+
+    height: calc(100% - 58px);
+
+    ul{
+        overflow: overlay;
+        height: 100%;
+        padding: 12px 0 0 0;
+        li{
+            color: #fff;
+        }
+        img{
+            width: 50px;
+            height: 50px;
+        }
+        ul{
+            padding: 0;
+            width: 100%;
+
+            li:nth-child(1){
+                width: 34%;
+            }
+
+            li:nth-child(2){
+                width: 66%;
+                line-height: 25px;
+                display: inline-block;
+            }
+
+            li{
+                padding: 0;
+                float: left;
+                line-height: 50px;
+
+                span{
+                    display: inline-block;
+                    width: 100%;
+                }
+                span.description{
+                    color: gray;
+                }
+            }
+        }
+        ul:hover{
+            cursor: pointer;
+        }
+    }
+}

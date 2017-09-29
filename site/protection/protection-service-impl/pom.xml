@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.emc.ocopea.site</groupId>
+        <artifactId>protection-parent</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>protection-service-impl</artifactId>
+    <name>Protection Policy Service</name>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>protection-domain</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>site-crb-tools</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>site-web-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.crb</groupId>
+            <artifactId>crb-java-web-api</artifactId>
+            <version>${ocopea.crb.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>protection-repository-impl</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>protection-repository-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>protection-repository-schema</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- For implementing our own web api -->
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>protection-java-web-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- DSB Web API for orchestrating DSBs -->
+        <dependency>
+            <groupId>com.emc.ocopea.dsb</groupId>
+            <artifactId>dsb-java-web-api</artifactId>
+            <version>${ocopea.dsb.version}</version>
+        </dependency>
+
+        <!-- MS api for implementing the microservice -->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice.api</groupId>
+            <artifactId>microservice-api</artifactId>
+            <version>${microservice.api.version}</version>
+        </dependency>
+
+        <!-- MS internal timer api -->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>microservice-timer</artifactId>
+            <version>${ocopea.util.version}</version>
+        </dependency>
+
+        <!-- test scope dependencies -->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>microservice-test-utils</artifactId>
+            <version>${ocopea.util.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.spec.javax.servlet</groupId>
+            <artifactId>jboss-servlet-api_3.1_spec</artifactId>
+            <scope>provided</scope>
+            <version>1.0.0.Final</version>
+        </dependency>
+
+    </dependencies>
+</project>
+

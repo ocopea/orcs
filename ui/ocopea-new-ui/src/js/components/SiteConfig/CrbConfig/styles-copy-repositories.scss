@@ -1,0 +1,35 @@
+.CopyRepositories {
+  table {
+    width: calc(100% - 52px);
+    border: 1px solid #d4d6d9;
+
+    thead {
+      background: #f7f9fc;
+      line-height: 42px;
+
+      th {
+        color: #595e64;
+        text-transform: uppercase;
+        font-size: 11px;
+        text-align: left;
+        font-weight: 500;
+        padding-left: 17px;
+        width: 200px;
+      }
+    }
+
+    tbody {
+      color: #858d99;
+      font-size: 13px;
+
+      tr {
+        line-height: 36px;
+        border-bottom: 1px solid #edf0f2;
+
+        td {
+          padding-left: 17px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,100 @@
+.main-screen{
+  min-height: 265px;
+}
+
+tr.no-apps-announce{
+    border-bottom: none;
+}
+
+tr.no-apps-announce td {
+	// padding-top: 80px;
+    line-height: 35px;
+}
+
+tr.no-apps-announce:hover{
+    background-color: inherit;
+    cursor: auto;
+}
+
+.no-apps-announce td span{
+	text-align: center
+}
+
+.main-screen .add-new-idea{
+    color: $primary-color;
+	cursor:pointer;
+	text-transform: capitalize;
+}
+
+th.add-new-idea:hover{
+    text-decoration: underline;
+}
+
+.main-screen table{
+	width: 100%;
+}
+
+table{
+    table-layout:fixed;
+}
+
+table > thead{
+	border-bottom: 1px solid $border-color;
+	line-height: 30px;
+}
+
+table > thead th{
+	padding: 10px;
+	text-align: left;
+	text-transform: uppercase;
+    font-weight: 700;
+}
+
+table > tbody > tr{
+    border-bottom: 1px solid $border-color;
+}
+
+table > tbody > tr:hover{
+    background-color: $background-color;
+    cursor: pointer;
+}
+
+table > tbody > tr > td{
+    padding-left: 10px;
+    vertical-align: middle;
+    line-height: 65px;
+    position: relative;
+    overflow: hidden;
+}
+
+table > thead > tr > th:nth-child(5),
+table > thead > tr > th:nth-child(6),
+table > tbody > tr > td:nth-child(5),
+table > tbody > tr > td:nth-child(6){
+	text-align: center;
+}
+
+table > tbody > tr > td:nth-child(5),
+table > tbody > tr > td:nth-child(6){
+    padding-left: 0;
+}
+
+.main-screen table .primary-button{
+	width: 50%;
+}
+
+.primary-button.vote:hover{
+    background-color: #fff;
+}
+
+.main-screen .idea-image{
+	width: 50px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  margin-left: 10px;
+  border-radius: 50%;
+}

@@ -1,0 +1,101 @@
+.tabs{
+  line-height: 50px;
+  height: 50px;
+  border-bottom: 1px solid #e6eaed;
+  padding-top: 30px;
+  position: relative;
+
+  .tab{
+    width: 150px;
+    float: left;
+    text-align: center;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #a9b5c8;
+
+    &:hover{
+      cursor: pointer;
+    }
+
+    span.label{
+      margin-left: 23px;
+    }
+
+    &.SAVED{
+      .tab-icon{
+        left: 18px;
+      }
+    }
+
+    &.BACKUP{
+      .tab-icon{
+          left: 32px;
+      }
+    }
+
+    .tab-icon{
+      position: absolute;
+      left: 10px;
+      top: 4px;
+
+      & .isvg svg > path{
+        fill: #a9b5c8;
+      }
+    }
+
+    &.selected{
+      border-bottom: 2px solid #479dda;
+      color: #479dda;
+
+      .tab-icon .isvg svg > path{
+        fill: rgb(71, 157, 218);;
+      }
+    }
+  }
+
+  button.create-blank{
+    width: 92px;
+    line-height: 32px;
+    position: absolute;
+    right: 0;
+    bottom: 6px;
+    text-transform: uppercase;
+    font-size: 11px;
+    @include border-radius(3px);
+    background: #f0f4fa;
+    color: #6b7083;
+    font-size: 11px;
+    padding: 0;
+    display: table;
+    vertical-align: middle;
+
+    label{
+      padding-left: 15px;
+     &:hover{
+        cursor: pointer;
+      }
+    }
+
+    &:active{
+      opacity: 0.5;
+      .plus span{
+        background: #000;
+      }
+    }
+
+    .plus span{
+      width: 8px;
+      height: 2px;
+      position: absolute;
+      background-color: #479dda;
+      left: 21px;
+      top: 15px;
+
+      &:nth-child(2){
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+}

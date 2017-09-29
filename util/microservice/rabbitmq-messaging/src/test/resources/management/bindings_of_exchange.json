@@ -1,0 +1,29 @@
+[
+  {
+    "source": "ListenerExchange",
+    "vhost": "/",
+    "destination": "ListenerQ1",
+    "destination_type": "queue",
+    "routing_key": "100",
+    "arguments": {},
+    "properties_key": "100"
+  },
+  {
+    "source": "ListenerExchange",
+    "vhost": "/",
+    "destination": "ListenerQ2",
+    "destination_type": "queue",
+    "routing_key": "100",
+    "arguments": {},
+    "properties_key": "100"
+  },
+  {
+    "source": "ListenerExchange",
+    "vhost": "/",
+    "destination": "ListenerQ3",
+    "destination_type": "queue",
+    "routing_key": "100",
+    "arguments": {},
+    "properties_key": "100"
+  }
+]

@@ -1,0 +1,101 @@
+.InstanceCardProd{
+  height: 376px;
+  margin: 15px;
+  float: left;
+  width: calc(33% - 27.5px);
+  position: relative;
+  &:hover{
+    cursor: pointer;
+  }
+
+  [class="icon-link"]{
+    right: 0;
+    position: absolute;
+    margin: 10px;
+    color: #939699;
+  }
+
+  .inside{
+    background-color: #373839;
+    width: 100%;
+    height: 100%;
+
+    .logo{
+      width: 60px;
+      height: 60px;
+      border-radius: 100%;
+      margin: auto;
+      position: relative;
+      top: 35px;
+      img{
+        max-width: 100%;
+        border-radius: 100%;
+      }
+    }
+
+    .fullName{
+      width: 75%;
+      float: right;
+      position: relative;
+      bottom: -18px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      left: -11%;
+    }
+    .instanceName{
+      display: block;
+      position: relative;
+      top: 65px;
+      text-align: center;
+      color: #c0becc;
+      font-size: 15px;
+      text-transform: uppercase;
+      width: 179px;
+      margin: auto;
+      overflow: hidden;
+      white-space: normal;
+      text-overflow: ellipsis;
+    }
+
+    .Sumup{
+      position: relative;
+      top: 100px;
+      padding: 20px 0;
+      border-top: 1px solid #252526;
+      margin: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      section{
+        width: 30%;
+        text-align: center;
+        .number{
+          color: #c0becc;
+          font-size: 25px;
+        }
+        .description{
+          color: #85838d;
+          font-size: 13px;
+        }
+        &:hover{
+          .description, .number{color: #fff}
+        }
+      }
+    }
+
+    .creator{
+      position: absolute;
+      bottom: 0;
+      padding: 19px;
+      display: inline-block;
+      color: #85838d;
+      width: calc(100% - 38px);
+      color: #85838d;
+      font-size: 13px;
+      .creatorName{
+        color: #c0becc;
+        padding-left: 5px;
+      }
+    }
+  }
+}

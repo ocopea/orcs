@@ -1,0 +1,34 @@
+.link{
+  &:hover{
+    cursor: pointer;
+  }
+  &:active{
+    opacity: 0.5
+  }
+}
+
+.devider{
+    border-right: 1px solid #ddd;
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+.bold{
+    font-family: 'helvetica-bold', sans-serif;
+}
+
+.row{
+    //display: inline-block;
+    width: 100%;
+}
+
+.loading{
+    pointer-events: none;
+    overflow: hidden;
+}

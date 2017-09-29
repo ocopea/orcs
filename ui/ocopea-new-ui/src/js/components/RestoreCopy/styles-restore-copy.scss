@@ -1,0 +1,26 @@
+.RestoreCopy{
+  padding: 0 7px;
+
+  section{
+    padding-bottom: 20px;
+
+    label{
+      text-transform: capitalize;
+      padding-bottom: 6px;
+      display: block;
+      color: #595e64;
+    }
+  }
+  :global{
+    .Button{
+      width: calc(100% - 38px);
+      height: 42px;
+      position: absolute;
+      bottom: 17px;
+      text-transform: uppercase;
+    }
+    .Select-value-label{
+      color: #aaa!important;
+    }
+  }
+}

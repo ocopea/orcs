@@ -1,0 +1,91 @@
+[
+  {
+    "id": "1989417f-410d-4304-b14d-997daa381987",
+    "name": "test1",
+    "appTemplateId": "2c2f1c71-e923-4482-9a76-83ec67f38ed6",
+    "appTemplateName": "hackathon",
+    "creatorUserId": "c1873172-1983-32c1-b6dc-435447321e60",
+    "webEntryPointURL": "http://localhost:8083/dd-hackathon-svc95828074714/hackathon-api/html/nui/index.html",
+    "state": "running",
+    "stateMessage": null,
+    "deploymentType": "test-dev",
+    "dateCreated": 1495828074700,
+    "quota": {
+      "orgId": "111",
+      "psbQuota": 38,
+      "dsbQuota": {
+        "gal": 18,
+        "postgres": 11
+      }
+    },
+    "numberOfAppServices": 1,
+    "numberOfInfraServices": 2
+  },
+  {
+    "id": "c4b22295-e631-45cc-961e-8394daf6cc53",
+    "name": "test2",
+    "appTemplateId": "2c2f1c71-e923-4482-9a76-83ec67f38ed6",
+    "appTemplateName": "hackathon",
+    "creatorUserId": "c1873172-1983-32c1-b6dc-435447321e60",
+    "webEntryPointURL": "http://localhost:8083/dd-hackathon-svc95828074714/hackathon-api/html/nui/index.html",
+    "state": "running",
+    "stateMessage": null,
+    "deploymentType": "test-dev",
+    "dateCreated": 1495828074700,
+    "quota": {
+      "orgId": "111",
+      "psbQuota": 38,
+      "dsbQuota": {
+        "s3": 68,
+        "postgres": 15
+      }
+    },
+    "numberOfAppServices": 1,
+    "numberOfInfraServices": 2
+  },
+  {
+    "id": "001",
+    "name": "test3",
+    "appTemplateId": "2c2f1c71-e923-4482-9a76-83ec67f38ed6",
+    "appTemplateName": "hackathon",
+    "creatorUserId": "c1873172-1983-32c1-b6dc-435447321e60",
+    "webEntryPointURL": "http://localhost:8083/dd-hackathon-svc95828074714/hackathon-api/html/nui/index.html",
+    "state": "running",
+    "stateMessage": null,
+    "deploymentType": "test-dev",
+    "dateCreated": 1495828074700,
+    "quota": {
+      "orgId": "111",
+      "psbQuota": 38,
+      "dsbQuota": {
+        "s3": 68,
+        "postgres": 15
+      }
+    },
+    "numberOfAppServices": 1,
+    "numberOfInfraServices": 2
+  },
+  {
+    "id": "002",
+    "name": "test4",
+    "appTemplateId": "2c2f1c71-e923-4482-9a76-83ec67f38ed6",
+    "appTemplateName": "hackathon",
+    "creatorUserId": "c1873172-1983-32c1-b6dc-435447321e60",
+    "webEntryPointURL": "http://localhost:8083/dd-hackathon-svc95828074714/hackathon-api/html/nui/index.html",
+    "state": "running",
+    "stateMessage": null,
+    "deploymentType": "test-dev",
+    "dateCreated": 1495828074700,
+    "quota": {
+      "orgId": "111",
+      "psbQuota": 38,
+      "dsbQuota": {
+        "s3": 19,
+        "postgres": 20
+      }
+    },
+    "numberOfAppServices": 3,
+    "numberOfInfraServices": 10
+  }
+
+]

@@ -1,0 +1,81 @@
+.copy-details{
+
+  .topology{
+    position: relative;
+    min-height: 292px;
+    padding: 20px 20px 0 20px;
+    
+
+    .box{
+      @include border-radius(3px);
+      background-color: #ffffff;
+      border: solid 1px #d7e9f5;
+      text-align: center;
+      position: relative;
+      margin: 5px;
+      margin-top: 0;
+
+      &.service.selected{
+          border: solid 1px #62ade1;
+      }
+
+      &.dependency.selected{
+          border: solid 1px #7ed396;
+      }
+
+      .name-container{
+        font-size: 11px;
+        color: #6b7083;
+        text-transform: capitalize;
+        width: 100%;
+        margin-top: 77px;
+        display: inline-block;
+      }
+
+      .image-container{
+        width: 58.8px;
+        height: 58.8px;
+        background-color: #d7e9f5;
+        border-radius: 50%;
+        @include center-element;
+        margin-top: 10px;
+
+        img{
+          width: 80%;
+          @include center-element;
+        }
+      }
+    }
+
+    .services, .dependencies{
+      display: flex;
+      justify-content: center;
+    }
+
+    .services{
+      margin-top: 20px;
+      .box{
+        width: 102px;
+        height: 102px;
+      }
+    }
+
+    .dependencies{
+      margin-top: 10px;
+      .box{
+        width: 84px;
+        height: 84px;
+
+        .image-container{
+          width: 42px;
+          height: 42px;
+          background-color: #daeee0;
+        }
+
+        .name-container{
+          margin-top: 60px;
+        }
+      }
+    }
+  }
+}

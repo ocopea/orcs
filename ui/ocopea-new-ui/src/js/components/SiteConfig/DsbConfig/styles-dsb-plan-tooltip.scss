@@ -1,0 +1,41 @@
+.DsbPlanTooltip {
+  width: 219px;
+  height: 154px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  Box-shadow: 0px 4px 4px 0 rgba(12, 27, 37, 0.09);
+  border: solid 1px #d4d6d9;
+  position: absolute;
+  bottom: 167px;
+  left: 202px;
+  top: 88px;
+  /*@extend .tip*/
+  padding: 38px 32px 16px 32px;
+
+  .title {
+    width: 176px;
+    height: 17px;
+    font-family: Roboto;
+    font-size: 18px;
+    text-align: left;
+    color: #479dda;
+    text-transform: capitalize;
+  }
+
+  .description {
+    & li {
+      margin: -9px;
+      margin-top: 12px;
+      color: #354151;
+      font-size: 13px;
+      &::before {
+        content: "• ";
+        color: #479dda!important;
+        position: relative;
+        top: 7px;
+        font-size: 30px;
+      }
+    }
+  }
+}
+

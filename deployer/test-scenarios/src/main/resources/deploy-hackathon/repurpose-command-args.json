@@ -1,0 +1,6 @@
+{
+  "appInstanceName": "${appInstanceName}",
+  "originAppInstanceId": "${originAppInstanceId}",
+  "copyId": "${copyId}",
+  "purpose": "${purpose}"
+}

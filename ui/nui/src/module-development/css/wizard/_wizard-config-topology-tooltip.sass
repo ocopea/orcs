@@ -1,0 +1,74 @@
+.Topology-tooltip
+  position: absolute
+  min-height: 178px
+  box-shadow: 0px 4px 4px 0 rgba(12, 27, 37, 0.09)
+  border: solid 1px #d4d6d9
+  background: #ffffff
+
+  & .Switch
+    margin-right: 17px
+
+  +element('service')
+    width: 296px
+
+  +element('dependency')
+    width: 475px
+    margin-top: -110px
+    z-index: 999
+
+  &:after, &:before
+  	right: 100%
+  	top: 50%
+  	border: solid transparent
+  	content: " "
+  	height: 0
+  	width: 0
+  	position: absolute
+  	pointer-events: none
+
+  &:after
+    border-color: rgba(136, 183, 213, 0)
+    border-right-color: #fff
+    border-width: 10px
+    margin-top: -10px
+
+  &:before
+    border-color: rgba(194, 225, 245, 0)
+    border-right-color: #d4d6d9
+    border-width: 12px
+    margin-top: -12px
+
+  +element('title')
+    +dialog-title
+    text-transform: uppercase
+
+  +element('inside')
+    padding: 18px
+    height: calc(100% - 84px)
+
+    +element('row')
+      width: 100%
+      line-height: 40px
+      display: inline-block
+      margin-bottom: 15px
+
+      +modifier('last')
+        width: 100%
+        line-height: 40px
+        display: inline-block
+        margin-bottom: 0
+
+      +element('label')
+        color: #252d3a
+        font-size: 14px
+        text-transform: capitalize
+        font-weight: 600
+        display: inline
+
+      +element('select')
+        width: 146px
+        height: 42px
+        border-radius: 3px
+        background-color: #ffffff
+        border: solid 1px #d4d6d9
+        float: right

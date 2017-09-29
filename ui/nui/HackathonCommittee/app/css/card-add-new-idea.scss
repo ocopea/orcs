@@ -1,0 +1,100 @@
+.add-new-idea{
+    height: 100%;
+    text-transform: uppercase;
+}
+
+.add-new-idea .title .logo{
+    text-align: left;
+    width: calc(11% - 10px);
+    padding-left: 10px;
+
+    & .img-logo{
+      width: 100%;
+      margin-left: -10px;
+      margin-bottom: -4px;
+    }
+}
+
+.add-new-idea .title span{
+    display: inline-block;
+    width: calc(75% - 11px);
+    text-align: left;
+    padding-left: 10px;
+}
+
+.add-new-idea .title span:nth-child(2){
+    border-left: 1px solid $border-color;
+}
+
+.add-new-idea .inside{
+    padding: 20px;
+    height: calc(100% - 130px);
+    display: inline-block;
+    width: calc(100% - 40px);
+}
+
+.left-container,
+.right-container{
+    height: 100%;
+}
+
+.add-new-idea .left-container{
+    float: left;
+    width: 50%;
+}
+
+.add-new-idea .right-container{
+    float: right;
+    width: 50%;
+}
+
+.add-new-idea label{
+    margin-bottom: 10px;
+}
+
+.add-new-idea section{
+    margin-bottom: 35px;
+}
+
+section .inventor-image > div button{
+	float: right;
+	background: none;
+	outline: none;
+	border: none;
+	line-height: 23px;
+	text-transform: capitalize;
+	color: $primary-color;
+}
+
+.inventor-image > div button:hover{
+	cursor: pointer;
+}
+
+.inventor-image > div span.image-name{
+	line-height: 25px;
+}
+
+.submit-btn-container{
+	display: inline-block;
+    width: 100%;
+	text-align: center;
+	margin-top: 40px;
+}
+
+button.primary-button{
+	border-radius: 20px;
+    background-color: inherit;
+    border: 1px solid black;
+    padding: 8px;
+    width: 140px;
+}
+
+button.primary-button:active{
+	outline: none;
+}
+
+button.primary-button:focus {outline:0;}
+
+button.primary-button:hover{
+	cursor: pointer;
+}

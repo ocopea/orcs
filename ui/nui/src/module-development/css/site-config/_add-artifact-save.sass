@@ -1,0 +1,29 @@
+.Add-artifact__save, .Add-artifact__custom
+  height: calc(100% - 115px)
+  +element('title')
+    +dialog-title
+    text-transform: uppercase
+
+  +element('inside')
+    padding: 20px
+
+    +element('section')
+      padding-bottom: 20px
+      +element('label')
+        color: #252d3a
+        font-size: 14px
+        text-transform: capitalize
+        font-weight: 500
+        display: block
+        padding-bottom: 11px
+
+      +element('input')
+        padding-left: 20px
+        width: calc(100% - 20px)
+
+      & .Inline-error
+        height: 15px
+        color: red
+        padding-top: 8px
+        &::first-letter
+          text-transform: uppercase

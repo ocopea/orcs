@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.emc.ocopea.orcs</groupId>
+        <artifactId>orcs-deployer-parent</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>orcs-docker-image</artifactId>
+
+    <properties>
+        <final.jar.name>orcs-k8s-runner</final.jar.name>
+        <maven-jar-plugin.mainClass>com.emc.ocopea.demo.OrcsDemoK8SDevRunner</maven-jar-plugin.mainClass>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <outputDirectory>${project.build.directory}/docker</outputDirectory>
+                    <finalName>${final.jar.name}</finalName>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>${maven-jar-plugin.mainClass}</mainClass>
+                            <useUniqueVersions>false</useUniqueVersions>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/docker/lib</outputDirectory>
+                            <!--<stripClassifier>true</stripClassifier>-->
+                            <!--<stripVersion>true</stripVersion>-->
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-docker-shit</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/docker</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${project.basedir}/src/main/docker</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-normal-resources</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.outputDirectory}</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${project.basedir}/src/main/resources</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>fix-shell-permissions</id>
+                        <phase>integration-test</phase>
+                        <configuration>
+                            <target>
+                                <chmod file="target/docker/*.sh" perm="+x"/>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+
+        <!-- MAVEN START -->
+        <dependency>
+            <groupId>org.jboss.spec.javax.servlet</groupId>
+            <artifactId>jboss-servlet-api_3.1_spec</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.spec.javax.annotation</groupId>
+            <artifactId>jboss-annotations-api_1.2_spec</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <!-- MAVEN END -->
+
+        <!-- K8S tools -->
+        <dependency>
+            <groupId>com.emc.ocopea.orcs</groupId>
+            <artifactId>k8s-tools</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- Hub microservice -->
+        <dependency>
+            <groupId>com.emc.ocopea.hub</groupId>
+            <artifactId>hub-service-impl</artifactId>
+            <version>${ocopea.hub.version}</version>
+        </dependency>
+
+        <!-- Hub webapp microservice -->
+        <dependency>
+            <groupId>com.emc.ocopea.hub</groupId>
+            <artifactId>hub-webapp-service</artifactId>
+            <version>${ocopea.hub.version}</version>
+        </dependency>
+
+        <!--Todo: schema should be started externally on normal version-->
+        <dependency>
+            <groupId>com.emc.ocopea.hub</groupId>
+            <artifactId>hub-repository-schema</artifactId>
+            <version>${ocopea.hub.version}</version>
+        </dependency>
+        <!-- Site microservice -->
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>site-service-impl</artifactId>
+            <version>${ocopea.site.version}</version>
+        </dependency>
+
+        <!-- Protection microservice -->
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>protection-service-impl</artifactId>
+            <version>${ocopea.site.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>site-repository-schema</artifactId>
+            <version>${ocopea.site.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.orcs</groupId>
+            <artifactId>shpan-crb-service</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+    </dependencies>
+</project>
+

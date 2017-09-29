@@ -1,0 +1,51 @@
+.WizardDeployMenu{
+  padding: 20px;
+  .row{
+    line-height: 50px;
+    display: flex;
+    > span{
+      margin: 0 15px;
+      text-transform: uppercase;
+      color: #7a7a7a;
+
+      &:first-child{
+        position: relative;
+        top: 15px;
+        display: table;
+        margin: 0;
+      }
+      &:nth-child(2){
+        margin-left: 25px;
+      }
+    }
+    .labelCompleted{
+      color: #91c7e5;
+    }
+    .labelSelected{
+      color: #fff;
+    }
+    .circle{
+      width: 10px;
+      height: 10px;
+      background: #7a7a7a;
+      border-radius: 50px;
+      display: table;
+      margin: 0;
+    }
+  }
+  [id="circle"]{
+    top: 19px!important;
+    left: 3px;
+  }
+  [id*="icon-"]{
+    margin-right: -7px!important;
+    span{height: 9px!important;}
+  }
+
+  :global{
+    .icon-check{
+      margin-bottom: -2px;
+    }
+  }
+
+}

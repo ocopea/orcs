@@ -1,0 +1,144 @@
+$border: 1px solid #d4d6d9
+
+.Topology-menu
+  position: absolute
+  box-shadow: 0px 4px 4px 0 rgba(12, 27, 37, 0.09)
+  border: solid 1px #d4d6d9
+  background: #ffffff
+  z-index: 3
+  height: auto!important
+
+  &.service
+    width: 300px
+
+  &.dependency
+    width: 350px
+
+  .Version-selection
+    color: #000
+    height: 100%
+    height: calc(100% - 48px)
+    padding: 17px
+    font-size: 15px
+    // & .Select-arrow
+      // margin-top: 15px
+
+    label
+      font-weight: 600
+      text-transform: capitalize
+      display: inline-block
+      width: 100%
+      padding-bottom: 10px
+
+  @extend .tip
+
+  +element('title')
+    line-height: 48px
+    width: calc(100% - 36px)
+    background-color: #f7f9fc
+    text-align: left
+    padding: 0 18px
+    font-size: 12px
+    font-weight: 500
+    color: #595e64
+    border-top-left-radius: 3px
+    border-top-right-radius: 3px
+    text-transform: uppercase
+    font-weight: 600
+    &:hover
+      cursor: auto
+
+  .Plans-selection
+    padding: 18px
+
+    +element('label')
+      display: inline-block
+      width: 100%
+      color: #252d3a
+      text-transform: capitalize
+      font-size: 14px
+      font-weight: bold
+
+    +element('service-select')
+      +element('select')
+        font-size: 15px
+        width: 257px
+        & .Select-value-label
+          top: -3px !important
+          position: absolute
+
+      .Select-value
+        top: 3px!important
+
+      +element('description')
+        padding-top: 15px
+        font-size: 13px
+        color: #354151
+        padding: 15px 0
+        &:hover
+          cursor: auto
+
+    +element('plans')
+
+      +element('wrapper')
+        border: 1px solid #d4d6d9
+        display: flex
+        border-radius: 3px
+        width: 100%
+
+      +element('plans-list')
+        font-size: 15px
+        width: 180px
+        float: left
+
+        +element('option')
+          line-height: 42px
+          border-bottom: $border
+          padding-left: 10px
+          cursor: pointer
+          color: #354151
+
+          +modifier('last')
+            border-bottom: none
+            padding-left: 10px
+            line-height: 39px
+
+          +element('selected')
+            background: #479dda
+            color: #ffffff
+            padding-left: 10px
+            line-height: 42px
+
+    +element('description')
+      display: inline-block
+      min-height: 4px
+      float: left
+      border-left: $border
+      padding: 0 12px 0 12px
+      color: #354151
+      font-size: 17px
+
+      & span
+        display: block
+        padding: 12px
+
+.tip
+  &::before, &::after
+    right: 100%
+    top: 50%
+    border: solid transparent
+    content: " "
+    height: 0
+    width: 0
+    position: absolute
+    pointer-events: none
+  &::before
+    border-color: rgba(194, 225, 245, 0)
+    border-right-color: #d4d6d9
+    border-width: 12px
+    margin-top: -12px
+  &::after
+    rgba(136, 183, 213, 0)
+    border-right-color: #fff
+    border-width: 10px
+    margin-top: -10px

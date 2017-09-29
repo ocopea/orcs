@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.emc.ocopea.crb</groupId>
+        <artifactId>crb-parent</artifactId>
+        <version>0.24</version>
+    </parent>
+
+    <artifactId>crb-java-web-api</artifactId>
+    <name>Copy Repository Java Web API</name>
+    <description>
+        This project includes java jax-rs web interface signatures contract for implementing copy repository broker
+        All communication with CRB will be invoked using this API
+    </description>
+
+    <properties>
+        <swagger-core-version>1.5.10</swagger-core-version>
+        <cxf-version>3.1.8</cxf-version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.emc.ocopea.crb</groupId>
+            <artifactId>crb-web-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- Dependencies for auto generated code -->
+        <!-- The following dependencies are required to build the code
+             swagger-codegen generates. It generates a pom.xml
+             (see target/generated-sources/swagger/pom.xml)
+             dependencies, so we take just the ones we need.
+             These depdendecies might change if we change the swagger
+             definition file, in which case compilation will fail.
+             -->
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-jaxrs</artifactId>
+            <scope>compile</scope>
+            <version>${swagger-core-version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.ws.rs</groupId>
+                    <artifactId>jsr311-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxrs</artifactId>
+            <version>${cxf-version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- End of dependencies for auto generated code -->
+
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.10</version>
+                <executions>
+                    <execution>
+                        <id>unpack-swagger</id>
+                        <goals>
+                            <goal>unpack-dependencies</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <includeArtifactIds>crb-web-api</includeArtifactIds>
+                            <outputDirectory>${project.build.outputDirectory}/swagger</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-codegen-maven-plugin</artifactId>
+                <!--TODO: switch to official version, if it's ever good enough -->
+                <version>2.2.4-NAZGUL</version>
+                <executions>
+                    <execution>
+                        <id>generate-java-code</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <inputSpec>${project.build.outputDirectory}/swagger/swagger.yaml</inputSpec>
+                            <language>jaxrs-cxf</language>
+                            <apiPackage>com.emc.ocopea.crb</apiPackage>
+                            <modelPackage>com.emc.ocopea.crb</modelPackage>
+                            <configOptions>
+                                <sourceFolder>src/gen/java/main</sourceFolder>
+                                <!-- TODO: change to StreamingOutput once https://issues.jboss.org/browse/RESTEASY-895 is resolved-->
+                                <type-mappings>OutputStream=Response</type-mappings>
+                                <import-mappings>InputStream=java.io.InputStream,Response=javax.ws.rs.core.Response</import-mappings>
+                                <dateLibrary>legacy</dateLibrary>
+                                <sortParamsByRequiredFlag>false</sortParamsByRequiredFlag>
+                                <title>Copy Repository Broker Java Web API</title>
+                            </configOptions>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+

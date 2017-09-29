@@ -1,0 +1,117 @@
+@import "_mixins";
+@import "_mixins.sass";
+@import "_dev-variables";
+@import "_dev-header";
+@import "_left-menu";
+@import "_left-menu-settings.sass";
+@import "_components";
+@import "_switch";
+@import "_scroll";
+@import "_general-menu.sass";
+@import "saved-images/_saved-images.sass";
+@import "saved-images/_search-select.sass";
+@import "_share-image-dialog.sass";
+@import "_shared-image.sass";
+@import "../js/components/plans-selection/_plans-selection.sass";
+@import "_credential-dialog.sass";
+@import "_properties.sass";
+
+
+@import "main-screen/_main-screen";
+@import "main-screen/_main-screen-quotas";
+@import "main-screen/_main-screen-quotas-list";
+@import "main-screen/_main-screen-filters";
+
+@import "wizard/_wizard";
+@import "wizard/_wizard-appMarket";
+@import "wizard/_wizard-image";
+@import "wizard/_wizard-image-backup";
+@import "wizard/_wizard-image-backup-details";
+@import "wizard/_wizard-config";
+@import "wizard/_wizard-config-topology";
+@import "wizard/_wizard-config-topology-tooltip";
+@import "wizard/_wizard-image-tabs";
+@import "wizard/_wizard-image-table";
+@import "wizard/_wizard-image-copy-details";
+@import "wizard/_wizard-image-copy-details-topology";
+
+@import "dashboard/_dashboard-img-loading-progress-bar.sass";
+@import "dashboard/_dashboard.sass";
+@import "dashboard/_dashboard-image-origin.sass";
+@import "dashboard/_dashboard-image-origin-list.sass";
+@import "dashboard/_dialog-create-image";
+@import "dashboard/_dashboard-title.sass";
+@import "dashboard/_dialog-create-image-tags-input";
+@import "dashboard/_dashboard-topology.sass";
+@import "dashboard/_dashboard-topology-title.sass";
+@import "dashboard/_dashboard-service-info.sass";
+@import "dashboard/_dashboard-inventory-manager.sass";
+@import "dashboard/_dialog-dispose-image.sass";
+@import "dashboard/_success-bar.sass";
+@import "dashboard/_error-bar.sass";
+
+@import "deploying-progress/_deplying-progress.sass";
+@import "deploying-progress/_deploying-progress-dialog-saved-successfuly.sass";
+@import "deploying-progress/_logs.sass";
+
+@import "settings/_integrations-config-dialog.sass";
+@import "settings/_integration-config.sass";
+@import "settings/_settings.sass";
+@import "settings/_permissions.sass";
+
+@import "site-config/_site-config.sass";
+@import "site-config/_add-artifact.sass";
+@import "site-config/_add-artifact-type-selection.sass";
+@import "site-config/_add-artifact-save.sass";
+@import "site-config/_dialog-confirm-remove.sass";
+@import "site-config/data-service-broker/_data-service-broker.sass";
+@import "site-config/data-service-broker/_dsb-details-dialog.sass";
+@import "site-config/data-service-broker/_dsb-details-dialog-protocols.sass";
+@import "site-config/data-service-broker/_add-dsb-dialog.sass";
+@import "site-config/data-service-broker/_confirm-remove-dsb-dialog.sass";
+@import "site-config/_copy-repo-broker.sass";
+@import "site-config/_add-crb-dialog.sass";
+@import "site-config/_add-cr-dialog.sass";
+
+
+
+#app > div{
+	height: 100%;
+}
+#app > div.dimmed{
+	background: #000;
+}
+
+.development.wrapper{
+
+	background: #ffffff;
+	height: 100%;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+	border: 1px solid #d4d6d9;
+	border-top: none;
+	border-left: none;
+
+	& .inside{
+		float: left;
+		height: calc(100% - 60px);
+    width: calc(100% - 234px);
+		overflow: auto;
+
+    &.maximized{
+        width: 100%;
+    }
+	}
+
+}
+
+.development.wrapper.dimmed{
+	@include dimmed;
+	pointer-events: none;
+	svg{
+		pointer-events: none;
+	}
+}

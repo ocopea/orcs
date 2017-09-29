@@ -1,0 +1,39 @@
+#CollapsableList{
+
+  .li{
+    transition: 0.8s;
+    position: relative;
+
+    > span{display: block}
+
+    .collapse{
+      max-height: 0;
+      transition: max-height 0.4s ease;
+      -webkit-transition: max-height 0.4s ease;
+      overflow: hidden;
+      position: relative;
+    }
+    .collapseOpen{
+      overflow: hidden;
+      max-height: 1000px;
+      transition: max-height 1.25s ease-in;
+    }
+    #iconArrowOpen{
+      @extend .iconArrow;
+    }
+    #iconArrowClose{
+      @extend .iconArrow;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.iconArrow{
+  font-size: 7px;
+  position: absolute;
+  right: 0;
+  top: 17px;
+  right: 16px;
+  color: #4a5365;
+  transition: 0.8s;
+}

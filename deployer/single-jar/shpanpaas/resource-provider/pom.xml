@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.emc.ocopea.orcs</groupId>
+        <artifactId>shpanpaas-parent</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>shpanpaas-resource-provider</artifactId>
+    <name>ShpanPaaS Resource Provider</name>
+
+    <dependencies>
+
+        <!-- MicroService Dev Mode Is base for this magic-->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>microservice-dev-deployment-stack</artifactId>
+            <version>${ocopea.util.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.emc.ocopea.microservice</groupId>
+                    <artifactId>dev-web-server-provider</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>microservice-undertow-webserver-impl</artifactId>
+            <version>${ocopea.util.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-multipart-provider</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.psb</groupId>
+            <artifactId>psb-java-web-api</artifactId>
+            <version>${ocopea.psb.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>persistent-messaging-provider</artifactId>
+            <version>${ocopea.util.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>persistent-scheduler-provider</artifactId>
+            <version>${ocopea.util.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.util</groupId>
+            <artifactId>postgres-util</artifactId>
+            <version>${ocopea.util.version}</version>
+        </dependency>
+    </dependencies>
+</project>
+

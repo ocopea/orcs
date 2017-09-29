@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.emc.ocopea.orcs</groupId>
+        <artifactId>orcs-parent</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+
+
+    <groupId>com.emc.ocopea.site</groupId>
+    <artifactId>site-parent</artifactId>
+    <name>Site Parent</name>
+    <packaging>pom</packaging>
+
+    <properties>
+        <ocopea.util.version>${project.version}</ocopea.util.version>
+
+        <!-- Sonar  -->
+        <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+        <sonar.jacoco.reportPaths>${user.dir}/target/jacoco.exec</sonar.jacoco.reportPaths>
+        <!-- for compatibility with Sonar 6.2 -->
+        <sonar.jacoco.reportPath>${sonar.jacoco.reportPaths}</sonar.jacoco.reportPath>
+    </properties>
+
+    <modules>
+        <module>site-web-api</module>
+        <module>repository</module>
+        <module>crb-tools</module>
+        <module>site-domain</module>
+        <module>service</module>
+        <module>artifact-registry</module>
+        <module>remote-dev-runner</module>
+        <module>protection</module>
+        <module>coverage</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.emc.ocopea.util</groupId>
+                <artifactId>native-query-service</artifactId>
+                <version>${ocopea.util.version}</version>
+            </dependency>
+
+            <!-- bill of materials for resteasy -->
+            <dependency>
+                <groupId>org.jboss.resteasy</groupId>
+                <artifactId>resteasy-bom</artifactId>
+                <version>${resteasy.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- TODO(maloni) remove this dependency when it is added to the parent pom -->
+        <dependency>
+            <groupId>com.emc.ocopea.dev-tools</groupId>
+            <artifactId>checkstyle</artifactId>
+            <version>${ocopea.dev-tools.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>0.7.9</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <!-- JaCoCo Code Coverage -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+

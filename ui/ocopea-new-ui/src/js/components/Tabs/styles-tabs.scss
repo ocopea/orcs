@@ -1,0 +1,35 @@
+.Tabs {
+  font-size: 12px;
+  color: #479dda;
+  font-weight: 500;
+  font-size: 12px;
+  color: #479dda;
+  display: flex;
+  justify-content: space-between;
+  width: 55%;
+  padding-top: 44px;
+
+  .tab {
+    height: 30px;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: space-between;
+
+
+    .name {
+      color: #479dda;
+    }
+
+    .icon {
+      padding-right: 10px;
+    }
+  }
+
+  .selected {
+    border-bottom: 2px solid #479dda;
+  }
+}
+
+
+
+

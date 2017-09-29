@@ -1,0 +1,66 @@
+.Configuration-container{
+
+  min-height: 700px!important;
+
+  .Topology{
+    margin-bottom: 30px;
+    margin-left: -40px;
+
+    .Topology__element{
+      color: #6b7083
+    }
+  }
+
+  .entry-point-container{
+    position: relative;
+    margin-left: -10px!important;
+    color: #6b7083;
+    .label{
+      top: 57px;
+      left: 77px;
+    }
+  }
+
+  .services-label{
+    top: 400px;
+  }
+  .dependencies-label{
+    bottom: 75px;
+  }
+
+  & .input.input-instance-name{
+    padding: 10px 0 0 10px;
+    border: none;
+    border-bottom: 1px solid #91aaa1;
+    background: inherit;
+    &:focus{
+      outline: none;
+    }
+  }
+  & .selects{
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0;
+    section{
+      width: calc(30% + 20px);
+      .has-value.Select--single>.Select-control .Select-value .Select-value-label{
+        color: #6b7083;
+      }
+    }
+    section{
+      label{
+        font-weight: 500;
+        padding-bottom: 5px;
+        color: #3b3b3b;
+        display: inline-block;
+        text-transform: capitalize;
+        font-size: 14px;
+      }
+      .Select{
+        .Select-arrow-zone{
+          line-height: 34px;
+        }
+      }
+    }
+  }
+}

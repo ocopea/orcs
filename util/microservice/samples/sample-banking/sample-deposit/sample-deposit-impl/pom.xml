@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.emc.ocopea.microservice.samples</groupId>
+        <artifactId>sample-deposit</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>sample-deposit-impl</artifactId>
+    <name>Deposit Sample Micro-Service Implementation</name>
+    <dependencies>
+
+        <!-- Micro-service api library -->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice.api</groupId>
+            <artifactId>microservice-api</artifactId>
+            <version>${microservice.api.version}</version>
+        </dependency>
+
+        <!-- The Deposit service Public model -->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice.samples</groupId>
+            <artifactId>sample-deposit-model</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- Calculator Public model -->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice.samples</groupId>
+            <artifactId>sample-calculator-model</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- Banking common services -->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice.samples</groupId>
+            <artifactId>sample-banking-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- Native Query Service -->
+        <dependency>
+            <groupId>com.emc.ocopea.util</groupId>
+            <artifactId>native-query-service</artifactId>
+        </dependency>
+
+
+        <!-- Test scope dependencies -->
+
+        <!-- Micro-service testing library -->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>microservice-test-utils</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Bank DB schema bootstrap -->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice.samples</groupId>
+            <artifactId>sample-bankdb-schema-bootstrap</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
+

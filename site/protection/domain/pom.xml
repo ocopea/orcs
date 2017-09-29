@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.emc.ocopea.site</groupId>
+        <artifactId>protection-parent</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>protection-domain</artifactId>
+    <name>Protection Domain Aggregates</name>
+
+    <dependencies>
+
+        <!-- dependency on api to use the events which are public and enums -->
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>protection-java-web-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>site-crb-tools</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>protection-repository-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.dsb</groupId>
+            <artifactId>dsb-java-web-api</artifactId>
+            <version>${ocopea.dsb.version}</version>
+        </dependency>
+
+
+    </dependencies>
+</project>
+

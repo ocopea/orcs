@@ -1,0 +1,127 @@
+.Dsb-details-dialog
+  width: 604px
+  height: 627px
+  background: #fff
+  +center-element
+  margin-top: 25px
+  border-radius: 3px
+
+  +element('title')
+    +dialog-title
+    text-transform: uppercase
+    font-weight: 500
+
+    +element('icon-close')
+      float: right
+      margin: 17px
+
+  +element('inside')
+
+    +element('section')
+
+      +modifier('header')
+        line-height: 90px
+        +element('inside')
+          margin: 0 18px 0 18px
+          border-bottom: 1px solid #e6eaed
+
+          +element('img-container')
+            width: 48px
+            height: 48px
+            display: inline-block
+            border-radius: 100%
+            position: relative
+            background: #eeeeee
+            margin: 33px 17px -18px 6px
+            +element('img')
+              width: 30px
+              +center-element
+
+          +element('title')
+            font-size: 18px
+            font-weight: 500
+            color: #4c515e
+            text-transform: capitalize
+
+      +modifier('description')
+        line-height: 16px
+
+        +element('inside')
+          margin: 0 25px 0 25px
+          +element('title')
+            @extend .Details-dialog__title
+
+          +element('content')
+            color: #6b7083
+            font-size: 14px
+            line-height: 1.21
+
+      +modifier('plans')
+        margin-left: 25px
+        margin-bottom: 20px
+
+        +element('select-container')
+          display: flex
+
+          +element('icon-info')
+            margin: 15px
+
+
+        & .Naz-select__container__label
+          display: none
+
+        +element('title')
+          @extend .Details-dialog__title
+
+  +element('footer')
+    position: absolute
+    bottom: 0
+    margin: 15px
+    width: calc(100% - 30px)
+    display: flex
+    justify-content: flex-end
+    +element('button')
+      +modifier('save')
+        margin-right: 15px
+
+.Dsb-info-menu
+  width: 219px
+  height: 154px
+  border-radius: 3px
+  background-color: #ffffff
+  box-shadow: 0px 4px 4px 0 rgba(12, 27, 37, 0.09)
+  border: solid 1px #d4d6d9
+  position: absolute
+  bottom: 167px
+  left: 202px
+  top: 88px
+  @extend .tip
+  padding: 19px 32px 16px 32px
+
+  +element('title')
+    width: 176px
+    height: 17px
+    font-family: Roboto
+    font-size: 18px
+    text-align: left
+    color: #479dda
+    text-transform: capitalize
+
+  +element('description')
+    & li
+      margin: -9px
+      margin-top: 12px
+      color: #354151
+      font-size: 13px
+      &::before
+        content: "• "
+        color: #479dda!important
+        position: relative
+        top: 7px
+        font-size: 30px
+
+.Details-dialog__title
+  font-size: 18px
+  color: #354151
+  margin: 23px 0 12px 0
+  text-transform: capitalize

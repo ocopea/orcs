@@ -1,0 +1,11 @@
+{
+  "orgId": "1",
+  "psbQuota": 1,
+  "dsbQuota": {
+    "shpanblob-dsb": 20,
+    "h2-dsb": 1,
+    "gal": 29,
+    "sss": 10,
+    "test": 100    
+  }
+}

@@ -1,0 +1,113 @@
+.Topology
+  margin-top: 31px
+
+  g.dimmed
+    border: 1px solid #ccc
+
+    svg, image, .service-title, .dependency-title,
+      opacity: 0.2
+
+  +element('container')
+    +border-radius(3px)
+    border: solid 1px #d4d6d9
+    position: relative
+
+    /* title */
+    +element('title')
+      +dialog-title
+      text-transform: uppercase
+      color: #595e64
+      font-size: 12px
+
+      +element('span')
+        font-weight: 500
+
+      +element('legend')
+        float: right
+        padding-right: 18px
+
+        +element('section')
+          float: left
+          padding-left: 25px
+
+        +element('label')
+          text-transform: capitalize
+          font-weight: 600
+
+    +element('inside')
+      padding: 18px
+      // position: relative
+
+    /* Topology */
+    .dependencies-label, .services-label
+      display: none
+
+    /* overide hover icon backround */
+    .service, .dependency
+      &:hover
+        svg path, .icon-service
+          fill: #60abdf
+      .icon
+        fill: none
+        stroke: none
+      svg.icon path
+        fill: #6b7083
+
+      rect
+        rx: 3px
+        ry: 3px
+      .icon-container
+        stroke: none
+
+      .icon-missing-field::before
+        color: #fff
+
+    /* overide service design */
+    .service
+      stroke: #8cc9ea
+      &.selected
+        stroke: #62ade1
+        stroke-width: 1px
+      rect
+        // width: 134px
+        // height: 134px
+        stroke-width: 0.5px
+
+      .icon-container
+        fill: #d7e9f5
+
+      & .service-title foreignObject
+        width: 105px
+        height: 17px
+        y: 162
+        color: #6b7083
+        font-size: 13px
+        text-transform: capitalize
+        text-align: center
+
+    /* overide dependency design */
+    .dependency
+      stroke: #daeee0
+      &.selected
+        stroke: #43ab60
+        stroke-width: 1px
+      rect
+        width: 110px
+        height: 110px
+      image
+        width: 40px
+        height: 40px
+        &.loader
+          width: 60px
+          height: 60px
+      .icon-container
+        fill: #daeee0
+
+      & .dependency-title foreignObject
+        width: 105px
+        height: 17px
+        y: 400
+        text-align: center
+        color: #6b7083
+        font-size: 13px
+        text-transform: capitalize

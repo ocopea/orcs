@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.emc.ocopea.crb</groupId>
+        <artifactId>crb-parent</artifactId>
+        <version>0.24</version>
+    </parent>
+
+    <artifactId>crb-web-api</artifactId>
+    <name>Copy Repository Web API</name>
+    <description>
+        This project packages a swagger definition file for Copy Repository's web API.
+        Use swagger-codegen to generate code for a specific language.
+        All communication with all copy repositories will be invoked using this API
+    </description>
+</project>
+

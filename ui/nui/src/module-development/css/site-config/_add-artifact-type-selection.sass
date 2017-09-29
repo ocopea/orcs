@@ -1,0 +1,77 @@
+.Add-artifact__type
+  height: calc(100% - 115px)
+
+  & table
+    width: 100%
+
+  +element('title')
+    +dialog-title
+    text-transform: uppercase
+    border-top-right-radius: 3px
+    border-top-left-radius: 3px
+
+    & .icon-close
+      position: absolute
+      right: 16px
+      top: 17px
+
+  +element('inside')
+    height: 235px
+    +element('row')
+      line-height: 66px
+      border-bottom: 1px solid #edf0f2
+      color: #858d99
+      font-size: 13px
+      &:hover
+        cursor: pointer
+        background: #edfbff
+
+      +modifier('disabled')
+        opacity: 0.5
+        pointer-events: none
+        &:hover
+          cursor: auto
+
+      +modifier('last')
+        border-bottom: none
+
+      & .Naz-checkbox-container
+        padding: 0 21px 0 23px
+        width: 5%
+
+      & .Naz-checkbox
+        display: block
+        top: 5px
+        position: relative
+
+      +element('logo-container')
+        width: 16%
+
+        +element('logo')
+          display: block
+          width: 48px
+          height: 48px
+          border-radius: 100%
+          background: #eeeeee
+          position: relative
+          top: 15px
+
+          +element('img')
+            position: absolute
+            width: 100%
+            top: 18px
+            left: -1px
+
+            &.docker
+              top: 5px
+              width: 80%
+              left: 6px
+
+            &.git
+              width: 70%
+              top: 8px
+              left: 7px
+              
+      +element('description')
+        position: relative
+        top: -5px

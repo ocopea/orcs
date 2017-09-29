@@ -1,0 +1,29 @@
+{
+  "appInstanceName": "${appInstanceName}",
+  "savedImageId": "${savedImageId}",
+  "siteId": "${siteId}",
+  "deploymentPlan": {
+    "appServices": {
+      "hackathon-svc": {
+        "enabled": true,
+        "space": "${space}",
+        "artifactRegistryName": "${artifactRegistryName}",
+        "imageVersion": "${hackSvcVersion}"
+      }
+    },
+    "dataServices": {
+      "hackathon-db": {
+        "dsbURN": "${dbDsbUrn}",
+        "enabled": true,
+        "dsbPlan": "${dbDsbPlan}",
+        "dsbProtocol": "${dbDsbProtocol}"
+      },
+      "hack-docs": {
+        "dsbURN": "${blobDsbUrn}",
+        "enabled": true,
+        "dsbPlan": "${blobDsbPlan}",
+        "dsbProtocol": "${blobDsbProtocol}"
+      }
+    }
+  }
+}

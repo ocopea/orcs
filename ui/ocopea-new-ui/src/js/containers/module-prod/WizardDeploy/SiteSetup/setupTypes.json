@@ -1,0 +1,17 @@
+[
+	{
+		"name": "single site",
+		"img": "map_SINGLE-SITE.png",
+		"points": 1
+	},
+	{
+		"name": "metro",
+		"img": "map_METRO.png",
+		"points": 2
+	},
+	{
+		"name": "multi region",
+		"img": "map_MULTI-REGION.png",
+		"points": 5
+	}
+]

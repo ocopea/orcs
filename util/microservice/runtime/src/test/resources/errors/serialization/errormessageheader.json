@@ -1,0 +1,6 @@
+{
+  "microservice_uri": "microservice-1-uri",
+  "timestamp": 1456485443905,
+  "error_code": 404,
+  "error_message": "Service unavailable"
+}

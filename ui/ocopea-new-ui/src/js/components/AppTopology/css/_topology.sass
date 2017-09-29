@@ -1,0 +1,334 @@
+@import './mixins.sass'
+@import './_switch.sass'
+@import '../plans-selection/_plans-selection.sass'
+
+$selected_element_border: 2px solid #8dc5e4
+$related_element_border: 2px solid yellow
+$font-color: #524545
+$fail-color: #cc5669
+$success-color: #e88f41
+
+$serviceIconFill: #dae8ee
+$serviceIconHoverFill: #62ade1
+$serviceIconSelectedFill: #479dda
+$serviceImgFill: #60abdf
+$serviceImgHoverFill: #dae8ee
+$serviceImgSelectedFill: #ffffff
+
+$dependencyIconHoverFill: #67b47d
+$dependencyIconFill: #daeee0
+$dependencyIconSelectedFill: #43ab60
+$dependencyImgFill: #67b47d
+
+$selectedelementIconFill: #644327
+
+.Topology
+  direction: ltr
+  position: relative
+
+  +element('container')
+    position: relative
+    margin: auto
+    border: none!important
+
+    & .container
+      overflow: hidden!important
+      position: relative
+      min-height: auto!important
+      width: 100%!important
+
+    +element('baselines')
+      position: relative
+      margin: -6px 0 -6px 0
+
+  +element('line')
+    width: 100%
+    stroke: rgb(141, 197, 228)
+    stroke-width: 2
+    position: absolute
+    left: 0
+    z-index: 1
+
+    +modifier('selected')
+      stroke-width: 4px
+
+    +element('element-to-baseline')
+      top: 0
+      height: 100%
+
+      +element('dependency')
+        height: 100%
+
+    +modifier('base-line')
+      height: 100%
+      +modifier('selected')
+        stroke-width: 4px
+        top: 0
+        height: 100%
+
+  +element('app-services')
+    position: absolute
+    bottom: 0
+    width: 100%
+    height: calc(100% + 17px)
+    justify-content: space-around
+    display: flex
+    position: relative
+    padding: 26px 0 0 26px
+    overflow-x: hidden
+
+    & > div
+      margin-bottom: auto
+      transition: 0.8s
+      &.disabled
+        opacity: 0.5
+      &:last-child > div
+        margin-right: 50px!important
+
+    &.scrollable
+      @extend .scrollable
+      &:hover
+        cursor: grab
+
+  +element('data-services')
+    position: absolute
+    bottom: 0
+    width: 100%
+    height: calc(100% - 7px)
+    overflow-x: hidden
+    min-height: auto
+    justify-content: space-around
+    display: flex
+    position: relative
+    top: 4px
+    padding: 0px 0 20px 26px
+
+    & > div
+      margin-top: auto
+      transition: 0.8s
+      &.disabled
+        opacity: 0.5
+      &:last-child > div
+        margin-right: 50px!important
+
+    &.scrollable
+      @extend .scrollable
+      &:hover
+        cursor: grab
+
+  +element('element')
+    background: #fff
+    color: #6b7083
+    position: relative
+    z-index: 2
+    flex-grow: 0
+    border-radius: 5px
+    transition: 0.4s
+    &:hover
+      cursor: pointer
+
+    +element('icon-container')
+      background: transparent
+      margin: 10px
+      position: relative
+      z-index: 2
+      top: -7px
+      width: 40px
+      height: 40px
+      display: table-cell
+      border-radius: 100%
+      left: -8px
+      & img
+        @extend .center
+      & span
+        @extend .center
+        font-size: 130%
+        width: 50%
+        height: 50%
+        text-align: center
+      &.circle
+        top: -18px
+        left: -18px
+
+    +element('state-indicator')
+      &.fail
+        background: $fail-color
+        & span
+          font-size: 7px
+          top: 0px
+          left: 1px
+          margin: auto  
+      &.success
+        background: $success-color
+      top: 0
+      margin: 5px
+      width: 16%
+      height: 16%
+      border-radius: 100%
+      position: absolute
+      right: 0
+      text-align: center
+      color: #fff
+
+      & span
+        @extend .center
+        color: #fff
+        font-size: 80%
+        &::before
+          @extend .center
+          position: relative
+          top: 30%!important
+
+    +element('logo-circle')
+      width: 55%
+      height: 55%
+      border-radius: 100%
+      background: #d7e9f5
+      @extend .center
+      top: -15%!important
+      text-align: center
+
+    +element('logo')
+      @extend .center
+      max-width: 57%
+
+    & .loader
+      width: 65%
+      position: absolute
+      top: -15%
+      bottom: 0
+      right: 0
+      left: 0
+      margin: auto
+
+    & .services-no-deps
+      text-align: center
+      margin-top: 5px
+      padding: 5px
+      display: inline-block
+      width: calc(100% - 10px)
+      font-style: italic
+      color: $font-color
+      z-index: 1
+      position: absolute
+
+    +modifier('shake-right')
+      transform: rotate(5deg)
+
+    +modifier('shake-left')
+      transform: rotate(-5deg)
+
+    +element('alert')
+      border: 2px solid $fail-color
+      width: 55%
+      height: 55%
+      border-radius: 100%
+      @extend .center
+      top: -15%!important
+      z-index: 1
+      & span
+        color: $fail-color!important
+        position: absolute
+        font-size: 20px
+        right: 0
+        top: -5px
+
+    +element('service')
+      font-size: 16px
+      // border: 1px solid #8cc9ea
+
+      & .topology-icon-container.circle
+        background: $serviceIconFill
+        & span
+          color: $serviceImgFill
+      &:hover
+        & .topology-icon-container.circle
+          background: $serviceIconHoverFill!important
+          & span
+            color: $serviceImgHoverFill
+      &.selected, &.related
+        &::before
+          @extend .outline
+          border: 1px solid #62ade1
+        & .topology-icon-container.circle
+          background: $serviceIconSelectedFill!important
+          & span
+            color: $serviceImgSelectedFill!important
+        &:hover
+          & .topology-icon-container.circle
+            background: $serviceIconSelectedFill
+            & span
+              color: $serviceImgSelectedFill!important
+
+    +element('dependency')
+      font-size: 12px
+      // border: 1px solid #daeee0
+
+      & .topology-icon-container.circle
+        background: $dependencyIconFill
+        & span
+          color: $dependencyImgFill
+          top: 6px
+      &:hover
+        & .topology-icon-container.circle
+          background: $dependencyIconHoverFill!important
+          & span
+            color: $serviceImgHoverFill
+      &.selected, &.related
+        &::before
+          @extend .outline
+          border: 1px solid #43ab60!important
+        & .topology-icon-container.circle
+          background: $dependencyIconSelectedFill!important
+          & span
+            color: $serviceImgSelectedFill!important
+        &:hover
+          & .topology-icon-container.circle
+            background: $dependencyIconSelectedFill
+            & span
+              color: $serviceImgSelectedFill!important
+
+
+    +element('selected')
+      // &::before
+      //   @extend .outline
+
+    +modifier('related')
+      // &::before
+      //   @extend .outline
+
+    +element('title')
+      text-align: center
+      position: absolute
+      bottom: 10px
+      width: 100%
+      left: 7px
+      overflow: hidden
+      width: calc(100% - 15px)
+      text-overflow: ellipsis
+      white-space: nowrap
+
+// placeholders
+.scrollable
+  overflow: auto
+  justify-content: flex-start
+
+.center
+  position: absolute
+  top: 0
+  bottom: 0
+  right: 0
+  left: 0
+  margin: auto
+
+// selected elememt outline
+.outline
+  content: " "
+  position: absolute
+  z-index: -1
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  // border: 4px solid #8dc5e4
+  border-radius: 5px

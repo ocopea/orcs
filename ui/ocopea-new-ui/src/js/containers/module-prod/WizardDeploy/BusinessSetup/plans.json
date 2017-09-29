@@ -1,0 +1,20 @@
+[
+	{
+		"name": "business critical",
+		"description": "Monthly, weekly, daily, CPS baa For business critical apps",
+		"img": "plan-img-business-critical.png",
+		"indicatorBlocksNumber": 5
+	},
+	{
+		"name": "tier 2",
+		"description": "Daily snap. Restore immediately to daily copies",
+		"img": "plan-img-tier2.png",
+		"indicatorBlocksNumber": 4
+	},
+	{
+		"name": "custom",
+		"description": "Build your own plan that meets your business needs",
+		"img": "plan-img-custom.png",
+		"indicatorBlocksNumber": 1
+	}
+]

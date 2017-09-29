@@ -1,0 +1,51 @@
+#menu-btn{
+    padding: 15px;
+    width: 28px;
+    height: 28px;
+    background: #F2F2F2;
+    //background: $menu-left-background;
+    float: left;
+    border-radius: 0;
+
+    &.disabled{
+      opacity: 0.2;
+      pointer-events: none;
+    }
+}
+
+#menu-btn #inside{
+    position: relative;
+}
+
+#menu-btn span:nth-child(1){
+   margin-top: 4px;
+}
+
+#menu-btn span{
+    width: calc(100% - 2px);
+    border: 1px solid $primary-color;
+    border-radius: 10px;
+    float: left;
+    height: 1px;
+    margin-bottom: 5px;
+    background: $primary-color;
+    transition: 0.4s;
+}
+
+#menu-btn span:nth-child(1)#hamburger-first-line.cross {
+    transform: rotate(45deg);
+    position: absolute;
+    margin-top: 13px;
+    right: 0;
+    width: 25px;
+}
+#menu-btn span:nth-child(2)#hamburger-middle-line.cross{
+    display: none;
+}
+#menu-btn span#hamburger-last-line.cross{
+    transform: rotate(-45deg);
+    position: absolute;
+    margin-top: 13px;
+    right: 0;
+    width: 25px;
+}

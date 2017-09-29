@@ -1,0 +1,78 @@
+button{
+	border: none;
+	outline: none;
+}
+
+#copy-history-next-btn,
+#copy-history-prev-btn{
+	&:active{
+		opacity: 0.5;
+	}
+}
+
+.button{
+    line-height: 33px;
+    text-align: center;
+    color: #fff;
+    text-transform: capitalize;
+    width: 100px;
+    height: 33px;
+    position: relative;
+    @include border-radius;
+    @include text-not-selectable;
+}
+
+button,
+.button:hover{
+    cursor: pointer;
+}
+
+.button.enabled:hover{
+   opacity: 0.9;
+   cursor: pointer;
+}
+
+.button:active{
+     opacity: 0.5;
+}
+
+#main-pane-footer .button{
+    float: right;
+}
+
+.button.disabled{
+    opacity: 0.5;
+}
+
+.button.enabled{
+    opacity: 1;
+}
+
+.button-primary{
+    background-color: #5c9abd;
+}
+
+.button-secondary{
+    background-color: #e6eaed;
+    color: #6b7083;
+		font-weight: 500
+}
+
+#next-button{
+    margin-left: 10px;
+}
+
+.arrow-img{
+    width: 10px;
+    padding-top: 12px;
+}
+
+#next-button .arrow-img{
+    padding-left: 5px;
+    padding-bottom: 2px;
+}
+
+#prev-button .arrow-img{
+    position: absolute;
+    left: 19px;
+}

@@ -1,0 +1,85 @@
+#main-pane{
+    padding: 50px;
+    //position: relative;
+    background: $background-color;
+    -webkit-transition: 0.8s;
+    transition: 0.8s;
+    width: 980px;
+    // height: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+#main-pane .inside{
+    margin-bottom: 50px;
+}
+
+#main-pane.main-screen{
+    background: #252526;
+}
+
+#main-pane.minimized-full > .inside{
+    width: 763px;
+    float: none;
+    margin: auto;
+}
+
+#main-pane.minimized-left > .inside{
+    float: right;
+    width: 886px;
+}
+
+#main-pane.minimized-full{
+    padding-left: 140px;
+}
+#main-pane.minimized-left{
+    padding-left: 200px;
+	padding-right: 100px;
+}
+
+#main-pane.minimized-right > .inside{
+    width: 948px;
+}
+
+#main-pane.maximized{
+    width: calc(100% - 100px);
+}
+
+#main-pane.maximized .inside{
+    float: none;
+    height: 100%;
+}
+
+#wizard-container > div{
+    min-height: 500px;
+    position: relative;
+}
+
+#app-market-container{
+    //float: left;
+}
+
+#wizard-container > div#main-pane-footer{
+    line-height: 30px;
+    float: left;
+    width: 100%;
+    direction: rtl;
+    min-height: 0;
+}
+
+#main-pane-footer a{
+    text-transform: uppercase;
+    float: left;
+}
+
+#main-pane-footer .inline-error{
+    float: left;
+    color: red;
+    font-weight: 700;
+}
+
+img#inline-error-img{
+   float: left;
+    padding-right: 10px;
+    padding-top: 4px;
+}

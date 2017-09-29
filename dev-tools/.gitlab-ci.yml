@@ -1,0 +1,101 @@
+# Copyright (c) [2017] Dell Inc. or its subsidiaries. All Rights Reserved.
+stages:
+  - build
+  - test
+  - deliver
+  - staging
+  - deploy
+
+# Define the variables that can be used in the jobs. Example: You can specify the location of the final builds
+# and use them during the tests
+variables:
+  ARTIFACTORY_SETTINGS: /home/gitlab-runner/settings.xml
+
+# This job builds the service and runs the unit tests that are included with the service
+build_job:
+  # Used if using docker for execution
+  image: maven:onbuild
+  stage: build
+  # Build the code; this job applies to both feature branch branch and master branch
+  script:
+    - echo "Building the service"
+    - mvn clean install -P CI,checkstyle
+
+# Test jobs runs the integration tests for the service.
+# The tests (or the test suite) that need to be executed are added as commands in the script section of this job.
+# Example: running the service in pcf dev environment
+# You can specify any number of test jobs  that can be run in parallel on different test environments
+# Test jobs are derived from hidden job (template) .integration_test.
+
+.integration_test: &integration_test_definition
+  stage: test
+  dependencies:
+    - build_job
+  before_script:
+    - echo "Executing integration tests"
+  after_script:
+    - echo "Integration tests completed"
+
+test_integration_suite1:
+  <<: *integration_test_definition
+  script:
+    - echo "Add commands to execute integration tests"
+
+# Here you can specify a second set of integration tests that can be executed on a different environment
+test_integration_suite2:
+  <<: *integration_test_definition
+  script:
+    - echo "Add commands to execute second set of integration tests"
+
+# Deliver job - this job creates a release build of the service and publishes to Artifactory
+
+deliver_job:
+  image: maven:onbuild
+  stage: deliver
+  dependencies:
+    - build_job
+  before_script:
+    - echo "Building and publish the release"
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$GIT_SSH_PRIVATE_KEY")
+    - mkdir -p ~/.ssh
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - git config --global user.name $GIT_SERVICE_USER
+    - git config --global user.email $GIT_SERVICE_USER_EMAIL
+  script:
+    - git checkout -B "$CI_BUILD_REF_NAME"
+    - mvn -s $ARTIFACTORY_SETTINGS --batch-mode release:prepare release:perform -P CI,checkstyle -DautoVersionSubmodules=true -DscmCommentPrefix="[ci skip]"
+  when: on_success
+  after_script:
+    - echo "Artifacts published"
+  only:
+    - master
+
+# Staging job - This job stages the master branch package made in deliver_job to stage on EMC IT.
+
+staging_job:
+  stage: staging
+  dependencies:
+    - deliver_job
+  before_script:
+    - echo "Deploying the build on staging environment"
+  script:
+    - echo "Completed deploying the build on staging environment"
+  when: on_success
+  only:
+    - master
+
+# Deploying the release build on a production environment.
+# This job runs only when trigged by API.
+
+deploy_job:
+  stage: deploy
+  dependencies:
+    - deliver_job
+  before_script:
+    - echo "Fetching the latest release package from artifactory"
+    - echo "Deploying the release package on a production environment"
+  script:
+    - echo "Completed deploying the release on a production environment"
+  only:
+    - triggers

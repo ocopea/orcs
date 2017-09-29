@@ -1,0 +1,43 @@
+.AddCopyRepoDialog {
+  .inside {
+    padding: 20px;
+
+    section {
+      margin-bottom: 20px;
+      line-height: 25px;
+    }
+
+    label {
+      display: inline-block;
+      width: 100%;
+      color: #252d3a;
+      font-size: 14px;
+      text-transform: capitalize;
+      font-weight: 500;
+    }
+
+    input {
+      padding-left: 20px;
+      width: calc(100% - 20px);
+
+      /* TODO: put in central place for all inputs */
+      line-height: 34px;
+      border-radius: 3px;
+      background-color: #ffffff;
+      border: solid 1px #d4d6d9;
+      line-height: 34px;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 15px;
+      width: calc(100% - 40px);
+      display: flex;
+      justify-content: flex-end;
+
+      button {
+        margin-left: 15px;
+      }
+    }
+  }
+}

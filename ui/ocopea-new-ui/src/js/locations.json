@@ -1,0 +1,73 @@
+{
+  "development": {
+    "home": {
+      "pathname": "/development/home",
+      "name": "home"
+    },
+    "dashboard": {
+      "pathname": "/development/dashboard",
+      "name": "dashboard"
+    },
+    "savedImages": {
+      "pathname": "/development/saved-images",
+      "name": "saved images"
+    }
+  },
+  "production": {
+    "home": {
+      "pathname": "/production/home",
+      "name": "home"
+    },
+    "wizardDeploy": {
+      "pathname": "/production/deploy-app",
+      "name": "deploy application",
+      "steps": {
+        "appMarket": {
+          "pathname": "/production/deploy-app/app-market",
+          "name": "app market",
+          "key": "appMarket"
+        },
+        "appTopology": {
+          "pathname": "/production/deploy-app/app-topology",
+          "name": "app topology",
+          "key": "appTopology"
+        },
+        "siteSetup": {
+          "pathname": "/production/deploy-app/site setup",
+          "name": "site setup",
+          "key": "siteSetup"
+        },
+        "businessSetup": {
+          "pathname": "/production/deploy-app/business setup",
+          "name": "business setup",
+          "key": "businessSetup"
+        },
+        "configuration": {
+          "pathname": "/production/deploy-app/configuration",
+          "name": "configuration",
+          "key": "configuration"
+        }
+      }
+    },
+    "deployingProgress": {
+      "name": "deploying progress",
+      "pathname": "/production/deploying-progress"
+    },
+    "dashboard": {
+      "name": "dashboard",
+      "pathname": "/production/dashboard"
+    }
+  },
+  "settings": {
+    "home": {
+      "pathname": "/settings",
+      "name": "settings"
+    }
+  },
+  "siteConfig": {
+    "home": {
+      "pathname": "/site-config",
+      "name": "site-config"
+    }
+  }
+}

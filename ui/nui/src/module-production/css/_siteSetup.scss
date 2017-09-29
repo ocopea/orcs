@@ -1,0 +1,124 @@
+#site-setup-container .cards-container{
+    padding-top: 20px;
+    float: left;
+    width: 100%;
+    height: 100%;  
+
+}
+
+.site-setup-card{
+    width: calc(33.333333% - 7px);
+    
+}
+
+.site-setup-card:nth-child(3){
+    padding-right: 0;
+}
+
+#site-setup-container .cards-container .title{
+    border-bottom: 1px solid #e0e0e0;
+    line-height: 50px;
+    margin: auto;
+    text-align: center;
+    color: #3b3b3b;
+    font-size: 14px;	
+}
+
+#site-setup-container .cards-container .inside{
+    padding: 0;
+}
+
+#setupTypeMap{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+#setupTypeMap img{
+    width: 100%;
+    height: 100%;    
+    display: inline-block;
+    border-radius: none;
+}
+
+.site-setup-card .inside{
+    position: relative;
+}
+
+.site-setup-card .inside .point{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    //border: 1px solid gray;
+}
+
+.site-setup-card .inside  .point .point-inside{
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 3px;
+    margin-left: 3.5px;
+}
+
+/* singel-site points */
+.site-setup-card.single-site .inside  .point .point-inside{
+    background: #2F9970;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.site-setup-card.single-site .inside  .point{
+    top: 225px;
+    right: 127px;
+    width: 35px;
+    height: 35px;
+    background:  rgba(#2F9970, 0.5);
+    border: none;
+}
+
+/* metro points */
+.site-setup-card.metro .inside  .point .point-inside{
+    background: $point-background;
+}
+.site-setup-card.metro .inside  .point:nth-child(2){
+    top: 231px;
+    right: 143px;
+    width: 30px;
+    height: 30px;
+}
+.site-setup-card.metro .inside  .point:nth-child(3){
+    top: 216px;
+    right: 150px;
+}
+
+/* multi-region points */
+.site-setup-card.multi-region .inside  .point .point-inside{
+    background: $point-background;
+}
+.site-setup-card.multi-region .inside  .point:nth-child(2){
+    top: 198px;
+    left: 17px;
+}
+.site-setup-card.multi-region .inside  .point:nth-child(3){
+    top: 198px;
+    left: 57px;
+}
+.site-setup-card.multi-region .inside  .point:nth-child(4){
+    top: 198px;
+    right: 17px;
+}
+.site-setup-card.multi-region .inside  .point:nth-child(5){
+    top: 272px;
+    right: 17px;
+}
+.site-setup-card.multi-region .inside  .point:nth-child(6){
+    top: 211px;
+    right: 97px;
+}

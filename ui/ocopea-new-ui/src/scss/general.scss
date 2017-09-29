@@ -1,0 +1,143 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body, html {
+  height: 100%;
+}
+body {
+	font-family: 'roboto';
+	width: 100%;
+	line-height: 1;
+  margin: 0;
+	display: grid;
+
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+
+}
+img{
+	user-drag: none;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+[id="link"]{
+	&:hover{
+		cursor: pointer;
+	}
+	&:active{
+		opacity: 0.5;
+	}
+}
+
+[id="root"]{
+	min-height:500px;
+	height:100%;
+}
+
+[id="link"]{
+	&:hover{
+		cursor: pointer;
+	}
+	&:active{
+		opacity: 0.5;
+	}
+}
+
+button {
+	border: none;
+	outline: none;
+  background: none;
+  padding: 0;
+	&:hover {
+		cursor: pointer;
+	}
+	&:active {
+		opacity: 0.5;
+	}
+}
+
+:global{
+	.master-loader{
+		@extend .center;
+		width: 150px;
+    height: 150px;
+		margin: auto;
+	}
+
+	.center{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+	}
+
+	.input{
+		width: calc(100% - 13px);
+    height: 33px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+    color: #aaa;
+	}
+}
+
+[class*="card-hover"]{
+	&:hover{
+		outline: 1px solid #91c7e5;
+		cursor: pointer;
+	}
+}
+
+[class*="card-selected"]{
+	box-shadow: 1px 1px 7px #5D5DB9!important;
+	outline: 1px solid #91c7e5;
+}
+
+@import './font.scss';

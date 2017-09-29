@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.emc.ocopea.site</groupId>
+        <artifactId>site-parent</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>site-service-impl</artifactId>
+    <name>Site MicroService</name>
+
+    <dependencies>
+        <!-- Site web api interfaces -->
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>site-web-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>protection-java-web-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.emc.ocopea.psb</groupId>
+            <artifactId>psb-java-web-api</artifactId>
+            <version>${ocopea.psb.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.emc.ocopea.util</groupId>
+            <artifactId>common-util</artifactId>
+            <version>${ocopea.util.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>site-repository-impl</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>site-crb-tools</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>protection-service-impl</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- for  streaming that doesn't work-->
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-jaxrs</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- DSB web API for communicating with DSBs -->
+        <dependency>
+            <groupId>com.emc.ocopea.dsb</groupId>
+            <artifactId>dsb-java-web-api</artifactId>
+            <version>${ocopea.dsb.version}</version>
+        </dependency>
+
+        <!-- DSB web API for communicating with Copy Repositories -->
+        <dependency>
+            <groupId>com.emc.ocopea.crb</groupId>
+            <artifactId>crb-java-web-api</artifactId>
+            <version>${ocopea.crb.version}</version>
+        </dependency>
+
+        <!-- Site domain -->
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>site-domain</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- Microservice api -->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice.api</groupId>
+            <artifactId>microservice-api</artifactId>
+            <version>${microservice.api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.util</groupId>
+            <artifactId>db-junit-test-support</artifactId>
+            <version>${ocopea.util.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <!-- for implementing rest resources -->
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+        </dependency>
+
+        <!-- for streaming application logs -->
+        <dependency>
+            <groupId>javax.websocket</groupId>
+            <artifactId>javax.websocket-api</artifactId>
+        </dependency>
+
+        <!-- For registering DSBs/CRBs etc in the service registry without hard dependency on ms runtime -->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>registry-client-resource-manager-api</artifactId>
+            <version>${ocopea.util.version}</version>
+        </dependency>
+
+        <!-- We also depend on impl for now just so it will package itself since there is no difference in impl -->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>registry-client-resource-manager-impl</artifactId>
+            <version>${ocopea.util.version}</version>
+        </dependency>
+
+        <!-- Microservice testing library-->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>microservice-test-utils</artifactId>
+            <version>${ocopea.util.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Using the site schema for testing -->
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>site-repository-schema</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.spec.javax.servlet</groupId>
+            <artifactId>jboss-servlet-api_3.1_spec</artifactId>
+            <scope>provided</scope>
+            <version>1.0.0.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.util</groupId>
+            <artifactId>json-util</artifactId>
+            <version>${ocopea.util.version}</version>
+        </dependency>
+
+    </dependencies>
+
+</project>
+

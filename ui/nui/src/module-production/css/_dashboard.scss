@@ -1,0 +1,307 @@
+#dashboard-container{
+    min-height: 700px;
+}
+
+#dashboard-container .row{
+    height: 275px;
+    padding-bottom: 10px;
+}
+
+#copy-history .inside{
+    position: relative;
+    height: 195px;
+    box-shadow: none;
+}
+
+#copy-history-error{
+    position: absolute;
+    right: 18px;
+    top: 63px;
+    color: red;
+    border: 1px solid red;
+    padding: 4px;
+}
+
+#copy-history-error:before{
+    border: solid;
+    border-color: #333 transparent;
+    border-width: 6px 6px 0 6px;
+    bottom: 20px;
+    content: "";
+    right: 15px;
+    top: 24px;
+    position: absolute;
+    z-index: 99;
+}
+
+#dashboard-container .card .inside:hover{
+    cursor: auto;
+    outline: none;
+}
+
+#dashboard-container .card .inside #main{
+    height: calc(100% - 29px);
+}
+
+#dashboard-container .card img{
+    width: 100%;
+    height: 100%;
+
+}
+
+.login-container .title,
+#copy-history .title,
+#dashboard-container .card .title{
+    border-bottom: 1px solid #e0e0e0;
+    line-height: 50px;
+    width: calc(100% + 18px);
+    margin: auto;
+    margin-top: -5px;
+    text-align: center;
+    margin-left: -10px;
+    color: #3b3b3b;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#dashboard-container .card .title{
+  .title__span{
+    font-weight: bold
+  }
+}
+
+#dashboard-container .card .inside:hover{
+    cursor: auto;
+    background: #FAFAFA;
+}
+
+/* Copy History Chart */
+
+.card#copy-history{
+    display: inline-block;
+    width: 100%;
+    min-height: 300px;
+    padding-right: 0;
+    padding-bottom: 0;
+    background: #FAFAFA;
+    box-shadow: 0px 1px 2px 0px rgba(4, 4, 4, 0.09);
+    text-align: center;
+    position: relative;
+    @include border-radius(3px);
+}
+
+.x axis path{
+    outline: 1px solid black;
+}
+
+#dashboard-container .card#copy-history .title{
+    text-align: left;
+    padding-left: 20px;
+    width: 100%;
+    position: relative;
+}
+
+#filter-range{
+    width: 545px;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    padding-right: 20px;
+    top: 0;
+}
+
+.filter{
+    margin-left: 20px;
+    color:  #797979;
+    font-weight: 400;
+	text-transform: none;
+}
+
+#filter-range span:hover{
+    cursor: pointer;
+}
+
+.filter{
+    transition: 0.4s;
+}
+
+.filter.selected{
+    border-bottom: 1px solid #5c9abd;
+    font-size: 1.2em;
+    color: #5c9abd;
+}
+
+#copy-history-prev-btn{
+    position: absolute;
+    left: 80px;
+    top: 120px;
+    color: #8c8c8c;
+}
+
+#copy-history-next-btn{
+    position: absolute;
+    right: 117px;
+    top: 120px;
+    color: #8c8c8c;
+}
+
+#copy-history .backup:hover{
+    cursor: pointer;
+    border: 1px solid #5c9abd;
+}
+
+#main-pane.minimized-left #copy-history-prev-btn{
+    left: 25px;
+}
+
+#main-pane.minimized-right #copy-history-prev-btn{
+    left: 85px;
+}
+
+#main-pane.maximized #copy-history-prev-btn{
+    left: 190px;
+}
+
+#main-pane.minimized-right #copy-history-next-btn,
+#main-pane.minimized-full #copy-history-next-btn{
+    right: 50px;
+}
+
+#main-pane.minimized-full #copy-history-next-btn{ right: 60px }
+#main-pane.minimized-right #copy-history-next-btn{ right: 70px }
+#main-pane.minimized-left #copy-history-next-btn{ right: 25px }
+#main-pane.maximized #copy-history-next-btn{ right: 170px}
+
+.tick line{
+    fill: none;
+    stroke: #FAFAFA;
+    shape-rendering: crispEdges;
+}
+
+#copy-history button#copy-history-next-btn,
+#copy-history button#copy-history-prev-btn{
+    border: none;
+	margin-top: 10px;
+    background: #FAFAFA;
+}
+
+
+#main-pane.maximized #dashboard-container #copy-history .inside{
+    height: 240px;
+}
+
+
+#copy-history-footer{
+    line-height: 27px;
+    width: 100%;
+    display: inline-block;
+    height: 55px;
+}
+
+#copy-history-footer .section{
+    display: inline-block;
+    padding: 15px;
+}
+
+#copy-history-footer .section #img-restore{
+    width: 13px;
+    height: 13px;
+}
+
+
+#copy-history-footer .section #img-create-copy{
+    width: 14px;
+    height: 15px;
+}
+
+#copy-history-footer .section span{
+    padding: 8px;
+    float: left;
+}
+
+#copy-history-footer .section .container{
+    background: inherit;
+    float: left;
+    line-height: 10px;
+    min-height: 100%;
+}
+
+#copy-history-footer .section .container:hover{cursor: pointer}
+
+#copy-history-footer .section .container img{
+    float: left;
+    margin-top: 7px;
+}
+
+#copy-history-footer .section-left{
+    float: left;
+    padding: 8px;
+    padding-left: 15px;
+}
+
+#copy-history-footer .section-left .success-backups{
+    color: #83bd5c;
+}
+
+#copy-history-footer .section-left .failed-backups{
+    color: #bd4c49;
+}
+
+#copy-history-footer .section-left span{
+    padding: 4px;
+}
+
+#copy-history-footer .section-right{
+    float: right;
+    color: #8c8c8c;
+}
+
+#copy-history-footer .section-right .container:nth-child(1){
+    padding-right: 15px;
+    border-right: 1px solid #ddd;
+    width: 115px;
+}
+
+#copy-history-footer .section-right .container:nth-child(2){
+    padding-left: 20px;
+    width: 85px;
+}
+
+#dashboard-container .row.chart-row{
+    height: 100%;
+	    width: 100%;
+	position: relative;
+}
+
+#statistics-pie{
+    height: 250px;
+    width: 250px;
+}
+
+.card#statistics{
+	position: relative;
+}
+
+#statistics-pie .highcharts-legend-item tspan{
+    text-anchor: middle;
+}
+
+#google-chart-img{
+    width: 100%;
+    height: 100%;
+    margin-top: 25px;
+}
+
+#sankey_basic{
+    width: 900px;
+    height: 300px;
+    margin: auto;
+}
+
+#main-pane.maximized #sankey_basic > div{
+    width: 1200px;
+}
+
+#sankey_basic > div{
+    padding-bottom: 80px;
+}

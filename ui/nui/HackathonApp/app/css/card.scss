@@ -1,0 +1,54 @@
+.card{
+    font-family: sans-serif;
+    font-size: 14px;
+    //font-family: "helvetica-bold";
+    position: relative;
+    width: 780px;
+    min-height: 300px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    //margin-top: 60px;
+    box-shadow: 1px 1px 25px gray;
+}
+
+.card .title{
+    border-bottom: 1px solid $border-color;
+    line-height: 30px;
+    padding: 10px;
+    display: inline-block;
+    width: calc(100% - 20px);
+    text-transform: uppercase;
+}
+
+.card .title span{
+    width: 25%;
+    float: left;
+    text-align: center;
+}
+
+.card .title span.add-new-idea{
+    color: $primary-color;
+    text-transform: capitalize;
+}
+
+.card .version{
+  // width: calc(100% - 20px);
+  // height: 25px;
+  // position: absolute;
+  // bottom: 0;
+  padding: 10px;
+}
+
+.main-screen .add-new-idea:hover{
+    cursor: pointer;
+}
+
+button.disabled{
+  opacity: 0.5;
+  pointer-events: none;
+}

@@ -1,0 +1,58 @@
+.wizard-main .dev-app-market{
+  width: 100%;
+  .cards-container{
+    margin-top: 50px;
+
+    .card{
+      width: 25%;
+      box-sizing: border-box;
+
+      &.selected .inside{
+        border-radius: 2px;
+        background-color: #ffffff;
+        box-shadow: 0px 2px 6px 0 rgba(12, 27, 37, 0.18);
+        border: solid 1px #479dda;
+        outline: none;
+
+        .check-icon{
+          display: inline!important;
+          right: 10px;
+          width: auto;
+        }
+      }
+
+      .inside{
+        height: 124px;
+        width: 100%;
+        border-radius: 2px;
+        background-color: #ffffff;
+        border: solid 1px #edf0f2;
+        position: relative;
+        box-shadow: none;
+
+        .card-icon{
+          position: relative;
+          margin-top: 30px;
+
+          img{
+            @include center-element;
+            width: 37px;
+            height: 37px;
+            border-radius: 50%;
+          }
+        }
+
+        span{
+          width: 100%;
+          display: inline-block;
+          text-align: center;
+          // margin-top: 25px;
+          font-size: 16px;
+          color: #565c65;
+          text-transform: capitalize;
+        }
+
+      }
+    }
+  }
+}

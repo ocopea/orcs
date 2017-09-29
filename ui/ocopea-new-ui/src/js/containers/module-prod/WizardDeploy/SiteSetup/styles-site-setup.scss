@@ -1,0 +1,135 @@
+$point-background: #2F9970;
+
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+
+  .card{
+    flex: 1 33%;
+
+    .inside{
+      margin: 15px;
+      box-shadow: 0px 1px 2px 0px rgba(4, 4, 4, 0.09);
+      border-radius: 3px;
+      background: #fff;
+      position: relative;
+
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .cardTitle{
+      border-bottom: 1px solid #e0e0e0;
+      line-height: 50px;
+      margin: auto;
+      text-align: center;
+      color: #3b3b3b;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+
+.point{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    //border: 1px solid gray;
+
+  .pointInside{
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 3px;
+    margin-left: 3.5px;
+  }
+}
+
+/* singel-site points */
+.single-site {
+  .inside {
+    .point {
+      top: 225px;
+      right: 127px;
+      width: 35px;
+      height: 35px;
+      background:  rgba($point-background, 0.5);
+      border: none;
+
+      .pointInside {
+        background: $point-background;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    }
+  }
+}
+
+/* metro points */
+.metro {
+  .inside {
+    .point {
+      .pointInside {
+        background: $point-background;
+      }
+
+      &:first-child {
+        top: 231px;
+        right: 143px;
+        width: 30px;
+        height: 30px;
+      }
+
+      &:nth-child(2) {
+        top: 216px;
+        right: 150px;
+      }
+    }
+  }
+}
+
+/* multi-region points */
+.multi-region {
+  .inside {
+    .point {
+      .pointInside {
+        background: $point-background;
+      }
+
+      &:first-child {
+        top: 198px;
+        left: 17px;
+      }
+
+      &:nth-child(2) {
+        top: 198px;
+        right: 57px;
+      }
+
+      &:nth-child(3) {
+        top: 198px;
+        right: 17px;
+      }
+
+      &:nth-child(4) {
+        top: 272px;
+        right: 17px;
+      }
+
+      &:nth-child(5) {
+        top: 211px;
+        right: 97px;
+      }
+    }
+  }
+}

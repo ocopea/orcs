@@ -1,0 +1,32 @@
+.dev-wizard{
+
+  .image{
+    width: 100%;
+
+    .icon-check-container{
+      width: 21px;
+      height: 21px;
+      background: #479dda;
+      position: absolute;
+      top: 6px;
+      border: solid 2px #e8f6fa;
+      border-radius: 50%;
+      left: 12px;
+      text-align: center;
+      display: none;
+
+      .icon-check{
+        position: absolute;
+        color: #ffffff!important;
+        font-size: 8px;
+        top: 8px;
+        bottom: 0;
+        left: 1px;
+        right: 0;
+        margin: auto;
+        font-weight: lighter;
+      }
+    }
+
+  }
+}

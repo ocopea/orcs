@@ -1,0 +1,92 @@
+.dialog.create-image{
+  @include center-element;
+  @include border-radius(3px);
+  width: 450px;
+  background-color: #ffffff;
+  box-shadow: -4px 0px 14px 0 rgba(0, 0, 0, 0.15);
+  height: 487px;
+  bottom: inherit;
+  margin-top: 125px;
+  margin-bottom: 50%;
+  overflow: auto;
+
+  .title{
+    @include dialog-title;
+    span{
+      font-weight: bold;
+    }
+  }
+
+  .inside{
+    padding: 18px;
+    width: calc(100% - 36px);
+    padding-top: 21px;
+    height: calc(100% - 87px);
+
+    section{
+      margin-bottom: 20px;
+
+      label{
+        width: 100%;
+        text-transform: capitalize;
+        display: inline-block;
+        padding-bottom: 11px;
+      }
+      input, select{
+        width: 255px;
+        height: 42px;
+        border: solid 1px #d4d6d9;
+        @include border-radius(3px);
+        padding-left: 18px;
+
+        &::-webkit-input-placeholder { font-style: italic; font-size: 14px; }
+        &::-moz-placeholder { font-style: italic; font-size: 14px;} /* firefox 19+ */
+        &:-ms-input-placeholder { font-style: italic; font-size: 14px; } /* ie */
+        &:-moz-placeholder { font-style: italic; font-size: 14px; }
+      }
+      select{
+        width: 275px;
+      }
+
+      textarea{
+        width: calc(100% - 5px);
+        height: 130px;
+        resize: none;
+        border: solid 1px #d4d6d9;
+        @include border-radius(3px);
+      }
+
+    }
+
+    .footer{
+      display: inline-block;
+      width: 100%;
+      padding: 20px 0 15px 0;
+
+      button{
+        text-transform: uppercase;
+        float: right;
+        font-size: 12px;
+        &:focus{
+          border: 1px solid black
+        }
+        &.save{
+          width: 92px;
+          height: 32px;
+          border-radius: 3px;
+          background-color: #479dda;
+          color: #ffffff;
+          margin-left: 12px;
+        }
+        &.cancel{
+          width: 92px;
+          height: 32px;
+          border-radius: 3px;
+          background-color: #e6eaed;
+          color: #6b7083;
+        }
+      }
+    }
+
+  }
+}

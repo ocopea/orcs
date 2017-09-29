@@ -1,0 +1,79 @@
+#main-screen-container{
+    display: inline-block;
+    width: 100%;
+}
+
+#main-screen-card{
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 30px;
+    position: relative;
+    width: calc(33.333333% - 30px);
+    float: left;
+    margin-bottom: -45px;
+}
+
+#main-screen-card .inside{
+    background: #373839;
+    padding: 15px;
+    min-height: 250px;
+}
+
+#main-screen-card .inside:hover{
+    cursor: pointer;
+    outline: 1px solid #553A3A;
+}
+
+.btn-expand{
+    width: 20px;
+    float: right;
+}
+
+#icon-container img,
+#icon-container{
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    margin-top: 36px;
+    margin-bottom: 20px;
+
+}
+
+#icon-container img{
+    margin-top: 0;
+}
+
+#app-name{
+    color: #8EBDCB;
+    text-align: center;
+    text-transform: uppercase
+}
+
+#app-id{
+    text-align: center;
+    color: #706F77;
+}
+
+#main-screen-card .user{
+	position: absolute;
+    width: 100%;
+    bottom: 95px;
+	line-height: 25px;
+	color: #706F77;
+}
+
+#main-screen-card .user .avatar {
+	width: 50px;
+	float: left;
+	padding-right: 10px;
+}
+
+#main-screen-card .user span{
+	display: block;
+}
+
+#main-screen-card .user .avatar img{
+	width: 100%;
+	border-radius: 50%;
+}

@@ -1,0 +1,59 @@
+.login-container{
+    width: 400px;
+    height: 486px;
+    background: #fff;
+    border-radius: 3px;	
+    position: absolute;
+}
+
+.login-container .title{
+	line-height: 60px;
+    margin: 0;
+    width: 100%;
+}
+
+.wallpaper{
+    position: absolute;
+    left: 0;
+    top: 0;   
+    width: 100%;
+    min-height: 100%;
+}
+
+.login-container .inside{
+	padding: 20px;
+}
+
+.ring-icon{
+	text-align: center;
+	padding: 50px;
+	padding-bottom: 30px;
+}
+
+.ring-icon img{
+	width: 100px;
+}
+
+.login-container .inputs input{
+	display: block;
+	margin: auto;
+	width: calc(100% - 10px);
+	height: 35px;
+	padding-left: 10px;
+	@include border-radius;
+}
+
+.forgot-password{
+	color: $primary-color;
+	float: right;
+	text-transform: capitalize;
+	line-height: 43px;
+}
+
+.remember-me{
+	line-height: 45px;
+}
+
+.login-container button{
+	width: calc(100% + 4px);
+}

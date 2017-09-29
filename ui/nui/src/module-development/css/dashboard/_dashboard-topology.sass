@@ -1,0 +1,72 @@
+.Dashboard
+  +element('inside')
+    +element('topology')
+      width: 708px
+      height: 529px
+      float: left
+      position: relative
+
+      .container
+        background: #fff!important
+
+        & .Topology__element
+          border: 1px solid #8cc9ea
+          +border-radius(3px)
+          background-color: #ffffff
+          margin: 24px 0 24px 0
+
+      +element('dynamic-load-balancer')
+        width: 255px
+        line-height: 42px
+        +border-radius(3px)
+        background-color: #f0f4fa
+        font-size: 14px
+        color: #565c65
+        +center-element
+        bottom: auto
+        margin-top: 95px
+        text-transform: capitalize
+
+        +element('span')
+          padding-left: 13px
+          font-weight: bold
+
+        +element('settings-icon')
+          float: right
+          margin-right: 13px
+          margin-top: 10px
+
+      .services-label, .dependencies-label
+        display: none
+
+      .Topology
+        margin-top: 24px!important
+
+        svg
+          height: 432px
+          margin-top: 15px
+
+        +element('container')
+          border: 1px solid #d4d6d9!important
+
+          +element('title')
+            +element('legend')
+              +element('label')
+                color: #252d3a
+                font-size: 14px
+
+//state-indicators
+circle.state-indicator
+  r: 6px
+  stroke: none
+
+  &.state-created,&.state-deploying
+    fill: #e88f41
+  &.state-failed
+    fill: #cc5669
+  &.state-deployed
+    display: none
+  &.state-bound
+    display: none
+  &.state-error-binding
+    fill: red

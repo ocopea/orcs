@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.emc.ocopea.microservice</groupId>
+        <artifactId>microservice-parent</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.emc.ocopea.microservice.samples</groupId>
+    <artifactId>microservice-samples</artifactId>
+    <name>DPA Micro Service Samples and integration tests</name>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>sample-calculator</module>
+        <module>sample-banking</module>
+        <module>sample-dev-runner</module>
+        <module>sample-platform-test</module>
+        <module>sample-schedule</module>
+    </modules>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <id>enforce-no-snapshots</id>
+                            <configuration>
+                                <rules>
+                                    <!-- since groupId is changed, snapshot dependency must be allowed for microservice's
+                                         normal groupId explicitly -->
+                                    <requireReleaseDeps>
+                                        <excludes combine.children="append">
+                                            <exclude>com.emc.ocopea.microservice:*:*:*:${project.version}</exclude>
+                                            <exclude>com.emc.ocopea.microservice:*:*:${project.version}</exclude>
+                                        </excludes>
+                                    </requireReleaseDeps>
+                                </rules>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
+

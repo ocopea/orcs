@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.emc.ocopea.hub</groupId>
+        <artifactId>hub-service-parent</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>hub-service-impl</artifactId>
+    <name>Hub Service</name>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-jaxrs</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.emc.ocopea.util</groupId>
+            <artifactId>common-util</artifactId>
+        </dependency>
+
+        <!--for now tying the hub service with a specific repo impl-->
+        <dependency>
+            <groupId>com.emc.ocopea.hub</groupId>
+            <artifactId>hub-repository-impl</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- for streaming application logs -->
+        <dependency>
+            <groupId>javax.websocket</groupId>
+            <artifactId>javax.websocket-api</artifactId>
+        </dependency>
+
+        <!-- timer api-->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>microservice-timer</artifactId>
+            <version>${ocopea.util.version}</version>
+        </dependency>
+
+        <!-- For implementing our own web api -->
+        <dependency>
+            <groupId>com.emc.ocopea.hub</groupId>
+            <artifactId>hub-java-web-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.emc.ocopea.hub</groupId>
+            <artifactId>hub-util</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- repository api -->
+        <dependency>
+            <groupId>com.emc.ocopea.hub</groupId>
+            <artifactId>hub-repository-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- For parsing copies json -->
+        <!--todo:jackson dep-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.6.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.microservice.api</groupId>
+            <artifactId>microservice-api</artifactId>
+            <version>${microservice.api.version}</version>
+        </dependency>
+
+        <!--logging api-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <!-- jax-rs api -->
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+        </dependency>
+
+        <!-- Test scope dependencies -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>microservice-test-utils</artifactId>
+            <version>${ocopea.util.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- we're using the hub schema for unit testing.. -->
+        <dependency>
+            <groupId>com.emc.ocopea.hub</groupId>
+            <artifactId>hub-repository-schema</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.emc.ocopea.hub</groupId>
+            <artifactId>hub-util</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+            <classifier>tests</classifier>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.spec.javax.servlet</groupId>
+            <artifactId>jboss-servlet-api_3.1_spec</artifactId>
+            <scope>provided</scope>
+            <version>1.0.0.Final</version>
+        </dependency>
+    </dependencies>
+</project>
+

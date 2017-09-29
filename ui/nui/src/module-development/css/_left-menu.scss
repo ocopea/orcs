@@ -1,0 +1,155 @@
+.left-menu{
+	width: 234px;
+	height: 100%;
+	background-color: #252d3a;
+	float: left;
+	//overflow: auto;
+
+		& > div{
+			height: 100%;
+		}
+
+    .top-container{
+        background-color:  #1e242f;
+        height: 101px;
+        position: relative;
+
+		button{
+			border-radius: 2px;
+			background-color:  #479dda;
+			width: 132px;
+			height: 36px;
+			text-transform: uppercase;
+			color: #fff;
+			text-align: center;
+			vertical-align: middle;
+			@include center-element;
+
+			&:active{
+				opacity: 0.5;
+			}
+
+			span{
+				position: absolute;
+				top: 10px;
+				width: 100%;
+				left: 0;
+				font-size: 14px;
+			}
+		}
+
+    }
+
+    .title{
+        text-align: left;
+
+        &.filter-by{
+            line-height: 73px;
+            text-align: left;
+            padding-left: 20px;
+            color: #fff;
+            font-size: 14px;
+            width: calc(100% - 20px);
+        }
+    }
+
+    .filter{
+        color:  #97a0af;
+        font-size: 12px;
+        text-align: left;
+        width: calc(100% - 20px);
+        line-height: 50px;
+        text-transform: uppercase;
+        margin: 0;
+        padding-left: 20px;
+
+				&:active{
+						opacity: inherit;
+				}
+
+        & .title{
+            border-top: 1px solid #2c3441;
+            margin-left: -20px;
+            padding-left: 20px;
+        }
+
+        &:nth-last-child(1){
+            .title{
+                border-bottom: 1px solid #2c3441;
+            }
+        }
+
+        .open-button,
+        .close-button{
+            right: 22px;
+						top: 25px;
+
+            span{
+                width: 5.3px;
+								height: 1px;
+								background: #4a5365;
+            }
+
+            span:nth-child(2){
+                right: 3px;
+            }
+        }
+
+        table{
+            width: 100%;
+            border-top: 1px solid #2c3441;
+            margin-left: -20px;
+
+            td{
+                vertical-align: middle;
+                text-transform: capitalize;
+
+                &:nth-child(1){
+                    padding-left: 20px;
+                }
+
+                .filter-icon{
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 3px;
+                    border: 1px solid gray;
+
+                    .point{
+                        display: none;
+                    }
+                }
+            }
+
+            tr.selected{
+                color: #fff;
+								td.appType .filter-icon{
+									background: $appType-filter-background;
+									border: 1px solid $appType-filter-background;
+								}
+								td.users .filter-icon{
+									background: $users-filter-background;
+									border: 1px solid $users-filter-background;
+								}
+								td.services .filter-icon{
+									background: $services-filter-background;
+									border: 1px solid $services-filter-background;
+								}
+                .filter-icon{
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 3px;
+                    position: relative;
+
+                    .point{
+                        display: block;
+                        border-radius: 50%;
+                        background-color:  #ffffff;
+                        width: 6px;
+                        height: 6px;
+                        @include center-element;
+                    }
+                }
+            }
+        }
+    }
+}

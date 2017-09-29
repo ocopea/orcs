@@ -1,0 +1,56 @@
+.indicator{
+    margin-top: 40px;
+    background-color: #f2f2f2;
+    height: 20px;
+    float: left;
+    width: 100%;
+}
+
+.indicator .block{
+    background-color:  #83bd5c;
+    height: 100%;
+    float: left;
+    width: 5%;
+}
+
+.business-critical.indicator .block:nth-child(1),
+.business-critical.indicator .block:nth-child(2){
+    width: 7%;
+    margin-right: 15%;
+}
+
+.business-critical.indicator .block:nth-child(3),
+.business-critical.indicator .block:nth-child(4){
+    width: 5%;
+    margin-right: 20px;
+}
+
+.business-critical.indicator .block:nth-child(5){
+    width: 23.3%;
+    float: right;
+}
+
+.img-repeat{
+    width: 19px;
+    margin-left: 31%;
+    margin-top: 3px;
+}
+
+/* tier-2 indicator */
+.tier-2.indicator .block{
+    width: 7%;
+    margin-right: 24%;
+}
+
+.tier-2.indicator .block:nth-last-child(1){
+    margin-right: 0;
+}
+
+/* custom indicator */
+.custom.indicator .block{
+    width: 23px;
+    margin: auto;
+    margin-top: -1px;
+    float: none;
+    border: 1px solid #fff;
+}

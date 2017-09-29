@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.emc.ocopea.hub</groupId>
+        <artifactId>hub-service-parent</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>hub-java-web-api</artifactId>
+    <name>Hub Web API</name>
+
+    <dependencies>
+
+        <!-- funny wrong dependency on site api -->
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>site-web-api</artifactId>
+            <version>${ocopea.site.version}</version>
+        </dependency>
+
+        <!-- For implementing rest resources -->
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+        </dependency>
+
+    </dependencies>
+</project>
+

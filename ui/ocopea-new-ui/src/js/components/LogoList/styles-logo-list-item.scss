@@ -1,0 +1,70 @@
+.LogoListItem {
+  display: flex;
+  line-height: 66px;
+  height: 66px;
+  border-bottom: 1px solid #ccc;
+
+  &:hover {
+    cursor: pointer;
+    background: #edfbff;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.logoSection {
+  flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.logoCircle {
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  background: #eeeeee;
+  position: relative;
+  top: 9px;
+  margin: 0 28px 0 24px;
+}
+
+.logoImage {
+  position: relative;
+  width: 100%;
+  //top: -8px;
+  //left: -1px;
+}
+
+.nameSection {
+  flex: 2;
+  font-size: 18px;
+  color: #4c515e;
+  font-weight: 500;
+}
+
+.descriptionSection {
+  flex: 5;
+  color: #858d99;
+  font-size: 13px;
+}
+
+.iconsSection {
+  flex: 2;
+  width: 100%;
+  text-align: right;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding-right: 15px;
+}
+
+.icon {
+  font-size: 18px;
+  margin: 10px;
+  top: 3px;
+  position: relative;
+}

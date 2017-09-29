@@ -1,0 +1,52 @@
+.Integrations-config
+  width: 838px
+  margin: auto
+  padding-top: 36px
+
+  +element('title')
+    +wizard-title
+    text-transform: uppercase
+
+  +element('sub-title')
+    color: #6b7083
+    font-size: 14px
+    padding-bottom: 30px
+    &::first-letter
+      text-transform: capitalize
+
+  +element('integrations')
+    border: solid 1px #d4d6d9
+    border-radius: 3px
+
+    +element('integration')
+      line-height: 66px
+      border-bottom: 1px solid #edf0f2
+      padding-left: 25px
+      width: calc(100% - 25px)
+      display: flex
+      &:hover
+        background: #edfbff
+        cursor: pointer
+
+      +modifier('last')
+        border-bottom: none
+
+      +element('icon')
+        display: inherit
+
+        +element('img')
+          width: 50px
+          height: 50px
+          margin-top: 7px
+
+          +modifier('jira')
+            border-radius: 100%
+            border: 1px solid #edf0f2
+
+      +element('name')
+        padding: 0 10px 0 10px
+        font-weight: bold
+
+      +element('description')
+        color: #858d99
+        font-size: 13px

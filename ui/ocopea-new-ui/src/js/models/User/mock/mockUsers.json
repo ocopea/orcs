@@ -1,0 +1,72 @@
+[
+  {
+    "id": "80ca06ab-fa1a-3104-af9a-770f485dad07",
+    "name": "ford",
+    "firstName": "Henry",
+    "lastName": "Ford",
+    "email": "henry@ford.com"
+  },
+  {
+    "id": "0dd243d0-5933-369b-b600-9927d8ab1f95",
+    "name": "bethp",
+    "firstName": "Elizabeth",
+    "lastName": "Phalen",
+    "email": "elizabeth.phalen@emc.com"
+  },
+  {
+    "id": "3a190eb5-2392-35ba-a882-56a7f3cbd9f9",
+    "name": "jimc",
+    "firstName": "Jim",
+    "lastName": "Clancy",
+    "email": "jim.clancy@emc.com"
+  },
+  {
+    "id": "d12e1cfe-8eb9-3b0a-9517-1728c89d3c37",
+    "name": "yariv",
+    "firstName": "Yariv",
+    "lastName": "Yaari",
+    "email": "yariv.yaari@emc.com"
+  },
+  {
+    "id": "555144bd-b045-3ecf-a18b-4bbdccbb8c3d",
+    "name": "maloni",
+    "firstName": "Matan",
+    "lastName": "Rubin",
+    "email": "matan.rubin@dell.com"
+  },
+  {
+    "id": "47a02f1a-5d54-312c-960f-f7db8cc88aa5",
+    "name": "frumi",
+    "firstName": "Frumi",
+    "lastName": "",
+    "email": "roni.frumkes@emc.com"
+  },
+  {
+    "id": "e5a1e8e8-3239-385d-bff0-270cc3540579",
+    "name": "galb",
+    "firstName": "Gal",
+    "lastName": "Ben Haim",
+    "email": "galb.netcraft@co.il"
+  },
+  {
+    "id": "c1873172-1983-32c1-b6dc-435447321e60",
+    "name": "shpandrak",
+    "firstName": "Amit",
+    "lastName": "Lieberman",
+    "email": "amit.lieberman@emc.com"
+  },
+  {
+    "id": "02a08433-d06b-3d41-a1f2-7179de60584c",
+    "name": "shilpa",
+    "firstName": "Shilpa",
+    "lastName": "Parulekar",
+    "email": "shilpa.parulekar@dell.com"
+  },
+  {
+    "id": "1970eb6d-2498-3b86-a3a8-dad510c6c057",
+    "name": "stanly",
+    "firstName": "Stephen",
+    "lastName": "Manley",
+    "email": "stephen.manley@dell.com"
+  }
+]

@@ -1,0 +1,14 @@
+.Add-cr-dialog
+  @extend .Add-dsb-dialog
+
+  +element('title')
+    @extend .Add-dsb-dialog__title
+
+    +element('icon-close')
+      @extend .Add-dsb-dialog__title__icon-close
+
+  +element('inside')
+    @extend .Add-dsb-dialog__inside
+
+    +element('footer')
+      @extend .Add-dsb-dialog__inside__footer

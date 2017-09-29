@@ -1,0 +1,49 @@
+.table {
+  width: 100%;
+  border: solid 1px #d4d6d9;
+  border-radius: 3px;
+
+  thead {
+    background-color: #f7f9fc;
+    line-height: 42px;
+    text-align: left;
+
+    tr {
+      th {
+        text-transform: uppercase;
+        color: #595e64;
+        font-weight: bold;
+        font-size: 12px;
+
+        :global {
+          .icon-arrow-sort {
+            margin-left: 10px;
+            font-size: 11px;
+          }
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid #edf0f2;
+      height: 67px;
+
+      &:nth-last-child(1) {
+        border: none;
+      }
+
+      td {
+        vertical-align: middle;
+        color: #858d99;
+        font-size: 13px;
+        text-transform: capitalize;
+
+        &:nth-child(1) {
+          text-align: center;
+        }
+      }
+    }
+  }
+}

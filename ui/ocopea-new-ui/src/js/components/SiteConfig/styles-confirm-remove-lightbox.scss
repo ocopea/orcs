@@ -1,0 +1,30 @@
+.ConfirmRemoveLightbox {
+  width: 500px;
+  height: 250px;
+  background: #fff;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
+
+  .content {
+    color: #6b7083;
+    font-size: 14px;
+    line-height: 1.21;
+    margin-bottom: 5px;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      margin-left: 15px;
+    }
+  }
+}
+
+

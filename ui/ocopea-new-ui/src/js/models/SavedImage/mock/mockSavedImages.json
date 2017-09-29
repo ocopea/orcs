@@ -1,0 +1,46 @@
+[
+  {
+    "id": "c4b13295-e631-45cc-961e-8394daf6cc53",
+    "name": "testImage2",
+    "appTemplateId": "2c2f1c71-e923-4482-9a76-83ec67f38ed6",
+    "creatorUserId": "0dd243d0-5933-369b-b600-9927d8ab1f95",
+    "state": "running",
+    "creationTime": 1495809637634,
+    "baseImageId": "c4b13295-e631-45cc-961e-8394daf6cc53",
+    "description": "whatever",
+    "tags": ["single tag"]
+  },
+  {
+    "id": "1e09417f-410d-4304-b14d-997daa381987",
+    "name": "testImage1",
+    "appTemplateId": "477be0be-b621-4563-ab57-b0dc905a1969",
+    "creatorUserId": "c1873172-1983-32c1-b6dc-435447321e60",
+    "state": "running",
+    "creationTime": 1495828074700,
+    "baseImageId": "c4b13295-e631-45cc-961e-8394daf6cc53",
+    "description": "another one",
+    "tags": ["foo", "bar", "baz", "whatever"]
+  },
+  {
+    "id": "001",
+    "name": "testImage3",
+    "appTemplateId": "b26a72c7-0fee-47e5-9695-83e036045646",
+    "creatorUserId": "c1873172-1983-32c1-b6dc-435447321e60",
+    "state": "running",
+    "creationTime": 1495228074700,
+    "baseImageId": "c4b13295-e631-45cc-961e-8394daf6cc53",
+    "description": "so many mocks",
+    "tags": ["tag1", "tag2", "tag3", "tag4", "tag5", "tag6", "tag7", "tag8", "tag9", "tag10"]
+  },
+  {
+    "id": "002",
+    "name": "testImage4",
+    "appTemplateId": "2c74cfe9-1dce-4de7-a673-e5c0e4ab91e1",
+    "creatorUserId": "c1873172-1983-32c1-b6dc-435447321e60",
+    "state": "running",
+    "creationTime": 1495228074700,
+    "baseImageId": "c4b13295-e631-45cc-961e-8394daf6cc53",
+    "description": "what's the point?",
+    "tags": ["a-ridicilously-long-tag,-I-really-don't-know-why-it's-a-tag,-but-nothing-prevents-me-from-writing-such-a-long-tag"]
+  }
+]

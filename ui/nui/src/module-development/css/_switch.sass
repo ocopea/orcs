@@ -1,0 +1,56 @@
+.Switch
+  width: 56px
+  height: 28px
+  border-radius: 14px
+  background-color: #ffffff
+  border: solid 1px #d4d6d9
+  float: right
+  margin-top: 8px
+
+  +element('dot')
+    width: 24px
+    height: 24px
+    background-color: #479dda
+    box-shadow: 0px 2px 4px 0 rgba(12, 27, 37, 0.15)
+    +border-radius(50%)
+    display: inline-block
+    transition: 0.4s
+    position: relative
+
+    +element('on')
+      margin: 2px 0 2px 30px
+      span:nth-child(1)
+        width: 5px
+        height: 2px
+        top: 13px
+        left: 6px
+        transform: rotate(45deg)
+
+      span:nth-child(2)
+        width: 10px
+        height: 2px
+        top: 11px
+        left: 8px
+        transform: rotate(-45deg)
+
+    +element('off')
+      margin: 2px 0 2px 2px
+      background: #cc5669
+      span
+        top: 11px
+        left: 7px
+        width: 10px
+
+      span:nth-child(1)
+        transform: rotate(45deg)
+
+      span:nth-child(2)
+        transform: rotate(-45deg)
+
+    +element('icon')
+
+      span
+        position: absolute
+        height: 2px
+        background: #fff
+        display: inline-block

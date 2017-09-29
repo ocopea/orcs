@@ -1,0 +1,108 @@
+.Logs{
+  border-radius: 3px;
+  background-color: #ffffff;
+  border: solid 1px #d4d6d9;
+  margin-top: 24px;
+
+  .title{
+    line-height: 48px;
+  	background-color: #f7f9fc;
+  	text-align: left;
+  	padding-left: 18px;
+  	font-size: 12px;
+  	font-weight: 500;
+  	color: #595e64;
+  	border-top-left-radius: 3px;
+  	border-top-right-radius: 3px;
+    text-transform: uppercase;
+    padding-left: 24px;
+    width: calc(100% - 24px);
+  }
+
+  .filters{
+    padding: 15px;
+    padding-left: 15px;
+    box-shadow: 0px 4px 4px 0 rgba(12, 27, 37, 0.09);
+    display: inline-block;
+    width: calc(100% - 29px);
+
+    .filter{
+      float: left;
+      line-height: 26px;
+      height: 26px;
+      border-radius: 3px;
+      border: 1px solid #62ade1;
+      flex: 1;
+      padding: 0 10px 0 9px;
+      margin: 10px;
+      background: #43ab60;
+      color: #ffffff;
+      text-transform: capitalize;
+      font-size: 11px;
+      &:hover{
+        cursor: pointer;
+      }
+      &[class*="disabled"]{ opacity: 0.5; }
+    }
+  }
+
+  /* search logs select */
+  .elasticSearch{
+    width: 120px!important;
+    height: 26px;
+    border: solid 1px #43ab60;
+    border-radius: 3px;
+    padding: 0 10px 0 10px;
+    margin: 10px 20px 0 10px;
+    display: inline-block;
+  }
+
+  .btnSeeAll{
+    width: 59px;
+    height: 29px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    border: solid 1px #565c65;
+    position: relative;
+  }
+
+  .inside{
+    padding: 24px;
+    height: 200px;
+    overflow: auto;
+    font-family: monospace;
+    background: #000;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+
+  .log{
+    line-height: 20px;
+    color: #fff;
+    padding-bottom: 10px;
+
+    .sourceNameSys{
+        color: #49a8d5
+    }
+    .type{
+      text-transform: uppercase;
+    }
+    .error{
+      color: #fff;
+    }
+    .success{
+      color: #fff;
+    }
+
+    .tag{ color: #fff }
+    :global{
+      .heighlight{
+        background: #fff;
+        color: #000;
+      }
+      .beginning{
+        padding-left: 10px;
+      }
+    }
+  }
+}

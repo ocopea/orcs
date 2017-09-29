@@ -1,0 +1,153 @@
+#plans-container{
+    padding-top: 20px;
+    float: left;
+    width: 100%;
+    height: 270px;
+}
+
+#plans-container ul{
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+
+#plans-container ul li{
+    height: 100%;
+    width: calc(33.3333% - 7px);
+    float: left;
+    height: 100%;
+}
+
+#plans-container ul li:nth-child(2){
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.business-continuity-plan{
+    height: 100%;
+}
+
+.business-continuity-plan .inside{
+    background: #fafafa;
+    padding: 10px;
+    height: 100%;
+    box-shadow: 0px 1px 2px 0px rgba(4, 4, 4, 0.09);
+    border-radius: 2px;
+}
+
+.business-continuity-plan .inside:hover{
+    cursor: pointer;
+    outline: 1px solid #91c7e5;
+}
+
+.business-continuity-plan .inside .title{
+    padding-top: 20px;
+}
+
+.business-continuity-plan .inside:hover{
+    cursor: pointer;
+}
+
+.business-continuity-plan.selected .inside{
+    box-shadow: $selected-card-shaddow;
+    outline: 1px solid #91c7e5;
+}
+
+.business-continuity-plan .inside .details{
+    float: right;
+    width: 100%;
+    text-align: right;
+    color:  #5c9abd;
+    font-size: 13px;
+    text-decoration: underline;
+}
+
+.details:hover{
+    cursor: pointer;
+}
+
+.business-continuity-plan .icon{
+    text-align: center;
+    background: #ddd;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.icon img{
+    padding-top: 15px;
+}
+
+.icon.plan-img-business img{
+    padding-right: 5px;
+}
+
+.icon.plan-img-tier2 img{
+    padding-top: 18px;
+}
+
+.business-continuity-plan .description{
+    padding-top: 20px;
+    text-align: center;
+}
+
+/* Indicator Line */
+.business-continuity-plan .indicator{
+    margin-top: 40px;
+    background-color: #f2f2f2;
+    height: 20px;
+    float: left;
+    width: 100%;
+}
+
+.indicator .block{
+    background-color:  #83bd5c;
+    height: 100%;
+    float: left;
+    width: 5%;
+}
+
+/* business critical line */
+.business-critical.indicator .block:nth-child(1),
+.business-critical.indicator .block:nth-child(2){
+    width: 7%;
+    margin-right: 15%;
+}
+
+.business-critical.indicator .block:nth-child(3),
+.business-critical.indicator .block:nth-child(4){
+    width: 5%;
+    margin-right: 20px;
+}
+
+.business-critical.indicator .block:nth-child(5){
+    width: 23.3%;
+    float: right;
+}
+
+.img-repeat{
+    width: 19px;
+    margin-left: 31%;
+    margin-top: 3px;
+}
+
+/* tier-2 indicator */
+.tier-2.indicator .block{
+    width: 7%;
+    margin-right: 24%;
+}
+
+.tier-2.indicator .block:nth-last-child(1){
+    margin-right: 0;
+}
+
+/* custom indicator */
+.custom.indicator .block{
+    width: 23px;
+    margin: auto;
+    margin-top: -1px;
+    float: none;
+    border: 1px solid #fff;
+}

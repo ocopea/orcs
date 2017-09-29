@@ -1,0 +1,29 @@
+.Dashboard
+  +element('inside')
+    +element('topology')
+      +element('title')
+        +dialog-title
+        text-transform: uppercase
+        color: #595e64
+
+        +element('span')
+          font-weight: 500
+
+        +element('legend')
+          width: 205px
+          float: right
+          text-transform: capitalize
+
+          +element('application')
+            width: 60%
+
+          +element('service')
+            width: 40%
+
+          +element('box')
+            float: left
+
+            +element('span')
+              font-weight: 500
+              color: #252d3a
+              font-size: 14px

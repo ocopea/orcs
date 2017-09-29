@@ -1,0 +1,126 @@
+.Share-image-dialog
+  +center-element
+  width: 498px
+  height: 405px
+  background-color: #ffffff
+  box-shadow: 0px 4px 14px 0 rgba(0, 0, 0, 0.15)
+  +border-radius(3px)
+
+  +element('title')
+    +dialog-title
+    border-top-left-radius: 3px
+    border-top-right-radius: 3px
+    text-transform: uppercase
+    padding-left: 24px
+    width: calc(100% - 24px)
+
+    +element('span')
+      font-weight: 500
+
+  +element('inside')
+    padding: 24px
+    height: calc(100% - 96px)
+    text-align: center
+
+    +element('msg')
+      font-size: 18px
+      color: #354151
+      line-height: 24px
+      &::first-letter
+        text-transform: capitalize
+
+      +element('span')
+        // font-weight: 500
+
+      +element('second-line')
+        +element('image-name')
+          span
+            font-weight: 500
+
+    +element('icons-container')
+      width: 350px
+      height: 60px
+      margin: auto
+      display: flex
+      justify-content: space-around
+      padding-top: 38px
+
+      +element('icon')
+        box-shadow: 0px 2px 6px 0 rgba(0, 0, 0, 0.15)
+        width: 60px
+        height: 60px
+        +border-radius(50%)
+        position: relative
+        float: left
+
+        & img
+          max-width: 100%
+
+        & .settings-icon-container
+          width: 25px
+          height: 25px
+          background: #ccc!important
+          border-radius: 100%
+          position: absolute
+          top: -6px
+          left: -13px
+          & .icon-settings
+            position: absolute
+            font-size: 15px
+            color: #fff!important
+            +center-element
+            top: 5px
+          &.disabled
+
+        +modifier('second')
+          background: #1e88e5
+
+        +modifier('third')
+          background: #d9dee1
+
+        +element('image')
+          svg
+            width: 33px
+            position: absolute
+            +center-element
+
+    +element('input-container')
+      padding-top: 42px
+      height: 42px
+
+      +element('input')
+        width: 338px
+        height: 100%
+        padding-left: 13px
+        float: left
+        border-top-left-radius: 3px
+        border-bottom-left-radius: 3px
+        border: solid 1px #a9b5c8
+        border-right: none
+        color: #a9b5c8
+        font-size: 12px
+
+      +element('button')
+        width: 97px
+        background: #479dda
+        height: 46px
+        float: left
+        border-top-right-radius: 3px
+        border-bottom-right-radius: 3px
+        color: #ffffff
+        font-size: 12px
+        text-transform: uppercase
+
+    +element('button-dismiss')
+      background-color: #e6eaed
+      width: 116px
+      line-height: 32px
+      text-transform: uppercase
+      color: #6b7083
+      font-size: 12px
+      font-weight: 500
+      position: absolute
+      bottom: 24px
+      left: 0
+      right: 0
+      margin: auto

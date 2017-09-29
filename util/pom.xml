@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Copyright (c) 2002-2016 EMC Corporation All Rights Reserved -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.emc.ocopea.orcs</groupId>
+        <artifactId>orcs-parent</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.emc.ocopea.util</groupId>
+    <artifactId>util-parent</artifactId>
+    <name>Utilities Parent</name>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>native-query-service</module>
+        <module>common-util</module>
+        <module>db-junit-support</module>
+        <module>workflow</module>
+        <module>postgres-util</module>
+        <module>rest-util</module>
+        <module>persistent-messaging</module>
+        <module>persistent-scheduler</module>
+        <module>json-util</module>
+        <module>microservice-api</module>
+        <module>microservice</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>2.7.22</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

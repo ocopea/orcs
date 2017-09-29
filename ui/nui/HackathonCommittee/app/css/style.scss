@@ -1,0 +1,34 @@
+@import "variables";
+@import "mixins";
+@import "reset";
+@import "type";
+@import "card";
+@import "card-main";
+@import "card-add-new-idea";
+@import "properties";
+@import "errorDialog";
+@import "card-idea-details";
+
+
+body {
+    font-family: "sans-serif";
+    //font-family: "helvetica";
+	background: $background-color;
+}
+
+#app{
+	height: 100%;
+}
+
+#app > div{
+	height: 100%;
+}
+
+#app > div.dimmed{
+	background: #000;
+}
+
+.wrapper{
+	padding-top: 60px;
+  padding-bottom: 60px;
+}

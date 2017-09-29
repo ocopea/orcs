@@ -1,0 +1,157 @@
+.Card{
+  width: 30.6%;
+  height: 375px;
+  border: solid 1px #d4d6d9;
+  border-radius: 3px;
+  margin: 15px;
+  float: left;
+
+  .inside{
+    padding: 13px;
+    position: relative;
+    height: 92%;
+
+    .header{
+      display: flex;
+      justify-content: space-between;
+
+      .dataCreated{
+        color: #858d99;
+        font-size: 13px;
+        margin-top: 1px;
+
+        .icon{
+          position: relative;
+          top: 3px;
+          left: -7px;
+        }
+      }
+
+      .creator{
+        display: flex;
+        line-height: 25px;
+        justify-content: space-between;
+        width: 125px;
+        position: relative;
+
+        .creatorName{
+          position: relative;
+          color: #858d99;
+          font-size: 13px;
+          @extend .textOverflow;
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+      }
+    }
+
+    .logo{
+      width: 55px;
+      height: 55px;
+      border-radius: 100%;
+      background: #ddd;
+      position: relative;
+      top: 49px;
+      right: 0;
+      left: 0;
+      margin: auto;
+      text-align: center;
+
+      .logoImg{
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+      }
+
+      .iconOpenAppContainer{
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background: #fff;
+        top: 3px;
+        right: 3px;
+        border-radius: 100%;
+        #iconOpenApp{
+          position: absolute;
+          right: 0;
+          top: 1px;
+          font-size: 9px;
+          transition: 0.8s;
+        }
+        &:hover{
+          #iconOpenApp{
+            font-size: 15px;
+            color: #858d99;
+            position: relative;
+            right: -15px;
+            top: -10px;
+          }
+        }
+      }
+
+      .instanceName{
+        color: #565c65;
+        font-size: 16px;
+        width: 100px;
+        position: relative;
+        left: -23px;
+        font-weight: bold;
+        @extend .textOverflow;
+      }
+    }
+
+  }
+}
+
+::i-block-chrome, .header {
+ display: -webkit-box;
+ -webkit-box-pack: justify;
+}
+
+.textOverflow{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+::i-block-chrome, .creator {
+ display: -webkit-box;
+ -webkit-box-pack: space-between;
+}
+
+.Sumup{
+  position: absolute;
+  bottom: 13px;
+  display: flex;
+  justify-content: space-between;
+  width: 94%;
+  line-height: 25px;
+
+  > div{
+    width: 50%;
+    text-align: center;
+  }
+
+  .numberOfServices, .numberOfInfraServices{
+    color: #565c65;
+    font-size: 15px;
+    [class="precent"]{
+      color: #8cc9ea;
+      font-size: 14px;
+    }
+    text-transform: uppercase;
+  }
+}
+
+::i-block-chrome, .Sumup {
+ display: -webkit-box;
+ -webkit-box-pack: space-between;
+}
+
+[id='minimize']{
+  .Card{
+    width: 30.16%;
+    height: 316px;
+  }
+}

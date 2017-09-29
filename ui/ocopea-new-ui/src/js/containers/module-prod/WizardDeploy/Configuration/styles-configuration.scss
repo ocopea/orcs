@@ -1,0 +1,45 @@
+.Configuration{
+
+  .inputInstanceName{
+    position: relative;
+    input{
+      padding: 10px 0 0 25px;
+      border: none;
+      border-bottom: 1px solid #91aaa1;
+      background: inherit;
+      line-height: 42px;
+      outline: none;
+    }
+
+    [class="icon-edit"]{
+      position: absolute;
+      bottom: 14px;
+    }
+  }
+
+  .selects{
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    section{
+      flex: 0 32%;
+
+      label{
+        font-weight: 600;
+        padding-bottom: 5px;
+        color: #3b3b3b;
+        display: inline-block;
+        text-transform: capitalize;
+        font-size: 14px;
+      }
+    }
+    [class="Select-placeholder"], [class="Select-menu-outer"]{
+      color: #6b7083!important;
+    }
+  }
+  [class="Topology"] {
+    padding-top: 45px;
+  }
+}

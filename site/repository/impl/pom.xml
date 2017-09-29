@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.emc.ocopea.site</groupId>
+        <artifactId>site-repository-parent</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>site-repository-impl</artifactId>
+    <name>Site Repository Implementations</name>
+
+    <dependencies>
+
+        <!-- site api is part of the events we need -->
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>site-web-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- using site repository-->
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>site-repository-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>site-domain</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!--  Using NQS to query the db-->
+        <dependency>
+            <groupId>com.emc.ocopea.util</groupId>
+            <artifactId>native-query-service</artifactId>
+        </dependency>
+
+        <!-- pg specific - need to move to util -->
+        <dependency>
+            <groupId>com.emc.ocopea.util</groupId>
+            <artifactId>postgres-util</artifactId>
+            <version>${ocopea.util.version}</version>
+        </dependency>
+
+
+        <!-- using schema in tests scope to run tests -->
+        <dependency>
+            <groupId>com.emc.ocopea.site</groupId>
+            <artifactId>site-repository-schema</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.util</groupId>
+            <artifactId>db-junit-test-support</artifactId>
+            <version>${ocopea.util.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>microservice-runtime</artifactId>
+            <version>${ocopea.util.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
+

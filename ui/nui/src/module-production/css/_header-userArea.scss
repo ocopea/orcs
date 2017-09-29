@@ -1,0 +1,72 @@
+ul#user-area{
+	float: right;
+    display: table-row;
+    position: absolute;
+    right: 18px;
+    top: 9px;
+}
+
+ul#user-area li{
+	float: left;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+ul#user-area li img{
+	vertical-align: middle;
+}
+
+ul#user-area li:nth-child(n+2){
+	padding-left: 20px;
+}
+
+.username-container img.avatar{
+    width: 32px;
+    border-radius: 50%;
+    float: left;
+	margin-right: 5px;
+	margin-top: 4px;
+}
+
+.username-container #user-default-img{
+    padding-top: 2px;
+    float: left;
+}
+
+.username-container img:hover{
+    cursor: pointer;
+}
+
+.notifications{
+	position: relative;
+}
+
+.notifications .notifications-circle{    
+    background: red;
+    position: absolute;
+    top: 8px;
+    right: -2px;
+    width: 10px;
+    font-size: 15px;
+    height: 10px;
+    text-align: center;
+    border-radius: $padding-inside;
+}
+
+.notifications-circle span{
+    position: absolute;
+    top: -14.87px;
+    left: 2.5px;
+    font-size: 9px;
+    color: #fff;
+}
+
+
+.logout{
+
+}
+
+.logout:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}

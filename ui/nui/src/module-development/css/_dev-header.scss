@@ -1,0 +1,168 @@
+.development .header{
+    width: calc(100% - 234px);
+    float: right;
+    height: 60px;
+  	box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+  	font-size: 13px;
+    color: #555c65;
+    position: relative;
+    z-index: 999;
+
+	& .header-inside{
+		padding: 10px;
+		width: calc(100% - 20px);
+        height: calc(100% - 20px);
+
+        .title{
+            width: 125px;
+            height: 100%;
+            display: inline-flex;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-right: 1px solid #d4d6d9;
+
+            .triangle {
+                width: 0;
+                height: 0;
+                border-top: 7px solid transparent;
+                border-bottom: 7px solid rgba(77, 26, 26, 0);
+                border-right: 7px solid #ccc;
+                -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+                position: absolute;
+                right: -7px;
+                top: 23px;
+            }
+
+            .inner-triangle {
+                position: relative;
+        				top: -6px;
+        				left: 1.2px;
+                width: 0;
+                height: 0;
+                border-top: 6.5px solid transparent;
+                border-bottom: 6.5px solid transparent;
+                border-right: 6.5px solid white;
+            }
+
+            .content{
+                line-height: 61px;
+                width: 100%;
+                text-align: left;
+            }
+
+        }
+
+        .icons{
+            height: 100%;
+            width: 160px;
+            float: left;
+            border-right: 1px solid #d4d6d9;
+            padding-right: 17px;
+
+            [class^="icon-"], [class*=" icon-"]{
+                float: left;
+                padding-top: 23px;
+                padding-left: 25px;
+            }
+
+            .dev-header-icon{
+              font-size: 15px;
+              float: right;
+            }
+
+            .settings-tooltip{
+                right: 174px;
+
+                [class^="icon-"], [class*=" icon-"]{
+                  padding: 0;
+                }
+
+                .icon-save{
+                  // font-size: 16px;
+                }
+
+                .icon-reports.s-menu{
+                  padding-top: 2.5px;
+                }
+
+            }
+
+        }
+
+
+        & .subtitle{
+            position: absolute;
+            left: 158px;
+            top: 11px;
+            text-transform: uppercase;
+            font-size: 13px;
+            color: #555c65;
+        }
+
+        .user-area{
+            width: 385px;
+            position: absolute;
+            height: 100%;
+            right: 0;
+            top: 0;
+
+            .username-container{
+                width: 199px;
+                height: 100%;
+                float: left;
+                line-height: 60px;
+
+                .avatar{
+                    margin-top: 15px;
+                    margin-left: 22px;
+                    margin-right: 10px;
+                }
+
+                & .open-user-menu{
+                  width: 125px;
+                  height: 18px;
+                  position: absolute;
+                  top: 21px;
+                  right: 23px;
+                  &:hover{
+                    cursor: pointer;
+                  }
+                }
+
+                .open-button,
+                .close-button{
+                  margin: 30px 26px 0 0;
+                }
+            }
+
+        }
+
+    }
+
+    #menu-btn{
+        background: inherit;
+        padding: 6px;
+        padding-left: 2px;
+        margin-top: 9px;
+        margin-left: 24px;
+        margin-right: 18px;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: -5px;
+        margin-top: 21px;
+        width: 0;
+        height: 0;
+        border-right: 7px solid #fff;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+    }
+}
+
+.development .header.maximized{
+    width: 100%;
+}

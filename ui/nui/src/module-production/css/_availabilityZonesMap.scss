@@ -1,0 +1,51 @@
+svg {
+  pointer-events: all;
+}
+
+#availability-zones-map {
+  overflow: hidden;
+}
+
+.sphere,
+.graticule {
+  //stroke: #568EAE;
+}
+
+#availability-zones-map{
+    position: relative;
+}
+
+#availability-zones-container{
+	height: 100%;
+	position: relative;
+}
+
+.locationOuterPoints{
+    r: 8px;
+    fill: red;
+    fill-opacity: 0.3;
+}
+
+.locationInnerPoints{
+    r: 4px;
+    fill: blue;
+}
+
+.map-tooltip{
+  text-transform: capitalize;
+}
+
+.map-tooltip:after{
+	position: absolute;
+	top: 100%;
+	width: 60px;
+	height: 120px;
+	background-size: 100%;
+	content: '';
+	transition: transform 0.3s;
+	transform-origin: 50% 0;
+}
+
+.map-tooltip:before{
+
+}

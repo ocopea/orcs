@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.emc.ocopea.orcs</groupId>
+        <artifactId>orcs-parent</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>orcs-deployer-parent</artifactId>
+    <packaging>pom</packaging>
+
+    <properties>
+        <ocopea.util.version>${project.version}</ocopea.util.version>
+        <ocopea.site.version>${project.version}</ocopea.site.version>
+        <ocopea.hub.version>${project.version}</ocopea.hub.version>
+        <ocopea.ui.version>${project.version}</ocopea.ui.version>
+        <ocopea.shpancrb.version>${project.version}</ocopea.shpancrb.version>
+    </properties>
+    <modules>
+        <module>k8s-tools</module>
+        <module>orcs-docker-image</module>
+        <module>test-scenarios</module>
+        <module>single-jar</module>
+    </modules>
+
+
+</project>
+

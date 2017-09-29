@@ -1,0 +1,52 @@
+.Header{
+  box-shadow: 1px 1px 5px gray;
+  background: #fff;
+  width: calc(100% - 17px);
+  line-height: 63px;
+  padding: 0 17px;
+  position: relative;
+  display: flex;
+  padding-right: 0;
+
+  [class*="icon-hamburger"]{
+    line-height: 63px;
+  }
+
+  .logoContainer{
+    width: 50px;
+    padding-right: 30px;
+    img{
+      max-width: 100%;
+      position: relative;
+      top: 1px;
+      right: -15px;
+    }
+  }
+
+  .breadCrumbs{
+    width: 750px;
+  }
+
+  .rightSection{
+    display: flex;
+    .loggedInUser{
+      #avatar{
+        position: relative;
+        top: 13px;
+        margin-right: 10px;
+      }
+      .userName{
+        font-size: 13px;
+        color: #858d99;
+      }
+    }
+    .icons{
+      padding-left: 20px;
+      [class^="icon-"]{
+        position: relative;
+        top: 3px;
+        margin: 10px;
+      }
+    }
+  }
+}

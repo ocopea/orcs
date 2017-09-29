@@ -1,0 +1,13 @@
+.ProgressBar{
+  & > div{
+    margin-top: -3px;
+    & svg g{
+      & rect:nth-child(1){
+        width: 100%;
+        height: 6.5px;
+        float: left;
+        fill: #ebeff5;
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "parser": "babel-eslint", // https://github.com/babel/babel-eslint
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
+  "globals": {
+    "expect": true,
+    "sinon": true,
+    "__DEV__": true
+  },
+  "settings": {
+    "ecmascript": 6,
+    "jsx": true
+  }
+}

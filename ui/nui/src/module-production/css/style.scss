@@ -1,0 +1,101 @@
+@import "_variables";
+@import "_mixins.scss";
+@import "_reset";
+@import "_type";
+@import "_header.scss";
+@import "_properties.scss";
+@import "_menuLeft.scss";
+@import "_menuRight.scss";
+@import "_mainPane.scss";
+@import "_card.scss";
+@import "_buttons.scss";
+@import "_hamburger.scss";
+@import "_header-breadcrumbs.scss";
+@import "_header-userArea.scss";
+@import "_components.scss";
+@import "_siteSetup.scss";
+@import "_business-continuity-plan.scss";
+@import "_wizard-configuration.scss";
+@import "_summary.scss";
+@import "_dashboard.scss";
+@import "_tooltip.scss";
+@import "_restorePopup.scss";
+@import "_redirect.scss";
+@import "_errorDialog.scss";
+@import "_mainScreen.scss";
+@import "_login.scss";
+@import "_availabilityZonesMap.scss";
+@import "_app-topology.scss";
+
+
+body,
+html{
+    height: 100%;
+}
+
+body {
+	background: #E6E6E6;
+    height: 100%;
+    font-family: 'roboto';
+    overflow: -moz-hidden-unscrollable;
+    overflow: hidden;
+}
+
+#app{
+    //position: relative;
+    height: 100%;
+    width: $all-site-width;
+    margin: auto;
+    overflow: hidden;
+    margin-bottom: -9999px;
+    padding-bottom: 9999px;
+}
+
+body.tablet #app{
+    //width: 100%;
+}
+
+#app .container{
+    height: 100%;
+    width: 102%;
+    background: $background-color;
+    min-height: 500px;
+    overflow: auto;
+    // overflow-x: hidden;
+    // padding-bottom: 9999px;
+}
+
+#app .container.dimmed{
+	opacity: 0.2;
+    overflow: hidden;
+}
+
+#app .container.loading{
+	overflow: hidden;
+}
+
+
+.wrap{
+	height: 100%;
+	padding-bottom: -9999px;
+	overflow: hidden;
+	background: #000;
+}
+
+#wrapper{
+    min-height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+#wrapper.main-screen{
+    background: #252526;
+}
+
+#wrapper-loading{
+    pointer-events: none;
+    position: relative;
+    height: 100%;
+    top: 0;
+    display: table;
+}

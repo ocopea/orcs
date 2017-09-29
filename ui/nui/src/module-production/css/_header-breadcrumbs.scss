@@ -1,0 +1,26 @@
+.breadcrumb { 
+	list-style: none; 
+	overflow: hidden; 
+    line-height: 20px;    
+    text-transform: capitalize;
+    padding-left: 20px;
+}
+
+.breadcrumb li { 
+	float: left; 
+    padding-right: 15px;
+}
+
+.breadcrumb li a {
+    color: #000;
+    text-decoration: none;
+    padding: 8px 0 10px 5px;
+    position: relative;
+    display: block;
+    float: left;    
+}
+
+.breadcrumb .separator{
+    padding-left: 10px;
+    padding-top: 5px;
+}

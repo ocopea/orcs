@@ -1,0 +1,51 @@
+{
+  "id": "b342be32-da0e-49dd-8f24-f9a0b768d27e",
+  "name": "hackathon-pro",
+  "version": "1.0",
+  "description": "Hackathon Pro Registration App",
+  "appServiceTemplates": [
+    {
+      "appServiceName": "committee-svc",
+      "psbType": "ShpanPaaS",
+      "imageName": "committee",
+      "imageType": "java",
+      "imageVersion": "2.1",
+      "environmentVariables": {},
+      "dependencies": [
+
+      ],
+      "exposedPorts": [
+        8080
+      ],
+      "httpPort": 8080,
+      "entryPointUrl": "committee-api/html/cui/index.html",
+      "img": "/hub-web-api/images/image-type/java"
+    },
+    {
+      "appServiceName": "hackathon-svc",
+      "psbType": "ShpanPaaS",
+      "imageName": "hackathon",
+      "imageType": "java",
+      "imageVersion": "1.0",
+      "environmentVariables": {
+        "hackathon-pro-mode": "true"
+      },
+      "dependencies": [
+        {
+          "type": "DATABASE",
+          "name": "hackathon-db",
+          "description": "Hackathon ideas DB",
+          "img": "/hub-web-api/images/dsb-protocol/postgres"
+        }
+      ],
+      "exposedPorts": [
+        8080
+      ],
+      "httpPort": 8080,
+      "entryPointUrl": "hackathon-api/html/nui/index.html",
+      "img": "/hub-web-api/images/image-type/java"
+    }
+  ],
+  "entryPointServiceName": "hackathon-svc",
+  "img": "/hub-web-api/images/app-template/b342be32-da0e-49dd-8f24-f9a0b768d27e"
+}

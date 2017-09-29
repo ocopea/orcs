@@ -1,0 +1,25 @@
+@import "variables";
+@import "mixins";
+@import "reset";
+@import "type";
+@import "login";
+@import "components";
+@import "buttons";
+
+
+$background-color: #E6E6E6;
+
+body, html{
+	height: 100%;
+}
+
+body {
+	background: $background-color;
+	padding: 50px;
+	font-family: 'roboto';
+	background-image: url('../assets/images/bg.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-blend-mode: soft-light;
+}

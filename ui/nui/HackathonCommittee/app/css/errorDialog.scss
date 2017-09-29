@@ -1,0 +1,50 @@
+#error-dialog{
+    font-family: sans-serif;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: 150px;
+    background: #fff;
+    border-radius: 3px;
+    width: 500px;
+    height: 300px;
+}
+
+#error-dialog .title{
+    line-height: 50px;
+    border-bottom: 1px solid #ddd;
+}
+
+#error-dialog .inside{
+    height: calc(100% - 50px);
+    padding: 20px;    
+}
+
+#error-dialog .content{
+    text-align: center;
+    font-size: 18px;
+    height: 177px;
+    text-transform: capitalize;
+}
+
+#error-dialog .content span{
+    margin-top: 64px;
+    display: inline-block;
+}
+
+#error-dialog button{
+    width: 100%;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+}
+
+#error-dialog .title{
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}

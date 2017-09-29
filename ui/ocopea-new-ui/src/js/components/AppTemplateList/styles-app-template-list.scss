@@ -1,0 +1,73 @@
+.AppTemplateList{
+    height: 100%;
+    padding: 62px 130px 10px 130px;
+
+    .appTemplateListTitle {
+        font-size: 22px;
+        text-align: left;
+        color: #479dda;
+        padding-bottom: 10px;
+        text-transform: uppercase;
+        padding-bottom: 14px;
+    }
+
+    .appTemplateListSubTitle {
+        color: #6b7083;
+        font-size: 14px;
+        padding-bottom: 20px;
+    }
+
+    .appTemplateListSubTitle::first-letter {
+        text-transform: capitalize;
+    }
+
+    table{
+        width: 100%;
+        border: solid 1px #d4d6d9;
+
+        td, th {
+            text-align: left;
+            padding: 0 25px;
+        }
+        thead {
+            background: #f7f9fc;
+            line-height: 42px;
+        }
+
+        th {
+            color: #595e64;
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+        td{
+            color: #858d99;
+            font-size: 13px;
+            [id="appTemplate-img"]{
+                position: relative;
+                top: 10px;
+                margin-right: 12px;
+            }
+        }
+        tbody tr{
+            line-height: 66px;
+            border-bottom: 1px solid #edf0f2;
+            &:last-child {
+                border: none;
+            }
+            &:hover{
+                background: #e8f6fa;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .appInstanceName {
+        width: 150px;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-right: -12px;
+        line-height: 10px;
+    }
+}

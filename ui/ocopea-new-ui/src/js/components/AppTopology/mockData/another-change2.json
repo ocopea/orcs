@@ -1,0 +1,128 @@
+{
+  "appServices": {
+    "101": {
+      "componentType": "service",
+      "id": "101",
+      "iconSrc": null,
+      "imgSrc": "http://www.pngall.com/wp-content/uploads/2016/05/Java-Free-Download-PNG.png",
+      "name": "service 1",
+      "webEntryPointUrl": "http://www.google.com",
+      "state": "deployed",
+      "version": "0.1",
+      "serviceBindings": [
+        "002",
+        "004",
+        "005"
+      ]
+    },
+    "102": {
+      "componentType": "service",
+      "id": "102",
+      "iconSrc": null,
+      "imgSrc": "http://placehold.it/100x100",
+      "name": "service 2",
+      "webEntryPointUrl": "http://www.google.com",
+      "state": "deployed",
+      "version": "0.1",
+      "serviceBindings": [
+        "003",
+        "006",
+        "007"
+      ]
+    },
+    "103": {
+      "componentType": "service",
+      "id": "103",
+      "iconSrc": null,
+      "imgSrc": "http://placehold.it/100x100",
+      "name": "service 3",
+      "webEntryPointUrl": "http://www.google.com",
+      "state": "deployed",
+      "version": "0.1",
+      "serviceBindings": [
+
+      ]
+    },
+    "104": {
+      "componentType": "service",
+      "id": "104",
+      "iconSrc": null,
+      "imgSrc": "http://placehold.it/100x100",
+      "name": "service 3",
+      "webEntryPointUrl": "http://www.google.com",
+      "state": "deployed",
+      "version": "0.1",
+      "serviceBindings": [
+        "001",
+        "002"
+      ]
+    }
+  },
+  "dataServices": {
+    "001": {
+      "componentType": "dependency",
+      "id": "001",
+      "iconSrc": null,
+      "imgSrc": "http://placehold.it/100x100",
+      "name": "dependency1",
+      "state": "bound"
+    },
+    "002": {
+      "componentType": "dependency",
+      "id": "002",
+      "iconSrc": null,
+      "imgSrc": "http://placehold.it/100x100",
+      "name": "dependency2",
+      "state": "failedCreating"
+    },
+    "003": {
+      "componentType": "dependency",
+      "id": "003",
+      "iconSrc": null,
+      "imgSrc": "http://placehold.it/100x100",
+      "name": "dependency3",
+      "state": "bound"
+    },
+    "004": {
+      "componentType": "dependency",
+      "id": "004",
+      "iconSrc": null,
+      "imgSrc": "http://placehold.it/100x100",
+      "name": "dependency4",
+      "state": "bound"
+    },
+    "005": {
+      "componentType": "dependency",
+      "id": "005",
+      "iconSrc": null,
+      "imgSrc": "http://placehold.it/100x100",
+      "name": "dependency5",
+      "state": "bound"
+    },
+    "006": {
+      "componentType": "dependency",
+      "id": "006",
+      "iconSrc": null,
+      "imgSrc": "http://placehold.it/100x100",
+      "name": "dependency6",
+      "state": "bound"
+    },
+    "007": {
+      "componentType": "dependency",
+      "id": "007",
+      "iconSrc": null,
+      "imgSrc": "http://placehold.it/100x100",
+      "name": "dependency7",
+      "state": "errorBinding"
+    },
+    "008": {
+      "componentType": "dependency",
+      "id": "008",
+      "iconSrc": null,
+      "imgSrc": "http://placehold.it/100x100",
+      "name": "dependency8",
+      "state": "bound"
+    }
+
+  }
+}

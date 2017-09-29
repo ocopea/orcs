@@ -1,0 +1,36 @@
+$color: #479dda;
+
+.buttonDismiss{
+  display: flex;
+  display: -webkit-box;
+  direction: ltr;
+  width: 15px;
+  height: 15px;
+
+
+  &:hover{
+    cursor: pointer;
+  }
+
+  &:active{
+    opacity: 0.5;
+  }
+
+  & span{
+    height: 2px;
+    width: 100%!important;
+    margin: auto;
+    position: absolute;
+    top: 10px;
+    background: $color;
+
+    &:nth-child(1){
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+    }
+    &:nth-child(2){
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+    }
+  }
+}

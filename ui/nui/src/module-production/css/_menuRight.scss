@@ -1,0 +1,32 @@
+#menu-right{
+    position: absolute;
+    right: 10px;
+    width: 220px;
+    height: 700px;
+    z-index: 333;
+    top: 70px;
+}
+
+
+#menu-right img{
+    width: 220px;
+    height: 100%;
+}
+
+#menu-right:before{
+    border: solid;
+    border-color: #B8B9BA transparent;
+    border-width: 0px 11px 11px 11px;
+    top: -11px;
+    content: "";
+    left: 80%;
+    position: absolute;
+    z-index: 99;
+}
+
+#menu-right .title{
+    background: #B8B9BA;
+    line-height: 50px;
+    color: #fff;
+    text-align: center;
+}

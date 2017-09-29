@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.emc.ocopea.hub</groupId>
+        <artifactId>hub-webapp-parent</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+
+	<artifactId>hub-webapp-service</artifactId>
+	<name>Hub WebApp Service</name>
+
+	<dependencies>
+
+		<!-- websocket experiment start -->
+		<dependency>
+			<groupId>javax.websocket</groupId>
+			<artifactId>javax.websocket-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jaxrs</artifactId>
+		</dependency>
+		<!-- websocket experiment end -->
+
+
+		<!-- site web api -->
+		<dependency>
+			<groupId>com.emc.ocopea.site</groupId>
+			<artifactId>site-web-api</artifactId>
+			<version>${ocopea.site.version}</version>
+		</dependency>
+
+		<!-- Hub util -->
+		<dependency>
+			<groupId>com.emc.ocopea.hub</groupId>
+			<artifactId>hub-util</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<!-- Auth util -->
+		<dependency>
+			<groupId>com.emc.ocopea.hub</groupId>
+			<artifactId>hub-auth-util</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.emc.ocopea.util</groupId>
+			<artifactId>common-util</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.emc.ocopea.util</groupId>
+			<artifactId>json-util</artifactId>
+		</dependency>
+
+		<!-- hub webapp api -->
+		<dependency>
+			<groupId>com.emc.ocopea.hub</groupId>
+			<artifactId>hub-webapp-java-web-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+
+		<!-- hub web api -->
+		<dependency>
+			<groupId>com.emc.ocopea.hub</groupId>
+			<artifactId>hub-java-web-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.emc.ocopea.microservice.api</groupId>
+			<artifactId>microservice-api</artifactId>
+			<version>${microservice.api.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.ws.rs</groupId>
+			<artifactId>javax.ws.rs-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.emc.ocopea.ui</groupId>
+			<artifactId>nui</artifactId>
+			<version>${ocopea.ui.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.emc.ocopea.ui</groupId>
+			<artifactId>ui</artifactId>
+			<version>${ocopea.ui.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.emc.ocopea.ui</groupId>
+			<artifactId>nui-login</artifactId>
+			<version>${ocopea.ui.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.emc.ocopea.hub</groupId>
+			<artifactId>hub-webapp-web-api</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Need scope to be "provided" because our webserver comes with it's own  -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.emc.ocopea.util</groupId>
+			<artifactId>rest-util</artifactId>
+			<version>${ocopea.util.version}</version>
+		</dependency>
+
+		<!-- Test scope dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.emc.ocopea.microservice</groupId>
+			<artifactId>microservice-test-utils</artifactId>
+			<version>${ocopea.util.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.emc.ocopea.hub</groupId>
+			<artifactId>hub-util</artifactId>
+			<version>${project.version}</version>
+			<scope>test</scope>
+			<classifier>tests</classifier>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>unpack-ui-artifacts</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>unpack</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>com.emc.ocopea.ui</groupId>
+									<artifactId>nui</artifactId>
+									<overWrite>true</overWrite>
+									<outputDirectory>${project.build.directory}/generated-resources/nui/</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.emc.ocopea.ui</groupId>
+									<artifactId>ui</artifactId>
+									<overWrite>true</overWrite>
+									<outputDirectory>${project.build.directory}/generated-resources/ui/</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.emc.ocopea.ui</groupId>
+									<artifactId>nui-login</artifactId>
+									<overWrite>true</overWrite>
+									<outputDirectory>${project.build.directory}/generated-resources/login/</outputDirectory>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+					<execution>
+						<id>unpack-swagger-file</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>unpack</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>com.emc.ocopea.hub</groupId>
+									<artifactId>hub-webapp-web-api</artifactId>
+									<overWrite>true</overWrite>
+									<outputDirectory>${project.build.directory}/classes/com/emc/ocopea/hub/webapp/</outputDirectory>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.outputDirectory}/static</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${project.build.directory}/generated-resources</directory>
+									<filtering>false</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
+

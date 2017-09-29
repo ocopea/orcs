@@ -1,0 +1,187 @@
+:global{
+  #copy-history{
+      display: inline-block;
+      width: 100%;
+      min-height: 300px;
+      padding-right: 0;
+      padding-bottom: 0;
+      background: #FAFAFA;
+      box-shadow: 0px 1px 2px 0px rgba(4, 4, 4, 0.09);
+      text-align: center;      
+      border-radius: 3px;
+  }
+
+  .inside{
+    position: relative;
+    height: 100%;
+  }
+
+  .x axis path{
+      outline: 1px solid black;
+  }
+
+  #copy-history .title{
+    text-align: left;
+    padding-left: 20px;
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid #e0e0e0;
+    line-height: 50px;
+    margin: auto;
+    margin-left: -10px;
+    color: #3b3b3b;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  #copy-history .inlineError{
+    position: absolute;
+    bottom: 80px;
+    right: 65px;
+    color: red;
+    font-weight: 800;
+  }
+
+  #filter-range{
+      width: 545px;
+      position: absolute;
+      right: 0;
+      text-align: right;
+      padding-right: 20px;
+      top: 0;
+  }
+
+  .filter{
+      margin-left: 20px;
+      color:  #797979;
+      font-weight: 400;
+  	text-transform: none;
+  }
+
+  #filter-range span:hover{
+      cursor: pointer;
+  }
+
+  .filter{
+      transition: 0.4s;
+  }
+
+  .filter.selected{
+      border-bottom: 1px solid #5c9abd;
+      font-size: 1.2em;
+      color: #5c9abd;
+  }
+
+  #copy-history-prev-btn{
+      position: absolute;
+      left: 40px;
+      top: 117px;
+      color: #8c8c8c;
+  }
+
+  #copy-history-next-btn{
+      position: absolute;
+      right: 40px;
+      top: 117px;
+      color: #8c8c8c;
+  }
+
+  #copy-history .backup:hover{
+      cursor: pointer;
+      border: 1px solid #5c9abd;
+  }
+
+  .tick line{
+      fill: none;
+      stroke: #FAFAFA;
+      shape-rendering: crispEdges;
+  }
+
+  #copy-history button#copy-history-next-btn,
+  #copy-history button#copy-history-prev-btn{
+    border: none;
+	   margin-top: 10px;
+    background: #FAFAFA;
+  }
+
+  #copy-history-footer{
+    line-height: 27px;
+    width: 100%;
+    display: inline-block;
+    height: 55px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #copy-history-footer .section{
+      display: inline-block;
+      padding: 15px;
+  }
+
+  #copy-history-footer .section #img-restore{
+      width: 13px;
+      height: 13px;
+  }
+
+
+  #copy-history-footer .section #img-create-copy{
+      width: 14px;
+      height: 15px;
+  }
+
+  #copy-history-footer .section span{
+      padding: 8px;
+      float: left;
+  }
+
+  #copy-history-footer .section .container{
+      background: inherit;
+      float: left;
+      line-height: 10px;
+      min-height: 100%;
+  }
+
+  #copy-history-footer .section .container:hover{cursor: pointer}
+
+  #copy-history-footer .section .container img{
+      float: left;
+      margin-top: 7px;
+  }
+
+  #copy-history-footer .section-left{
+      float: left;
+      padding: 8px;
+      padding-left: 15px;
+  }
+
+  #copy-history-footer .section-left .success-backups{
+      color: #83bd5c;
+  }
+
+  #copy-history-footer .section-left .failed-backups{
+      color: #bd4c49;
+  }
+
+  #copy-history-footer .section-left span{
+      padding: 4px;
+  }
+
+  #copy-history-footer .section-right{
+      float: right;
+      color: #8c8c8c;
+  }
+
+  #copy-history-footer .section-right .container:nth-child(1){
+      padding-right: 15px;
+      border-right: 1px solid #ddd;
+      width: 115px;
+  }
+
+  #copy-history-footer .section-right .container:nth-child(2){
+      padding-left: 20px;
+      width: 85px;
+  }
+
+}

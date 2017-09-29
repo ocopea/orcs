@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.emc.ocopea.orcs</groupId>
+        <artifactId>orcs-single-jar-parent</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>shpanpaas-parent</artifactId>
+
+    <packaging>pom</packaging>
+    <name>ShpanPaaS PSB Parent</name>
+    <modules>
+        <module>hackathon</module>
+        <module>shpanpaas-psb-service</module>
+        <module>resource-provider</module>
+        <module>remote-dev-runner</module>
+        <module>h2-dsb</module>
+        <module>shpanblob-dsb</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.emc.ocopea.util</groupId>
+                <artifactId>native-query-service</artifactId>
+                <version>${ocopea.util.version}</version>
+            </dependency>
+
+            <!-- bill of materials for resteasy -->
+            <dependency>
+                <groupId>org.jboss.resteasy</groupId>
+                <artifactId>resteasy-bom</artifactId>
+                <version>${resteasy.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>
+

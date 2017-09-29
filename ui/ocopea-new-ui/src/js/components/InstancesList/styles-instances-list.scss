@@ -1,0 +1,71 @@
+.InstancesList{
+  table{
+    width: 100%;
+    border: solid 1px #d4d6d9;
+
+    td, th{
+      text-align: left;
+      padding: 0 25px;
+    }
+    thead{
+      background: #f7f9fc;
+      line-height: 42px;
+    }
+    th{
+      color: #595e64;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+    td{
+      color: #858d99;
+      font-size: 13px;
+      [id="appTemplate-img"]{
+        position: relative;
+        top: 10px;
+        margin-right: 12px;
+      }
+      .appInstanceName{
+        width: 150px;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-right: -12px;
+        line-height: 10px;
+      }
+      .dsbQuotaMin, .dsbQuotaMax{
+        font-size: 14px;
+        margin: 0 9px;
+        &::before{
+          position: relative;
+          top: 6px;
+          font-size: 30px;
+          content: "• ";
+        }
+      }
+      .dsbQuotaMin{
+        color: #858d99;
+        &::before {
+          color: #479dda;
+        }
+      }
+      .dsbQuotaMax{
+        color: #858d99;
+        &::before {
+          color: #3ac187;
+        }
+      }
+    }
+    tbody tr{
+      line-height: 66px;
+      border-bottom: 1px solid #edf0f2;
+      &:last-child{
+        border: none;
+      }
+      &:hover{
+        background: #e8f6fa;
+        cursor: pointer;
+      }
+    }
+  }
+}

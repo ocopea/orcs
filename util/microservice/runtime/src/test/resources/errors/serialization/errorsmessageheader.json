@@ -1,0 +1,28 @@
+{
+  "errorMessageHeaders": [
+    {
+      "microservice_uri": "microservice-1-uri",
+      "timestamp": 1456485443905,
+      "error_code": 404,
+      "error_message": "Service 1 unavailable"
+    },
+    {
+      "microservice_uri": "microservice-2-uri",
+      "timestamp": 1456485443906,
+      "error_code": 405,
+      "error_message": "Service 2 unavailable"
+    },
+    {
+      "microservice_uri": "microservice-3-uri",
+      "timestamp": 1456485443907,
+      "error_code": 406,
+      "error_message": "Service 3 unavailable"
+    },
+    {
+      "microservice_uri": "microservice-4-uri",
+      "timestamp": 1456485443908,
+      "error_code": 407,
+      "error_message": "Service 4 unavailable"
+    }
+  ]
+}

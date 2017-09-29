@@ -1,0 +1,74 @@
+.state-bar-container
+  box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.09)
+  border: solid 1px #e1e4e6
+  line-height: 56px
+  margin-top: 18px
+  padding: 0 19px 0 19px
+  border-radius: 3px
+  color: #565c65
+  font-size: 16px
+
+.state-bar-buttons
+  float: right
+  display: flex
+  justify-content: space-between
+  width: 188px
+  padding: 17px
+  padding-right: 0
+
+.state-bar-button
+  width: 92px
+  height: 32px
+  border-radius: 3px
+  margin: -5px
+  font-size: 12px
+  text-transform: uppercase
+  span
+    font-weight: bold
+
+.state-bar-image-name
+  color: #1e242f
+  font-style: italic
+
+
+.state-bar-check-container
+  width: 30px!important
+  height: 30px!important
+  display: block
+  float: left
+  margin-top: 11px
+  margin-right: 18px
+  margin-bottom: 0
+
+.dismiss-state-bar-button
+  background-color: #e6eaed
+  color: #6b7083
+
+.Dashboard
+  +element('inside')
+    +element('success-image-saved-container')
+      @extend .state-bar-container
+
+      +element('buttons')
+        @extend .state-bar-buttons
+
+        +element('button')
+          @extend .state-bar-button
+
+          +modifier('remove-success-msg')
+            @extend .dismiss-state-bar-button
+
+          +modifier('share')
+            background-color: #479dda
+            color: #ffffff
+
+      +element('check-container')
+        @extend .state-bar-check-container
+
+        +element('icon-check')::before
+          left: 8px!important
+          margin-top: 10px!important
+          font-size: 12px
+
+      +element('image-name')
+        @extend .state-bar-image-name

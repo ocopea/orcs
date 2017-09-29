@@ -1,0 +1,65 @@
+.QuotaList{
+  > div{
+    &:last-child{
+      height: 40px;
+      .row{
+        border: none;
+      }
+    }
+  }
+  .row{
+    display: flex;
+    justify-content: space-between;
+    line-height: 35px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    color: #565c65;
+    text-transform: uppercase;
+    > div{
+      margin: 0 10px;
+    }
+    &:first-child{
+      top: -8px;
+      position: relative;
+    }
+    .img{
+      flex: 0.2;
+      margin-right: -8px;
+      > div{
+        width: 36px;
+        height: 36px;
+        background: #67b47d;
+        border-radius: 100%;
+        text-align: center;
+        span{
+          position: relative;
+          color: #fff;
+          font-size: 25px;
+          top: 6px
+        }
+      }
+    }
+    .name{
+      width: 59px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+    .progress{
+      flex: 1;
+    }
+    .precent{
+      width: 45px;
+      font-size: 18px;
+      text-align: right;
+      padding-right: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+::i-block-chrome, .row {
+ display: -webkit-box;
+ -webkit-box-pack: justify;
+}

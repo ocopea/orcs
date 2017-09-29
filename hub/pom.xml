@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.emc.ocopea.orcs</groupId>
+        <artifactId>orcs-parent</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.emc.ocopea.hub</groupId>
+    <packaging>pom</packaging>
+    <artifactId>hub-parent</artifactId>
+    <name>Hub Parent project</name>
+
+    <properties>
+        <ocopea.site.version>${project.version}</ocopea.site.version>
+        <ocopea.ui.version>${project.version}</ocopea.ui.version>
+        <ocopea.util.version>${project.version}</ocopea.util.version>
+    </properties>
+    <modules>
+        <module>hub-util</module>
+        <module>hub-service</module>
+        <module>webapp</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.emc.ocopea.util</groupId>
+                <artifactId>native-query-service</artifactId>
+                <version>${ocopea.util.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.emc.ocopea.util</groupId>
+                <artifactId>db-junit-test-support</artifactId>
+                <version>${ocopea.util.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.emc.ocopea.util</groupId>
+                <artifactId>common-util</artifactId>
+                <version>${ocopea.util.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.emc.ocopea.util</groupId>
+                <artifactId>json-util</artifactId>
+                <version>${ocopea.util.version}</version>
+            </dependency>
+
+
+            <!-- bill of materials for resteasy -->
+            <dependency>
+                <groupId>org.jboss.resteasy</groupId>
+                <artifactId>resteasy-bom</artifactId>
+                <version>${resteasy.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>
+

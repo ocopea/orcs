@@ -1,0 +1,31 @@
+.DeployingProgress{
+  width: 100%;
+  background: #f2f2f2;
+
+  .inside{
+    width: 800px;
+    margin: auto;
+
+    .topBar{
+      line-height: 60px;
+      height: 60px;
+      background: #fff;
+      width: 800px;
+      margin: auto;
+      margin-top: 20px;
+      border-radius: 3px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    :global{
+      .icon-check{
+        font-size: 10px;
+        left: 1px;
+        top: -1px;
+      }
+    }
+
+  }
+
+}

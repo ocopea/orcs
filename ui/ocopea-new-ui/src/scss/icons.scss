@@ -1,0 +1,165 @@
+$icon-layout-cards: "\e900";
+$icon-layout-list: "\e901";
+$icon-activities: "\e902";
+$icon-alerts: "\e904";
+$icon-notifications: "\e904";
+$icon-arrow-dropdown: "\e906";
+$icon-arrow-sort: "\e907";
+$icon-backup: "\e908";
+$icon-check: "\e90a";
+$icon-x: "\e90b";
+$icon-create: "\e90f";
+$icon-arrow-right: "\e910";
+$icon-db: "\e911";
+$icon-delete: "\e913";
+$icon-edit: "\e916";
+$icon-filter: "\e919";
+$icon-hamburger: "\e91c";
+$icon-info: "\e91d";
+$icon-link: "\e91e";
+$icon-logout: "\e91f";
+$icon-check: "\e90a";
+$icon-close: "\e90b";
+$icon-arrow-open: "\e920";
+$icon-modes: "\e923";
+$icon-mongo: "\e924";
+$icon-arrow-right: "\e925";
+$icon-play: "\e928";
+$icon-reports: "\e92a";
+$icon-saved-images: "\e92b";
+$icon-search: "\e92c";
+$icon-service: "\e92d";
+$icon-share: "\e930";
+$icon-site-config: "\e93d";
+$icon-settings: "\e92e";
+$icon-user-settings: "\e92f";
+$icon-alert: "\e936";
+$icon-app-quota: "\e93e";
+$icon-postgres: "\e940";
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  color: #a9b5c8;
+  font-size: 100%;
+}
+
+:global {
+  .icon-hamburger::before {
+    content: $icon-hamburger;
+  }
+  .icon-backup::before {
+    content: $icon-backup;
+  }
+  .icon-alerts::before {
+    content: $icon-alerts;
+  }
+  .icon-settings::before {
+    content: $icon-settings;
+  }
+  .icon-link::before {
+    content: $icon-link;
+  }
+  .icon-arrow-dropdown::before {
+    content: $icon-arrow-dropdown;
+  }
+  .icon-arrow-sort::before {
+    content: $icon-arrow-sort;
+  }
+  .icon-app-quota::before {
+    content: $icon-app-quota;
+  }
+  .icon-postgres::before {
+    content: $icon-postgres;
+  }
+  .icon-mongo::before {
+    content: $icon-mongo;
+  }
+  .icon-arrow-right::before {
+    content: $icon-arrow-right;
+  }
+  .icon-layout-cards::before {
+    content: $icon-layout-cards;
+  }
+  .icon-layout-list::before {
+    content: $icon-layout-list;
+  }
+  .icon-filter::before {
+    content: $icon-filter;
+  }
+  .icon-arrow-open::before {
+    content: $icon-arrow-open;
+  }
+  .icon-notifications::before {
+    content: $icon-notifications;
+  }
+  .icon-logout::before {
+    content: $icon-logout;
+  }
+  .icon-user-settings::before {
+    content: $icon-user-settings;
+  }
+  .icon-activities::before {
+    content: $icon-activities;
+  }
+  .icon-reports::before {
+    content: $icon-reports;
+  }
+  .icon-saved-images::before {
+    content: $icon-saved-images;
+  }
+  .icon-search::before {
+    content: $icon-search;
+  }
+  .icon-site-config::before {
+    content: $icon-site-config;
+  }
+  .icon-modes::before {
+    content: $icon-modes;
+  }
+  .icon-info::before {
+    content: $icon-info;
+  }
+  .icon-play::before {
+    content: $icon-play;
+  }
+  .icon-share::before {
+    content: $icon-share;
+  }
+  .icon-delete::before {
+    content: $icon-delete;
+  }
+  .icon-create::before {
+    content: $icon-create;
+  }
+  .icon-check::before {
+    content: $icon-check;
+  }
+  .icon-arrow-right::before {
+    content: $icon-arrow-right;
+  }
+  .icon-db::before {
+    content: $icon-db;
+  }
+  .icon-service::before {
+    content: $icon-service;
+  }
+  .icon-alert::before {
+    content: $icon-alert;
+  }
+  .icon-edit::before {
+    content: $icon-edit;
+  }
+  .icon-x::before {
+    content: $icon-x;
+  }
+  .icon-close::before {
+    content: $icon-close;
+  }
+}

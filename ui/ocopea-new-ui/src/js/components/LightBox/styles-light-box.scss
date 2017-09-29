@@ -1,0 +1,59 @@
+.lightBox{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 70%;
+  height: 80%;
+  min-height: 200px;
+  background: #fff;
+  border-radius: 3px;
+  overflow: auto;
+  overflow-x: hidden;
+  background-color: #fff;
+
+  & .title{
+    background: #f7f9fc;
+    color: #595e64;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    line-height: 42px;
+    text-transform: capitalize;
+    padding-left: 20px;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    div{
+      top: 10px;
+      position: relative;
+      right: 12px;
+    }
+  }
+
+  & .inside{
+    height: calc(100% - 72px);
+    padding: 12px;
+    overflow-y: auto;
+    padding-bottom: 18px;
+    overflow-x: hidden;
+
+    & > div{
+      height: 100%;
+    }
+  }
+}
+
+@media (max-width: 1024px){
+  .lightBox{
+      font-size: 0.8em;
+  }
+}
+
+@media (max-width: 600px){
+  .lightBox{
+    width: 85%;
+    height: 88%;
+  }
+}

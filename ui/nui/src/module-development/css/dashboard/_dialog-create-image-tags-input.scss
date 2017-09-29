@@ -1,0 +1,65 @@
+.dialog.create-image .inside section .react-tagsinput{
+  min-height: 40px;
+  @include border-radius(3px);
+  border: solid 1px #d4d6d9;
+  outline: none;
+  padding-left: 10px;
+
+  input{
+    background: transparent;
+    border: 0;
+    color: #777;
+    font-family: sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 6px;
+    margin-top: 1px;
+    outline: none;
+    border: none;
+    padding: 5px;
+    padding-left: 12px;
+    width: 100px;
+    height: 24px;
+    float: left;
+  }
+  &.react-tagsinput--focused{
+    outline: -webkit-focus-ring-color auto 5px;
+    border-color: none;
+  }
+  span.react-tagsinput-tag{
+    float: left;
+    margin-top: 5px;
+    background: #858d99;
+    color: #ffffff;
+    border: none;
+    padding: 0 8px 0 12px;
+    line-height: 26px;
+
+    .react-tagsinput-remove{
+      padding-left: 8px;
+    }
+  }
+
+  .react-autosuggest__suggestions-list{
+    width: 172px;
+    overflow: auto;
+    background: #fff;
+    position: absolute;
+    box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.09);
+    border: solid 1px #e1e4e6;
+    @include border-radius(3px);
+
+    li{
+      line-height: 35px;
+      padding-left: 12px;
+
+      &:hover{
+        cursor: pointer;
+      }
+
+      &.react-autosuggest__suggestion--focused{
+        background: #f2f5f7;
+      }
+    }
+  }
+}

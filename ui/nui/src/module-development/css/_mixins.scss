@@ -1,0 +1,55 @@
+@mixin center-element(){
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+}
+
+@mixin dimmed(){
+	opacity: 0.5;
+}
+
+@mixin wizard-next-btn(){
+    background-color: #479dda;
+    color: #ffffff;
+}
+
+@mixin wizard-back-btn(){
+    background-color: #e6eaed;
+    color: #9599a6;
+}
+
+@mixin border-radius($radius: $border-radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin wizard-title(){
+  font-size: 22px;
+  text-align: left;
+  color: #479dda;
+	padding-bottom: 10px;
+}
+
+@mixin dialog-title(){
+	line-height: 48px;
+	width: calc(100% - 18px);
+	background-color: #f7f9fc;
+	text-align: left;
+	padding-left: 18px;
+	font-size: 12px;
+	font-weight: 500;
+	color: #595e64;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+@mixin dev-table-header(){
+	background-color: #f7f9fc;
+	line-height: 42px;
+	text-align: left;
+}

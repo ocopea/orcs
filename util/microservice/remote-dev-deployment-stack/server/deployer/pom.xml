@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.emc.ocopea.microservice</groupId>
+        <artifactId>microservice-remote-dev-server-parent</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>microservice-remote-dev-server-deployer</artifactId>
+    <name>Remote DEV Deployment Stack Server Deployer</name>
+
+
+    <dependencies>
+
+        <!--running the built in configuraiton service -->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>configuration-service</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!--running the built in configuraiton service schema bootstrap-->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>configuration-bootstrap</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- Remote Dev Server -->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>microservice-remote-dev-server-impl</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- running on simple dev-mode -->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>microservice-dev-deployment-stack</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- MAVEN START -->
+        <dependency>
+            <groupId>org.jboss.spec.javax.servlet</groupId>
+            <artifactId>jboss-servlet-api_3.1_spec</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.spec.javax.annotation</groupId>
+            <artifactId>jboss-annotations-api_1.2_spec</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <!-- MAVEN END -->
+
+    </dependencies>
+
+</project>
+

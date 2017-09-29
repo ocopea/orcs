@@ -1,0 +1,61 @@
+.Dialog-saved-succesfuly
+  +center-element
+  +border-radius(3px)
+  width: 423px
+  height: 363px
+  background: #ffffff
+  border: 1px solid #ddd
+  box-shadow: 0px 4px 14px 0 rgba(0, 0, 0, 0.15)
+
+  +element('title')
+    +dialog-title
+    text-transform: uppercase
+    font-weight: 500
+
+  +element('content')
+    padding: 25px 20px 20px 20px
+    text-align: center
+    font-size: 18px
+    color: #6b7083
+    line-height: 20px
+
+    +element('firstline')
+      color: #565c65
+
+    +element('sub-title')
+      font-size: 16px
+
+    +element('instance-name')
+      font-weight: bold
+      font-style: italic
+
+  +element('buttons')
+    width: 100%
+
+    +element('btn-view-app')
+      width: 100%
+      height: 40px
+      margin: 28px 0 22px 0
+
+      +element('icon')::before
+        color: #fff
+        margin-right: 10px
+        font-size: 15px
+        line-height: 30px
+
+    +element('button')
+      line-height: 25px
+      color: #ffffff
+      text-transform: capitalize
+      background: #479dda
+      +border-radius(3px)
+      text-transform: uppercase
+      font-size: 13px
+
+    +element('bottom-buttons-container')
+      display: flex
+      justify-content: space-between
+      margin-top: 20px
+      +element('button')
+        width: 181px
+        line-height: 40px

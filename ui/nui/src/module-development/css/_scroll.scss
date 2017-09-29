@@ -1,0 +1,33 @@
+.gm-scroll-view{
+  // width: auto!important;
+  // height: auto!important;
+}
+
+.gm-scrollbar.-horizontal{
+  display: none;
+}
+
+.gm-scrollbar.-vertical{
+  background: #fff;
+  .thumb{
+    background-color: #f0f4fa;
+    @include border-radius(2px);
+  }
+}
+
+.left-menu .gm-scrollbar.-vertical{
+  background: #252d3a;
+  top: 103px;
+
+  .thumb{
+    &:active, &:hover{
+      background-color: #f0f4fa;
+    }
+  }
+}
+
+.dialog.create-image{
+  .gm-scrollbar.-vertical{
+    top: 47px;
+  }
+}

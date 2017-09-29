@@ -1,0 +1,124 @@
+.development.wrapper{
+
+    .filters{
+        line-height: 60px;
+        width: calc(100% - 25px);
+        line-height: 40px;
+        padding-left: 10px;
+        min-height: 50px;
+
+        .tags{
+          display: inline;
+          width: calc(100% - 225px);
+          float: left;
+
+          .tag{
+            float: left;
+            color: #6b7083;
+            font-size: 11px;
+            text-transform: capitalize;
+            height: 40px;
+            margin-top: 10px;
+            background: none;
+            width: auto;
+
+            span{
+              font-weight: 600;
+            }
+
+            &.users{
+              .tag-inside .close-btn span{
+                background-color: $users-filter-background;
+              }
+            }
+
+            &.app{
+              .tag-inside .close-btn span{
+                background-color: $appType-filter-background;
+              }
+            }
+
+            &.services{
+              .tag-inside .close-btn span{
+                background-color: $services-filter-background;
+              }
+            }
+
+            .tag-inside{
+              @include border-radius(3px);
+              background-color: #f0f4fa;
+              padding: 10px 20px 10px 10px;
+              position: relative;
+              display: inline-block;
+              line-height: 20px;
+
+              .close-btn{
+                position: absolute;
+                top: -4px;
+                right: -15px;
+
+                span{
+                  width: 8px;
+                }
+              }
+            }
+
+          }
+        }
+
+        section.section-right{
+            width: 214px;
+            height: 40px;
+            float: right;
+            margin-top: 10px;
+        }
+
+        .sort-by{
+          float: left;
+          height: 20px;
+          width: 112px;
+          font-size: 12px;
+          line-height: 20px;
+          border-right: 1px solid #e6eaed;;
+          padding-right: 20px;
+          margin-top: 10px;
+        }
+
+        .open-button,
+        .close-button{
+          top: 8px;
+          left: -18px;
+          span{
+            background: #dadee1;
+          }
+        }
+
+        .icons{
+            width: 45px;
+            float: left;
+            padding-left: 36px;
+            line-height: 40px;
+
+            & > span:nth-child(2){
+                padding-left: 5px;
+            }
+
+            span.isvg{
+                width: 20px;
+
+                path{
+                  fill: rgb(225, 231, 240);
+                }
+
+                &.selected{
+                  svg path{
+                      fill: rgb(71, 157, 218);
+                      transition: 0.4s;
+                  }
+                }
+            }
+        }
+
+    }
+
+}

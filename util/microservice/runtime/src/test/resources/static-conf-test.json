@@ -1,0 +1,21 @@
+{
+  "children": {
+    "a": {
+      "children": {
+        "aa": {
+          "data":"my data"
+        },
+        "ab": {
+          "children": {
+            "abc": {
+              "data":{"koko":"shoko", "moka":"latte"}
+            }
+          }
+        }
+      }
+    },
+    "b":{
+      "data": "test my data"
+    }
+  }
+}

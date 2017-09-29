@@ -1,0 +1,140 @@
+$day-hover-background: #D8EDFF;
+
+.dev-wizard .image{
+  .backup{
+    min-height: 400px;
+    float: left;
+    padding-top: 20px;
+    width: 100%;
+
+    /*root element*/
+    .react-date-picker__month-view{
+      width: 60%;
+      border: solid 1px #d4d6d9;
+      font-family: sans-serif;
+
+      /*title*/
+      .react-date-picker__nav-bar{
+        position: relative;
+        font-size: 12px;
+        text-transform: uppercase;
+        height: 58px;
+        border-bottom: solid 1px #d4d6d9;
+
+        /*hide buttons for navigating years*/
+        .react-date-picker__nav-bar-secondary-arrow{
+          display: none!important;
+        }
+
+        /*months navigation buttons position*/
+        .react-date-picker__nav-bar-arrow{
+
+          path:nth-child(1){
+            fill: #97a0af;
+          }
+
+          &.react-date-picker__nav-bar-arrow--next{
+            right: 168px;
+          }
+
+          &.react-date-picker__nav-bar-arrow--prev{
+            left: 168px;
+          }
+        }
+
+      }
+
+      /*days design*/
+      .dp-row{
+            height: 60px;
+      }
+
+      .dp-week-day-names.dp-row{
+        line-height: 50px;
+        height: 42px;
+        border-bottom: solid 1px #d4d6d9;
+        color: #858d99;
+        font-size: 13px;
+      }
+
+      /*all days cells*/
+      .dp-day{
+        font-size: 16px;
+        color: #6b7083;
+        position: relative;
+
+        &:hover{
+          .react-date-picker__month-view-day-text{
+            background: $day-hover-background;
+          }
+        }
+
+        /*today cell*/
+        &.react-date-picker__month-view-day--today{
+          .react-date-picker__month-view-day-text{
+            background: #fff;
+            color: #3b92df;
+            &:hover{
+              background: $day-hover-background;
+            }
+          }
+          &.react-date-picker__month-view-day--active.event{
+            .react-date-picker__month-view-day-text{
+                background: #3b92df;
+            }
+          }
+
+        }
+
+        /*active cells*/
+
+        /*no event active cells*/
+        &.react-date-picker__month-view-day--active{
+          .react-date-picker__month-view-day-text{
+            background: inherit;
+            color: #6b7083;
+            border: none;
+            &:hover{
+              background: $day-hover-background;
+            }
+          }
+        }
+
+        /*active cells with event*/
+        &.react-date-picker__month-view-day--active.event{
+          span{
+            background: #e6eaed;
+          }
+
+          .react-date-picker__month-view-day-text{
+              background-color: #3b92df;
+              color: #fff;
+          }
+        }
+
+        &.event span{
+          position: absolute;
+          height: 2px;
+          width: 19px;
+          background: #43ab60;
+          bottom: 17px;
+          left: 25px;
+        }
+
+
+      }
+
+      .react-date-picker__month-view-day-text{
+        @include border-radius(3px);
+      }
+
+      /*non active cells- last and next month*/
+      .react-date-picker__month-view-day--prev-month,
+      .react-date-picker__month-view-day--next-month{
+        color: rgba(107, 112, 131, 0.2);
+      }
+
+    }
+
+  }
+}

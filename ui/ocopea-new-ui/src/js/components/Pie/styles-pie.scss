@@ -1,0 +1,38 @@
+.pie{
+    background: #000;
+}
+
+:global{
+    .arc text {
+        font: 10px sans-serif;
+        text-anchor: middle;
+    }
+
+    .arc path {
+        stroke: #fff;
+    }
+
+    .toolTip {
+        position: fixed;
+        display: none;
+        width: auto;
+        height: auto;
+        background: none repeat scroll 0 0 white;
+        border: 0 none;
+        border-radius: 8px 8px 8px 8px;
+        box-shadow: -3px 3px 15px #888888;
+        color: black;
+        font: 12px sans-serif;
+        padding: 5px;
+        text-align: center;
+    }    
+
+    .legend{
+        font-size: 12px!important;
+    }
+
+    .copies-count{
+        font-size: 20px!important;
+        fill: #91c7e5;
+    }
+}

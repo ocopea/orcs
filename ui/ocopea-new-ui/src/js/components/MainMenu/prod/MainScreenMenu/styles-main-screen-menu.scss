@@ -1,0 +1,21 @@
+.MainScreenMenu{
+  padding: 5px;
+  .btnGoToWWizard{
+    background: #568EAE;
+    color: #fff;
+    padding: 15px;
+    text-transform: uppercase;
+    font-size: 12px;
+    text-align: center;
+    width: 100%;
+    span{
+      font-size: 13px;
+      color: #fff;
+      margin-right: 10px;
+    }
+    [class="icon-create"]{
+      position: relative;
+      top: 1px;
+    }
+  }
+}

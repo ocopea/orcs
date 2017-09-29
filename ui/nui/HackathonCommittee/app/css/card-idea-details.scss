@@ -1,0 +1,76 @@
+.idea-details .title{
+    text-align: center;
+    font-weight: 700;
+}
+
+.idea-details .inside{
+    padding: 10px;
+}
+
+.idea-details .image-container{
+    float: left;
+    padding-right: 10px;
+    transition: 0.8s;
+}
+
+.idea-details .image-container.enlarged,
+.idea-details .image-container.enlarged img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.idea-details img.idea-image:hover{
+    cursor: pointer;
+}
+
+.image-container.enlarged img.idea-image:hover{
+    cursor: auto;
+}
+
+.idea-details .inside p{
+    text-align: justify;
+    line-height: 15px;
+}
+
+button.minimize-image{
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 25px;
+    height: 25px;
+    border: none;
+    background-color: inherit;
+    outline: none;
+    padding: 0;
+}
+
+button.minimize-image span{
+    width: calc(100% - 2px);
+    border: 1px solid $primary-color;
+    border-radius: 10px;
+    float: left;
+    height: 1px;
+    margin-bottom: 5px;
+    background: $primary-color;
+    transition: 0.4s;
+}
+
+button.minimize-image span:nth-child(1){
+    transform: rotate(45deg);
+    position: absolute;
+    right: 0;
+    width: 25px;    
+}
+button.minimize-image span:nth-child(2){
+    transform: rotate(-45deg);
+    position: absolute;
+    right: 0;
+    width: 25px;   
+}

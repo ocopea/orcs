@@ -1,0 +1,88 @@
+.ChooseArtifactRegistryTypeLightbox {
+  width: 100%;
+
+  .inside {
+
+    table {
+      width: 100%;
+
+      .row {
+        line-height: 66px;
+        border-bottom: 1px solid #edf0f2;
+        color: #858d99;
+        font-size: 13px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+          cursor: pointer;
+          background: #edfbff;
+        }
+
+        .checkboxContainer {
+          flex: 1;
+
+          display: flex;
+          justify-content: center;
+        }
+
+        .logoContainer {
+          flex: 1;
+
+          display: flex;
+          justify-content: center;
+
+          .logoCircle {
+            width: 48px;
+            height: 48px;
+            border-radius: 100%;
+            background: #eeeeee;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .logoImage {
+              width: 80%;
+              margin: 0;
+            }
+          }
+        }
+
+        .name {
+          text-transform: capitalize;
+          flex: 5;
+          margin-left: 15px;
+        }
+      }
+
+      .disabledRow {
+        opacity: 0.5;
+        pointer-events: none;
+
+        &:hover {
+          cursor: auto;
+        }
+      }
+
+      .lastRow {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      margin-left: 15px;
+    }
+  }
+}
+

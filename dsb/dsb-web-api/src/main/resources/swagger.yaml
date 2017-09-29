@@ -1,0 +1,407 @@
+# Copyright (c) [2017] Dell Inc. or its subsidiaries. All Rights Reserved.
+---
+swagger: '2.0'
+
+################################################################################
+#                              API Information                                 #
+################################################################################
+info:
+  version: '0.2'
+  title: Data Service Broker (DSB) API
+  description: A Data Service Broker (DSB) provides a way to connect to,
+               take copies and create new instances of a data service.
+
+################################################################################
+#                  Host, Base Path, Schemes and Content Types                  #
+################################################################################
+host: localhost:8080
+basePath: /dsb
+schemes:
+  - http
+produces:
+  - application/json
+consumes:
+  - application/json
+
+################################################################################
+#                                   Tags                                       #
+################################################################################
+tags:
+  - name: dsb-web
+
+################################################################################
+#                                  Security                                    #
+################################################################################
+
+#todo
+
+################################################################################
+#                                   Parameters                                 #
+################################################################################
+
+parameters:
+
+  instanceId:
+    name: instanceId
+    in: path
+    description: The id of the data service instance.
+    type: string
+    required: true
+
+  serviceSettings:
+    name: serviceSettings
+    in: body
+    description: The details of the data service to be created.
+    schema:
+      $ref: '#/definitions/createServiceInstance'
+
+  copyDetails:
+    name: copyDetails
+    in: body
+    description: The details of the data service copy to be taken.
+    schema:
+      $ref: '#/definitions/copyServiceInstance'
+
+################################################################################
+#                                           Paths                              #
+################################################################################
+paths:
+
+  /:
+    get:
+      tags:
+        - dsb-web
+      summary: List the details and protocols supported by this Data Service Broker (DSB).
+      description: ''
+      operationId: getDSBInfo
+      parameters: []
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/dsbInfo'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/error'
+
+  /icon:
+    get:
+      tags:
+        - dsb-web
+      summary: Retrieve the icon associated with this Data Service Broker, (DSB).
+      description: ''
+      operationId: getDSBIcon
+      produces:
+        - application/webp
+      parameters: []
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Response'
+        204:
+          description: No image
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/error'
+
+  /service_instances:
+    get:
+      tags:
+        - dsb-web
+      summary: List all the current data service instances.
+      description: ''
+      operationId: getServiceInstances
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/serviceInstance'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/error'
+
+    post:
+      tags:
+        - dsb-web
+      summary: Create a new data service instance and bind to it.
+               Optionally include a copy to import.
+      description: ''
+      operationId: createServiceInstance
+      parameters:
+        - $ref: '#/parameters/serviceSettings'
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/serviceInstance'
+        400:
+          description: Request is malformed or has invalid parameters and values
+          schema:
+            $ref: '#/definitions/error'
+        504:
+          description: Unreachable dependent service.
+          schema:
+            $ref: '#/definitions/error'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/error'
+
+  /service_instances/{instanceId}:
+    get:
+      tags:
+        - dsb-web
+      summary: List the details of a specific data service instance.
+      description: ''
+      operationId: getServiceInstance
+      parameters:
+        - $ref: '#/parameters/instanceId'
+      responses:
+        200:
+          description: successful operation
+          schema:
+              $ref: '#/definitions/serviceInstanceDetails'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/error'
+
+    delete:
+      tags:
+        - dsb-web
+      summary: Delete a data service instance.
+      description: ''
+      operationId: deleteServiceInstance
+      parameters:
+        - $ref: '#/parameters/instanceId'
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/serviceInstance'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/error'
+
+  /service_instances/{instanceId}/copy:
+    parameters:
+      - $ref: '#/parameters/instanceId'
+    post:
+      tags:
+        - dsb-web
+      summary: Take a copy of the data service instance.
+      description: ''
+      operationId: copyServiceInstance
+      parameters:
+         - $ref: '#/parameters/copyDetails'
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/copyServiceInstanceResponse'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/error'
+
+
+################################################################################
+#                               Definitions                                    #
+################################################################################
+
+definitions:
+
+  dsbInfo:
+    type: object
+    properties:
+      name:
+        type: string
+      type:
+        type: string
+      description:
+        type: string
+      plans:
+        type: array
+        items:
+          $ref: '#/definitions/dsbPlan'
+
+  dsbSupportedProtocol:
+    type: object
+    properties:
+      protocol:
+        type: string
+      version:
+        type: string
+      properties:
+        type: object
+        additionalProperties:
+          type: string
+
+  dsbSupportedCopyProtocol:
+    type: object
+    properties:
+      copyProtocol:
+        type: string
+      copyProtocolVersion:
+        type: string
+
+  dsbPlan:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      price:
+        type: string
+      protocols:
+        type: array
+        items:
+          $ref: '#/definitions/dsbSupportedProtocol'
+      copyProtocols:
+          type: array
+          items:
+            $ref: '#/definitions/dsbSupportedCopyProtocol'
+      dsbSettings:
+        type: object
+        additionalProperties:
+          type: string
+
+  serviceInstance:
+    type: object
+    properties:
+      instanceId:
+        type: string
+
+  serviceInstanceDetails:
+    type: object
+    properties:
+      instanceId:
+        type: string
+      binding:
+        type: object
+        additionalProperties:
+          type: string
+      bindingPorts:
+        type: array
+        items:
+          $ref: '#/definitions/bindingPort'
+      storageType:
+        type: string
+      size:
+        type: integer
+        format: int64
+      state:
+        type: string
+        enum:
+        - creating
+        - running
+        - error
+        - removing
+
+  bindingPort:
+    type: object
+    required:
+      - protocol
+      - destination
+      - port
+    properties:
+      protocol:
+        type: string
+      destination:
+        type: string
+      port:
+        type: integer
+        format: int32
+
+  copyServiceInstance:
+    type: object
+    required:
+      - copyId
+    properties:
+      copyId:
+        type: string
+      copyRepoProtocol:
+        type: string
+      copyRepoProtocolVersion:
+        type: string
+      copyRepoCredentials:
+        type: object
+        additionalProperties:
+          type: string
+      copyType:
+        type: string
+      copyTime:
+        type: integer
+        format: int64
+
+  createServiceInstance:
+    type: object
+    required:
+      - instanceId
+      - instanceSettings
+    properties:
+      instanceId:
+        type: string
+      namespaces:
+        type: array
+        items:
+          type: string
+      instanceSettings:
+        type: object
+        additionalProperties:
+          type: string
+      restoreInfo:
+        $ref: '#/definitions/dsbRestoreCopyInfo'
+
+  copyServiceInstanceResponse:
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int32
+      statusMessage:
+        type: string
+      copyId:
+        type: string
+
+  dsbRestoreCopyInfo:
+    type: object
+    properties:
+      copyId:
+        type: string
+      copyRepoProtocol:
+        type: string
+      copyRepoProtocolVersion:
+        type: string
+      copyRepoCredentials:
+        type: object
+        additionalProperties:
+          type: string
+      copyType:
+        type: string
+
+  Response:
+    type: object
+    description: JAXRS Response
+
+  error:
+    type: object
+    required:
+      - code
+      - message
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string

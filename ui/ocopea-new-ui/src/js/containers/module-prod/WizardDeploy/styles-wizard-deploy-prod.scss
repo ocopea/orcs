@@ -1,0 +1,95 @@
+.WizardDeployProd{
+  padding: 20px;
+  background: #f2f2f2;
+  min-height: 700px;
+
+  .container{
+    min-height: 373px;
+    position: relative;
+    width: 90%;
+    margin: auto;
+    padding-top: 20px;
+    > div:first-child{
+      height: 100%;
+    }
+
+    .title{
+      color: #3b3b3b;
+      font-size: 23px;
+      padding-bottom: 15px;
+      text-transform: capitalize;
+    }
+
+    .subtitle{
+      color: #7a7a7a;
+      font-size: 15px;
+      &::first-letter{
+        text-transform: capitalize;
+      }
+    }
+
+    .footer{
+      position: absolute;
+      border-top: 1px solid #ccc;
+      height: 50px;
+      bottom: -100px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      .inlineError{
+        color: #cc5669;
+        font-weight: 600;
+        line-height: 42px;
+        &::first-letter{text-transform: uppercase;}
+      }
+
+      .buttons{
+        button{
+          width: 100px;
+          height: 33px;
+          margin: 15px 0 0 15px;
+          font-size: 13px;
+          position: relative;
+          border-radius: 3px;
+          &::first-letter{
+            text-transform: capitalize;
+          }
+          [class*="icon-"]{
+            position: absolute;
+            top: 12px;
+            font-size: 9px;
+          }
+        }
+      }
+
+      .btnNext{
+        background-color: #5c9abd;
+        color: #fff;
+        [class*="icon-"]{
+          right: 10px;
+          color: #fff;
+        }
+      }
+      .btnBack{
+        background: #e0e0e0;
+        color: #7a7a7a;
+        [class*="icon-"]{
+          left: 10px;
+          transform: rotate(180deg);
+          color: #7a7a7a;
+        }
+      }
+      .btnNextDisabled{
+        @extend .btnNext;
+        opacity: 0.5;
+      }
+      .btnBackDisabled{
+        @extend .btnBack;
+        opacity: 0.5;
+      }
+
+    }
+  }
+
+}

@@ -1,0 +1,44 @@
+.ProgressBarCount{
+  width: calc(100% - 20px);
+  padding: 0 10px;
+
+  .status{
+    float: right;
+  }
+
+  .deployingMsg{
+    color: #252d3a;
+    font-size: 14px;
+    float: left;
+    line-height: 16px;
+    width: 206px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 60px;
+    display: flex;
+    span{
+      float: left;
+      margin: 0 10px;
+      &:nth-child(2){
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 100px;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .container{
+    float: left;
+    margin-top: 26px;
+    margin-left: 20px;
+  }
+
+  .range{
+    fill: #d9dee1;
+  }
+
+  .done{
+    fill: #62ade1;
+  }
+}

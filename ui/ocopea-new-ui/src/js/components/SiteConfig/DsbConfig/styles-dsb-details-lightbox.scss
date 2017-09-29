@@ -1,0 +1,90 @@
+.DsbDetailsDialog {
+  width: 568px;
+  height: 627px;
+  background: #fff;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
+
+  .header {
+    /* TODO */
+    //line-height: 90px;
+    height: 104px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    //margin: 0 18px 0 18px;
+    border-bottom: 1px solid #e6eaed;
+
+    .logoContainer {
+      width: 48px;
+      height: 48px;
+      display: inline-block;
+      border-radius: 100%;
+      //position: relative;
+      background: #eeeeee;
+      position: relative;
+
+      .logo {
+        width: 30px;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* TODO */
+        /*+center-element*/
+      }
+    }
+
+    .dsbName {
+      font-size: 18px;
+      font-weight: 500;
+      color: #4c515e;
+      text-transform: capitalize;
+      margin-left: 20px;
+    }
+  }
+
+  .title {
+    font-size: 18px;
+    color: #354151;
+    margin: 23px 0 12px 0;
+    text-transform: capitalize;
+  }
+
+  .description {
+    color: #6b7083;
+    font-size: 14px;
+    line-height: 1.21;
+  }
+
+  .plansSelectContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .plansSelect {
+      width: 258px;
+      height: 37px;
+    }
+
+    .iconInfo {
+      margin: 15px;
+    }
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      margin-left: 15px;
+    }
+  }
+}
+

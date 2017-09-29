@@ -1,0 +1,74 @@
+.Image-origin-list
+  width: 787px
+  height: 615px
+  box-shadow: 0px 4px 14px 0 rgba(0, 0, 0, 0.15)
+  +center-element
+  +border-radius(3px)
+  background: #ffffff
+  margin-top: 125px
+  overflow: auto
+
+  +element('title')
+    +dialog-title
+    +border-radius(3px)
+    text-transform: uppercase
+
+    +element('span')
+      font-weight: bold
+
+  +element('inside')
+    height: calc(100% - 48px)
+
+    +element('table')
+      width: 100%
+      +element('thead')
+        +element('tr')
+          +element('th')
+            font-size: 11px
+            color: #595e64
+            font-weight: bold
+            text-transform: uppercase
+            text-align: left
+            padding-left: 18px
+            line-height: 41px
+            border-bottom: 1px solid #edf0f2
+      +element('tbody')
+        +element('tr')
+          line-height: 66px
+          border-bottom: 1px solid #edf0f2
+          +modifier('last')
+            border-bottom: none
+
+          +element('td')
+            padding-left: 18px
+            vertical-align: middle
+            color: #858d99
+            font-size: 13px
+            text-transform: capitalize
+
+            +element('avatar')
+              width: 30px
+              height: 30px
+              +border-radius(50%)
+              display: inherit
+              float: left
+
+            +element('tags')
+              +element('tag')
+                float: left
+                margin-top: 5px
+                background: #858d99
+                color: #ffffff
+                border: none
+                padding: 0 8px 0 8px
+                line-height: 26px
+                +border-radius(3px)
+                margin-left: 8px
+                +modifier('first')
+                  margin-left: 0
+
+              +element('see-more')
+                float: left
+                line-height: 30px
+                margin-left: 8px
+                font-weight: bold

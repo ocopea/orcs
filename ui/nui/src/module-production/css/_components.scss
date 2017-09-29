@@ -1,0 +1,115 @@
+#loader-gif{
+    position: absolute;
+    top: 20%;
+    right: 42%;
+    width: 133px;
+    text-align: center;
+    line-height: 28px;
+    z-index: 999;
+}
+
+#loader-gif span{
+    animation: blinker 1s linear infinite;
+    font-size: 23px;
+    padding-left: 10px;
+    color: $menu-left-background;
+}
+
+#component-loading-gif,
+#dashboard-container .card img#component-loading-gif{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+@keyframes blinker {
+  50% { opacity: 0.0; }
+}
+
+.edit-btn{
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    padding: 5px;
+    position: relative;
+    top: 6px;
+    left: 10px;
+    box-shadow: #ffb0b0 1px 1px 1px;
+}
+
+.edit-btn span{
+    font-size: 15px;
+    padding-left: 30px;
+    padding-top: -44px;
+    position: absolute;
+    color: #b89393;
+}
+
+.edit-btn:hover{
+    cursor: pointer;
+    background-color: #dce4e8;
+}
+
+#pencil-icon{
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#input-edit-app-instance-name{
+    margin-left: 15px;
+    margin-top: -20px;
+    height: 30px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.open-button,
+.close-button{
+    position: relative;
+    width: 15px;
+    height: 15px;
+    float: right;
+
+    span{
+        position: absolute;
+        width: 5px;
+        height: 2px;
+        background: $tooltipFontColor;
+        right: 0;
+        transition: 0.4s
+    }
+}
+
+.open-button{
+    span:nth-child(1){
+        transform: rotate(-45deg);
+    }
+    span:nth-child(2){
+        transform: rotate(45deg);
+        right: 3px;
+    }
+}
+
+.close-button{
+    span:nth-child(1){
+        transform: rotate(45deg);
+    }
+    span:nth-child(2){
+        transform: rotate(-45deg);
+        right: 3px;
+    }
+}

@@ -1,0 +1,31 @@
+.ErrorBar{
+  display: flex;
+  background: #cc5669;
+  padding: 0 10px;
+  width: 100%;
+  border-radius: 3px;
+  color: #fff;
+
+  .icon{
+    width: 30px;
+    height: 30px;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    position: relative;
+    margin: 13px;
+
+    [class="icon-x"] {
+      font-size: 11px;
+      width: 11px;
+      height: 11px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      color: #fff;
+    }
+  }
+
+}

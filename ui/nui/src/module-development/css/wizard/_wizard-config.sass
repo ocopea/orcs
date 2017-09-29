@@ -1,0 +1,91 @@
+.development.wrapper .wizard-main .Config
+
+  .Topology
+    position: static
+    margin-top: 0!important
+    padding-bottom: 50px
+    margin-left: -30px
+
+    .container
+      background: #fff!important
+
+      .Topology__element
+        border: 1px solid #ccc
+
+        .Topology__element__alert span
+          right: -5px!important
+
+      .Topology__element__title
+        line-height: 20px
+        margin-bottom: -5px
+
+    .Topology-menu
+      &.dependency
+        margin-top: -25px
+        width: 330px
+      &.service
+        margin-top: -75px
+
+  +element('subtitle')
+   color: #6b7083
+   padding-bottom: 39px
+   &::first-letter
+     text-transform: capitalize
+
+  +element('inside')
+    // overflow: hidden
+
+    .Topology__container
+      padding-bottom: 20px
+      // border: 1px solid #d4d6d9!important
+
+    +element('topContainer')
+      // box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.15)
+
+    +element('configureName')
+      padding-bottom: 39px
+
+      +element('icon')
+        width: 36px
+        height: 36px
+        +border-radius(3px)
+        border: solid 1px #858d99
+        display: inline-block
+        vertical-align: middle
+        margin-right: 15px
+        position: relative
+
+        +element('image')
+          svg
+            +center-element
+
+      +element('input')
+        height: 34px
+        width: 255px
+        border: none
+        border-bottom: solid 1px #d4d6d9
+        padding-left: 10px
+        &:focus
+          border: none
+          outline: none
+          border-bottom: solid 1px #d4d6d9
+        &::-webkit-input-placeholder
+          color: #6b7083
+          font-size: 16px
+          text-transform: capitalize
+
+    +element('selectsContainer')
+      display: flex
+      padding-bottom: 30px
+
+      +element('section')
+        width: 33%
+
+        +element('label')
+          font-weight: 600
+          font-size: 14px
+          color: #252d3a
+          text-transform: capitalize
+          display: inline-block
+          width: 100%
+          margin-bottom: 8px

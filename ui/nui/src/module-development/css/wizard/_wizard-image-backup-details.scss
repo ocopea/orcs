@@ -1,0 +1,26 @@
+.dev-wizard .image .backup .backup-details{
+  float: right;
+  width: 38%;
+  border: solid 1px #d4d6d9;
+
+  .title{
+    color: #595e64;
+    font-size: 12px;
+    text-align: center;
+    min-height: 55px;
+    line-height: 57px;
+    font-weight: 600;
+    padding: 0;
+  }
+
+  table{
+    margin-top: 0;
+    border: none;
+
+    td{
+      padding-left: 24px;
+      text-align: left
+    }
+  }
+
+}
