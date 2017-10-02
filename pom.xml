@@ -16,7 +16,7 @@
         <module>crb</module>
         <module>psb</module>
         <module>site</module>
-	<module>ui</module>
+	    <module>ui</module>
         <module>hub</module>
         <module>shpan-crb</module>
         <module>deployer</module>
@@ -182,6 +182,14 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>2.19.1</version>
                 </plugin>
+
+                <!-- swagger java code generator, built using our fork that was not merged yet to mainstream -->
+                <plugin>
+                    <groupId>io.swagger</groupId>
+                    <artifactId>swagger-codegen-maven-plugin</artifactId>
+                    <version>2.2.4-OCOPEA</version>
+                </plugin>
+
             </plugins>
         </pluginManagement>
     </build>
@@ -189,8 +197,6 @@
     <prerequisites>
         <maven>3.0.5</maven>
     </prerequisites>
-
-
 
     <profiles>
         <profile>
@@ -308,14 +314,7 @@
         </profile>
     </profiles>
 
-    <!-- todo: remove before open sourcing -->
     <repositories>
-        <repository>
-            <id>nazv</id>
-            <name>nazgul-virtual</name>
-            <url>https://amaas-eos-mw1.cec.lab.emc.com/artifactory/nazgul-virtual</url>
-        </repository>
-
         <repository>
             <id>central</id>
             <url>http://repo1.maven.org/maven2/</url>
@@ -324,46 +323,27 @@
     </repositories>
 
     <pluginRepositories>
+        <!-- our public bintray repository-->
         <pluginRepository>
+            <id>bintray-ocopea-ocopea-dependencies</id>
+            <name>bintray-plugins</name>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
-            <id>naz-central</id>
-            <name>plugins-release</name>
-            <url>https://amaas-eos-mw1.cec.lab.emc.com/artifactory/plugins-release</url>
+            <url>https://ocopea.bintray.com/ocopea-dependencies</url>
         </pluginRepository>
         <pluginRepository>
-            <snapshots />
-            <id>naz-snapshots</id>
-            <name>plugins-snapshot</name>
-            <url>https://amaas-eos-mw1.cec.lab.emc.com/artifactory/plugins-snapshot</url>
-        </pluginRepository>
-        <!-- TODO: NEED TO REMOVE plugins-nazgul ONCE THIS GETS IN THE SWAGGER
-             RELEASE. THIS IS HERE SINCE MATAN WAS HOLDING THEIR HANDS FIXING
-             THEIR SHIT
-        -->
-        <pluginRepository>
+            <id>central</id>
+            <name>Maven Plugin Repository</name>
+            <url>http://repo1.maven.org/maven2</url>
+            <layout>default</layout>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
-            <id>NAZGUL</id>
-            <name>plugins-nazgul</name>
-            <url>https://amaas-eos-mw1.cec.lab.emc.com/artifactory/nazgul-local</url>
+            <releases>
+                <updatePolicy>never</updatePolicy>
+            </releases>
         </pluginRepository>
-            <pluginRepository>
-                <id>central</id>
-                <name>Maven Plugin Repository</name>
-                <url>http://repo1.maven.org/maven2</url>
-                <layout>default</layout>
-                <snapshots>
-                    <enabled>false</enabled>
-                </snapshots>
-                <releases>
-                    <updatePolicy>never</updatePolicy>
-                </releases>
-            </pluginRepository>
     </pluginRepositories>
-
-
 </project>
 

@@ -86,8 +86,6 @@
             <plugin>
                 <groupId>io.swagger</groupId>
                 <artifactId>swagger-codegen-maven-plugin</artifactId>
-                <!--TODO: switch to official version, if it's ever good enough -->
-                <version>2.2.4-NAZGUL</version>
                 <executions>
                     <execution>
                         <id>generate-java-code</id>
