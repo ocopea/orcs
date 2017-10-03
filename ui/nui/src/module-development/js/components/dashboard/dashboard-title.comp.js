@@ -148,7 +148,6 @@ var DashboardTitle = React.createClass({
                             'Dashboard__title__inside__section__inside--right'}>
               <div className={this.getSaveImageBtnClassName()}
                    onClick={DashboardActions.showCreateImageDialog}>save as</div>
-              <div className={'Dashboard__title__inside__section__inside--right__button link'}>clone</div>
               <span className={'Dashboard__title__inside__section__inside--right__button'+
                               ' link icon-delete '+
                               'Dashboard__title__inside__section__inside--right__button--icon-delete'}
