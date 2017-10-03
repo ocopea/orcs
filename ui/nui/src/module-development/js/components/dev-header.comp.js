@@ -128,7 +128,7 @@ var DevHeader = React.createClass({
 									className="link"
 									onClick={this.goToMainScreen}
 									style={!this.isHamburgerRender() ? {paddingLeft: 28} : null}>
-										CNDP
+										OCOPEA
 								</span>
             </div>
 

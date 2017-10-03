@@ -39,7 +39,7 @@ var Quotas = React.createClass({
 				<div className="quotas">
 					<div className="title">
 						<div>org</div>
-						<div>CNDP</div>
+						<div>OCOPEA</div>
 					</div>
 
 					<div className="quota">
