@@ -35,20 +35,15 @@ var LogIn = React.createClass({
 			<div className="login-container">
 
 				<div className="title">
-					<div className="logo-circle">
-						<Isvg className="logo-shield" src={LogoShield} />
-					</div>
 					<div className="content">
-						cloud native data protection
-					</div>
-					<div className="emc-logo">
-						<Isvg className="emc-logo-img" src={Logo} />
+						<br/>
+						Ocopea
 					</div>
 				</div>
 
 				<div className="inside">
 					<div className="intro">
-						please sign in with the credentials provided to you when you purchased the product
+						welcome to ocopea! please sign in with your credentials
 					</div>
 					<div className="inputs">
 
@@ -66,9 +61,6 @@ var LogIn = React.createClass({
 							placeholder="Admin password"/>
 
 					</div>
-
-					<span className="forgot-password">in case you forgot your password, contact
-						<a href="http://www.emc.com" target="blank">emc support</a></span>
 
 					<button
 						className="button button-primary"
