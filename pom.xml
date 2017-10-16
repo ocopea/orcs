@@ -319,18 +319,22 @@
             <id>central</id>
             <url>http://repo1.maven.org/maven2/</url>
         </repository>
-
+        <repository>
+            <id>ocopea-dependencies</id>
+            <name>dependencies</name>
+            <url>https://raw.githubusercontent.com/ocopea/artifactory/repository/</url>
+        </repository>
     </repositories>
 
     <pluginRepositories>
         <!-- our public bintray repository-->
         <pluginRepository>
-            <id>bintray-ocopea-ocopea-dependencies</id>
+            <id>ocopea-dependencies</id>
             <name>bintray-plugins</name>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
-            <url>https://ocopea.bintray.com/ocopea-dependencies</url>
+            <url>https://raw.githubusercontent.com/ocopea/artifactory/repository/</url>
         </pluginRepository>
         <pluginRepository>
             <id>central</id>
