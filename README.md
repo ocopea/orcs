@@ -23,8 +23,13 @@ Visit the ocopea [kubernetes](https://github.com/ocopea/kubernetes) and
 The Orcs repository contains codebase for several independent microservices and components that can be built separately
 It is however recommended to build the project as a whole at least once in order to populate the local maven repository
 with latest versions of all libraries.
-The project is using maven, so in order to build, clone the repo and use the mvn command
+The project is using maven, so in order to build, clone the repo and use the mvn command.
 
+### Pre-requisites
+- maven 3.2.5
+- JDK8
+
+### How-to-build
 ```
 $ git clone https://github.com/ocopea/orcs.git
 $ cd orcs
