@@ -45,7 +45,7 @@ $ mvn clean install
 
 In order to build a docker image containing the local code, use the deployer/orcs-docker-image project
 ```
-$ deployer/orcs-docker-image
+$ cd deployer/orcs-docker-image
 $ mvn clean install
 $ cd target/docker
 $ ./buildImage.sh
