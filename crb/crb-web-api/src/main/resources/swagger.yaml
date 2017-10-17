@@ -655,12 +655,12 @@ definitions:
       copyURL: 'http://<crb-endpoint>/copies/<copyId>'
 
   InputStream:
-    type: string
+    type: object
     format: binary
     description: Octet Stream
 
   OutputStream:
-    type: string
+    type: object
     format: binary
     description: Octet Stream
 
