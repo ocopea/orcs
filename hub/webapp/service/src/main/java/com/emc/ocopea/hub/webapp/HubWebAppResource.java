@@ -975,7 +975,7 @@ public class HubWebAppResource implements HubWebAppWebApi {
                         .collect(Collectors.toMap(
                                 Map.Entry::getKey,
                                 o -> new DeployAppCommandArgs.AppServiceDeploymentPlanDTO(
-                                        o.getValue().getEnabled(),
+                                        o.getValue().isEnabled(),
                                         checkMissingField(
                                                 o.getValue().getSpace(),
                                                 "space"),
@@ -994,7 +994,7 @@ public class HubWebAppResource implements HubWebAppWebApi {
                                         checkMissingField(o.getValue().getDsbURN(), "dsbURN"),
                                         checkMissingField(o.getValue().getDsbPlan(), "dsbPlan"),
                                         checkMissingField(o.getValue().getDsbProtocol(), "dsbProtocol"),
-                                        checkMissingField(o.getValue().getEnabled(), "enabled"),
+                                        checkMissingField(o.getValue().isEnabled(), "enabled"),
                                         Collections.emptyMap())
                         ))
         );
