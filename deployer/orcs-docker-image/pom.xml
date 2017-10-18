@@ -56,7 +56,7 @@
                 <artifactId>maven-resources-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>copy-docker-shit</id>
+                        <id>copy-docker-files</id>
                         <phase>process-resources</phase>
                         <goals>
                             <goal>copy-resources</goal>
@@ -128,7 +128,7 @@
         <!-- K8S tools -->
         <dependency>
             <groupId>com.emc.ocopea.orcs</groupId>
-            <artifactId>k8s-tools</artifactId>
+            <artifactId>docker-runner</artifactId>
             <version>${project.version}</version>
         </dependency>
 

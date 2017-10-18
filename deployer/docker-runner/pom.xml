@@ -8,8 +8,8 @@
     </parent>
 
 
-    <artifactId>k8s-tools</artifactId>
-    <name>Ocopea orcs K8S Tools</name>
+    <artifactId>docker-runner</artifactId>
+    <name>Ocopea orcs docker runner</name>
 
     <dependencies>
         <dependency>

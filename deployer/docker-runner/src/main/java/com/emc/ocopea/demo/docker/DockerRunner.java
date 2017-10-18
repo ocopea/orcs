@@ -1,5 +1,5 @@
 // Copyright (c) [2017] Dell Inc. or its subsidiaries. All Rights Reserved.
-package com.emc.ocopea.demo.k8s;
+package com.emc.ocopea.demo.docker;
 
 import com.emc.microservice.MicroService;
 import com.emc.microservice.MicroServiceController;
@@ -15,8 +15,6 @@ import com.emc.microservice.resource.ResourceProvider;
 import com.emc.microservice.runner.MicroServiceRunner;
 import com.emc.microservice.webclient.WebAPIResolver;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.sql.DataSource;
 import java.io.IOException;
@@ -24,21 +22,19 @@ import java.sql.SQLException;
 import java.util.Map;
 
 /**
- * Created by liebea on 7/26/17.
- * Drink responsibly
+ * Helper Runner for running microservices within docker containers
  */
-public class K8SRunner {
-    private static final Logger log = LoggerFactory.getLogger(K8SRunner.class);
+public class DockerRunner {
 
     /**
-     * Run services in k8s rp
+     * Run services in docker container
      */
     public static Map<String, MicroServiceController> runServices(
-            String k8sServiceName,
+            String serviceEnvVarPrefix,
             Map<String, AbstractSchemaBootstrap> schemaBootstrapMap,
             MicroService... services) {
 
-        ResourceProvider resourceProvider = getResourceProvider(k8sServiceName);
+        ResourceProvider resourceProvider = getResourceProvider(serviceEnvVarPrefix);
 
         schemaBootstrapMap.entrySet().forEach(currDsEntry -> {
 
@@ -81,19 +77,19 @@ public class K8SRunner {
         );
     }
 
-    private static ResourceProvider getResourceProvider(String k8sServiceName) {
+    private static ResourceProvider getResourceProvider(String serviceEnvVarPrefix) {
         ConfigurationAPI staticEnvConfiguration = getConfigurationAPI();
 
         // reading the cluster ip of the current service
-        final String serviceHost = System.getenv(k8sServiceName.toUpperCase() + "_SERVICE_HOST");
-        final String servicePort = System.getenv(k8sServiceName.toUpperCase() + "_SERVICE_PORT");
+        final String serviceHost = System.getenv(serviceEnvVarPrefix.toUpperCase() + "_SERVICE_HOST");
+        final String servicePort = System.getenv(serviceEnvVarPrefix.toUpperCase() + "_SERVICE_PORT");
         if (serviceHost == null || servicePort == null) {
             throw new IllegalStateException("Failed locating cluster service ip and port using " +
-                    k8sServiceName.toUpperCase() + "_SERVICE_HOST and " +
-                    k8sServiceName.toUpperCase() + "_SERVICE_PORT");
+                    serviceEnvVarPrefix.toUpperCase() + "_SERVICE_HOST and " +
+                    serviceEnvVarPrefix.toUpperCase() + "_SERVICE_PORT");
         }
 
-        // Kubernetes does not expose the service cluster ip within the same container. so cheating it...
+        // In some cases, docker does not expose the service cluster ip within the same container. so cheating it...
         final String urlToReplace = "://" + serviceHost + ":" + servicePort;
 
         return new ResourceProvider(

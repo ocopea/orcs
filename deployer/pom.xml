@@ -18,7 +18,7 @@
         <ocopea.shpancrb.version>${project.version}</ocopea.shpancrb.version>
     </properties>
     <modules>
-        <module>k8s-tools</module>
+        <module>docker-runner</module>
         <module>orcs-docker-image</module>
         <module>test-scenarios</module>
         <module>single-jar</module>
