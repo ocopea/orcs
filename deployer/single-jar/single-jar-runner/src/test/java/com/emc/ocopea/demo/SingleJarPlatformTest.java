@@ -41,7 +41,7 @@ public class SingleJarPlatformTest {
     public SimpleServiceWebTargetResolver getResolver() {
         return SimpleServiceWebTargetResolver.builder()
                 .withService("hub-web", hubWebAPIURL)
-                .withTargetRegister(new BasicAuthentication("shpandrak", "1234"))
+                .withTargetRegister(new BasicAuthentication("admin", "nazgul"))
                 .build();
     }
 

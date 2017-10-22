@@ -782,7 +782,7 @@ public class SingleJarDemoMain {
     public static class MockAuthFilter extends AuthFilter {
         @Override
         protected String[] getLap(ContainerRequestContext containerRequest) {
-            return new String[]{"shpandrak", "1234"};
+            return new String[]{"admin", "nazgul"};
         }
     }
 }

@@ -27,8 +27,8 @@ var huburls = { baseUrl: "", baseUrlWrongPassword: "", listIntegrationUrl: "", a
                 addBugUrl: "" }
 
 exports.setPivotalUrls = function (hubIP) {
-    huburls.baseUrl = 'http://bethp:1234@' + hubIP;
-    huburls.baseUrlWrongPassword = 'http://bethp:123@' + hubIP;
+    huburls.baseUrl = 'http://admin:nazgul@' + hubIP;
+    huburls.baseUrlWrongPassword = 'http://admin:frodo@' + hubIP;
     huburls.listIntegrationUrl = huburls.baseUrl + '/share-image-integrations';
     huburls.addPivotalTrackerInt = huburls.baseUrl + '/commands/add-pivotal-tracker-integration' ;
     huburls.addBugUrl = huburls.baseUrl + '/test-dev/pivotal-tracker-add';

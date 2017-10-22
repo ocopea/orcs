@@ -18,8 +18,8 @@ exports.issueTypeIdOverwrite;
 var huburls = { baseUrl: "", baseUrlWrongPassword: "",  listIntegrationUrl: "", jiraAddIntegrationUrl: "" }
 
 exports.setJiraUrls = function (hubIP) {
-    huburls.baseUrl = 'http://bethp:1234@' + hubIP;
-    huburls.baseUrlWrongPassword = 'http://bethp:123@' + hubIP;
+    huburls.baseUrl = 'http://admin:nazgul@' + hubIP;
+    huburls.baseUrlWrongPassword = 'http://frodo:ashnazg@' + hubIP;
     huburls.listIntegrationUrl = huburls.baseUrl + '/share-image-integrations';
     huburls.jiraAddIntegrationUrl = huburls.baseUrl + '/commands/add-jira-integration' ;
 }

@@ -46,7 +46,7 @@ public class ApiInvoker {
     protected WebAPIResolver getResolver() {
         return new DefaultWebApiResolver().buildResolver(
                 new WebApiResolverBuilder()
-                        .withBasicAuthentication("shpandrak", "1234")
+                        .withBasicAuthentication("admin", "nazgul")
                         .withVerifySsl(false));
     }
 
