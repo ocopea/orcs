@@ -104,8 +104,8 @@ class PlansSelectionHome extends React.Component{
     const position = this.props.position;
     const componentType = this.props.selectedElement.componentType;
     const style = {top: position.top, left: position.left};
-    const registry = 'shpanRegistry';
     const versions = selectedConfig ? selectedConfig.supportedVersions : null;
+    const registry = versions ? Object.keys(versions)[0] : null;
     const supportedVersions = versions ? versions[registry] : null;
 
     return(

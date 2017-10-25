@@ -322,7 +322,8 @@ var DevWizardStore = Reflux.createStore({
 		const appServices = dataFromTopology.appServices;
 		const dataServices = dataFromTopology.dataServices;
 		const appServicesConfig = this.state.config.configuration.appServiceConfigurations;
-		const dataServicesConfig = this.state.config.configuration.dataServiceConfigurations;
+	        const dataServicesConfig = this.state.config.configuration.dataServiceConfigurations;
+	        const artifactRegistry = Object.keys(appServicesConfig[0].supportedVersions)[0];
 
 		let parsedAppServices = {};
 		let parsedDataServices = {};
@@ -334,7 +335,7 @@ var DevWizardStore = Reflux.createStore({
 				space: this.state.config.selectedSpace,
 				enabled: appService.isActive,
 				imageVersion: appService.version,
-				artifactRegistryName: 'shpanRegistry'
+                                artifactRegistryName: artifactRegistry
 			};
 		});
 
