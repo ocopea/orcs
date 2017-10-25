@@ -332,6 +332,17 @@
             </build>
         </profile>
     </profiles>
+    <pluginRepositories>
+         <!-- our public bintray repository-->
+        <pluginRepository>
+             <id>ocopea-dependencies</id>
+             <name>bintray-plugins</name>
+              <snapshots>
+                  <enabled>false</enabled>
+              </snapshots>
+	     <url>https://dl.bintray.com/ocopea/central</url>
+         </pluginRepository>
+    </pluginRepositories>
 
     <repositories>
         <repository>
@@ -339,34 +350,13 @@
             <url>http://repo1.maven.org/maven2/</url>
         </repository>
         <repository>
-            <id>ocopea-dependencies</id>
-            <name>dependencies</name>
-            <url>https://raw.githubusercontent.com/ocopea/artifactory/repository/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>bintray-ocopea-central</id>
+            <name>bintray</name>
+            <url>https://dl.bintray.com/ocopea/central</url>
         </repository>
     </repositories>
-
-    <pluginRepositories>
-        <!-- our public bintray repository-->
-        <pluginRepository>
-            <id>ocopea-dependencies</id>
-            <name>bintray-plugins</name>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <url>https://raw.githubusercontent.com/ocopea/artifactory/repository/</url>
-        </pluginRepository>
-        <pluginRepository>
-            <id>central</id>
-            <name>Maven Plugin Repository</name>
-            <url>http://repo1.maven.org/maven2</url>
-            <layout>default</layout>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <releases>
-                <updatePolicy>never</updatePolicy>
-            </releases>
-        </pluginRepository>
-    </pluginRepositories>
 </project>
 
