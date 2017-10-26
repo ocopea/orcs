@@ -46,7 +46,7 @@ export default class Header extends React.Component{
             onClick={this.navigateHome}
             className={styles.linkHome}
             title="home">
-              <span>CNDP</span>
+              <span>Ocopea</span>
           </section>
 
           {/* Current location */}

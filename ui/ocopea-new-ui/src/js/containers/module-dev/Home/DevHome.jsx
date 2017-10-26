@@ -34,7 +34,7 @@ export default class DevHome extends React.Component{
         <div className={styles.topContainer}>
           <div className={styles.org}>
             <span>org</span>
-            <span>CNDP</span>
+            <span>Ocopea</span>
           </div>
 
           <div>
