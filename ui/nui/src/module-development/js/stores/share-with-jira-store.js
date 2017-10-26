@@ -70,15 +70,15 @@ var ShareWithJiraStore = Reflux.createStore({
   onCreateJiraIssue: function(data){
 
     let imageSummary = data.description.length ? data.description : 'no summary was provided';
-    let descriptionText = `Reproduce the app image using Nazgul:
+    let descriptionText = `Reproduce the app image using Ocopea:
                           `;
     var projectId = `pid=${data.projectId}`,
         description = `description=${descriptionText}
-                       ${encodeURIComponent(data.shareURL)}`
+                       ${encodeURIComponent(data.shareURL)}`,
         summary = `summary=${imageSummary}`,
         issueType = `issuetype=${data.issueTypeId}`,
         components = `components=${this.state.component}`,
-        reporter = `reporter=${SharedStore.state.loggedInUser}`
+        reporter = `reporter=${SharedStore.state.loggedInUser}`,
         jiraUrl = data.url;
 
     var url = this.addParamsToUrl(jiraUrl, [
