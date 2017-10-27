@@ -1,3 +1,4 @@
+// Copyright (c) [2017] Dell Inc. or its subsidiaries. All Rights Reserved.
 import React from 'react';
 import d3 from 'd3';
 import styles from './styles-progress-bar-count.scss';

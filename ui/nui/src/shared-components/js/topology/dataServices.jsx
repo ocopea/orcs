@@ -1,3 +1,4 @@
+// Copyright (c) [2017] Dell Inc. or its subsidiaries. All Rights Reserved.
 import React from 'react';
 import { observer } from 'mobx-react';
 import ScrollBar from 'react-gemini-scrollbar';

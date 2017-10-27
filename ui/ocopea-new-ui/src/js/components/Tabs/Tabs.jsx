@@ -1,3 +1,4 @@
+// Copyright (c) [2017] Dell Inc. or its subsidiaries. All Rights Reserved.
 import _ from 'lodash';
 import React from 'react';
 import styles from './styles-tabs.scss';

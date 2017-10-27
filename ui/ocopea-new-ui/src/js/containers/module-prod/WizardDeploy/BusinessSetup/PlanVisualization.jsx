@@ -1,3 +1,4 @@
+// Copyright (c) [2017] Dell Inc. or its subsidiaries. All Rights Reserved.
 import React, { Component } from 'react';
 import { observer } from 'mobx';
 import ImgRepeat from './assets/repeat.png';

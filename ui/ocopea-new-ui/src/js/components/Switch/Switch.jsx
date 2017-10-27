@@ -1,3 +1,4 @@
+// Copyright (c) [2017] Dell Inc. or its subsidiaries. All Rights Reserved.
 import React from 'react';
 // import DevWizardActions from '../../../actions/dev-wizard-actions.js';
 import _ from 'lodash';
