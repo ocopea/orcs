@@ -1,27 +1,38 @@
-## CNDP - UI project
-###STACK
+## CNDP - UI Project
+
+### Stack
 * React.js
 * MobX
 * For a complete list of dependencies visit package.json
 
 ## Installation
-From root folder
+From root folder, perform the following steps.
 
 Install dependencies:
-###$ npm install
 
-run locally:
-###$ npm start
+```
+$ npm install
+```
 
-build to /dist:
-###$ npm run build
+Run locally:
+
+```
+$ npm start
+```
+
+Build to /dist:
+
+```
+$ npm run build
+```
 
 ## Folders structure and naming conventions
 
 ## Basic architecture
-###Per application:
 
-* _Ui store -_ stores ui related information which is relevent for more than one container or component.
+### Per application:
+
+* _Ui store -_ stores UI related information which is relevent for more than one container or component.
 * _Data store -_ stores data from server converted by models.
 
 
@@ -30,7 +41,7 @@ build to /dist:
 * _Model -_ an exact representation of the data base model, decalring each field and foreign keys.
 * _Handler -_ a middleware between component and data store.
 * _Service -_ where fetch is being made.
-* _Api -_ declaration of all rest api URLs related to that model.
+* _Api -_ declaration of all REST API URLs related to that model.
 
 
 ## Adding a new component / container
@@ -46,7 +57,7 @@ build to /dist:
   static propTypes = {myProp: React.PropTypes.string.isRequired}
   ```
 
-  *Upon adding a new container, set related ui url (hash) route in routes.js.*
+*Upon adding a new container, set related UI URL (hash) route in routes.js.*
 
 ## Adding a new model
 
@@ -58,27 +69,28 @@ build to /dist:
 * tempate-api.js
 * tempate-model.js
 
-
-*Follow naming convention in folder structure above*
+*Follow naming convention in folder structure above.*
 
 ## Use a component / container / model
-*Examples:*
 
-  ```
-  import MyModel from 'path/to/models';
-  import MyContainer from 'path/to/containers';
-  import MyComponent from 'path/to/components';
-  ```
+Examples:
+
+```
+import MyModel from 'path/to/models';
+import MyContainer from 'path/to/containers';
+import MyComponent from 'path/to/components';
+```
+
 ## Styling
 
 This project uses Css Modules.
 
 To style a component:
 
-*import a stylesheet into the component (by convention it should be located at the same folder as the component).*
-*use class names from style sheet directly in component, for example:*
+*Import a stylesheet into the component (by convention it should be located at the same folder as the component).*
+*Use class names from style sheet directly in component, for example:*
 
-  ```
-	import styles from './styles-my-component.scss';
-  <div className={styles.Container}></div>
-  ```
+```
+import styles from './styles-my-component.scss';
+<div className={styles.Container}></div>
+```
