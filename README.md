@@ -4,8 +4,12 @@
 
 The Ocopea orcs component contains all the codebase for building the orchestration components of Ocopea and 
 the orcs Docker image.
-Visit the Ocopea [Kubernetes](https://github.com/ocopea/kubernetes) and 
-[Cloud Foundry](https://github.com/ocopea/cloudfoundry) for installation
+Visit the Ocopea extensions for platform specific installation instructions.
+
+**Learn More:**
+
+* [Kubernetes Extension](https://github.com/ocopea/kubernetes)
+* [Cloud Foundry Extension](https://github.com/ocopea/cloudfoundry)
 
 ## Repository Components
 
