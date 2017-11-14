@@ -1,11 +1,9 @@
 # Utilities
 
-Bunch of utilities for nazgul
+Bunch of utilities for Ocopea
 
-## Technical Leads
-The following people are responsible for the reviewing changes and maintaining quality for this repository.  All pull requests should include some of these people in order to get merged.
+## Contribution
 
- - <ashish.shrestha@emc.com>
- - <amit.lieberman@emc.com>
-
+* [Contributing to Ocopea](https://github.com/ocopea/documentation/blob/master/docs/contributing.md)
+* [Ocopea Developer Guidelines](https://github.com/ocopea/documentation/blob/master/docs/guidelines.md)
 

@@ -1,14 +1,14 @@
 # Micro-Service API
 
-The contract that java micro service library implements. This allows
+The contract that Java microservice library implements. This allows
 for API and implementation to be versioned separately and evolve
 separately.
 
-## Technical Leads
+## Contribution
 
-- <amit.lieberman@emc.com>
-- <ashish.shrestha@emc.com>
+* [Contributing to Ocopea](https://github.com/ocopea/documentation/blob/master/docs/contributing.md)
+* [Ocopea Developer Guidelines](https://github.com/ocopea/documentation/blob/master/docs/guidelines.md)
 
 ## Origins
 
-EMC DPA microservice framework
+Dell EMC DPA microservice framework

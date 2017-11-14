@@ -1,11 +1,13 @@
 # Java Micro Service Library
 
-Contains common library runtime for java micro services.
+Contains common library runtime for Java microservices.
 
-## Technical Leads
-The following people are responsible for the reviewing changes and maintaining quality for this repository.  All pull requests should include some of these people in order to get merged.
-- <amit.lieberman@emc.com>
-- <ashish.shrestha@emc.com>
+## Contribution
+
+* [Contributing to Ocopea](https://github.com/ocopea/documentation/blob/master/docs/contributing.md)
+* [Ocopea Developer Guidelines](https://github.com/ocopea/documentation/blob/master/docs/guidelines.md)
 
 ## Origins
-EMC DPA microservice framework
+
+Dell EMC DPA microservice framework
+
