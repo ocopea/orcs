@@ -1,9 +1,9 @@
 ## CNDP - UI Project
 
-### Stack
+## Stack
 * React.js
 * MobX
-* For a complete list of dependencies visit package.json
+* For a complete list of dependencies visit `package.json`
 
 ## Installation
 From root folder, perform the following steps.
@@ -20,7 +20,7 @@ Run locally:
 $ npm start
 ```
 
-Build to /dist:
+Build to `/dist`:
 
 ```
 $ npm run build
@@ -36,20 +36,20 @@ $ npm run build
 * _Data store -_ stores data from server converted by models.
 
 
-###Per model:
+### Per model:
 
-* _Model -_ an exact representation of the data base model, decalring each field and foreign keys.
-* _Handler -_ a middleware between component and data store.
-* _Service -_ where fetch is being made.
-* _Api -_ declaration of all REST API URLs related to that model.
+* _Model -_ an exact representation of the data base model, declaring each field and foreign keys
+* _Handler -_ a middleware between component and data store
+* _Service -_ where fetch is being made
+* _Api -_ declaration of all REST API URLs related to that model
 
 
 ## Adding a new component / container
 
-* Create a new folder in /components or /container.
-* Copy template-component.jsx from /templates to the new folder and rename it.
-* Create scss file in the new folder.
-* Export that file in /components/index.js or /containers/index.js
+* Create a new folder in `/components` or `/container`
+* Copy template-component.jsx from /templates to the new folder and rename it
+* Create scss file in the new folder
+* Export that file in `/components/index.js` or `/containers/index.js`
 
   * Component which depends on props should declare prop types, for example:
 
@@ -57,17 +57,17 @@ $ npm run build
   static propTypes = {myProp: React.PropTypes.string.isRequired}
   ```
 
-*Upon adding a new container, set related UI URL (hash) route in routes.js.*
+*Upon adding a new container, set related UI URL (hash) route in `routes.js`.*
 
 ## Adding a new model
 
 *Same as in components and containers, only difference is the files copied.*
-*Copy the following files from /templates and rename them accordingly:*
+*Copy the following files from `/templates` and rename them accordingly:*
 
-* tempate-service.js
-* tempate-handler.js
-* tempate-api.js
-* tempate-model.js
+* `tempate-service.js`
+* `tempate-handler.js`
+* `tempate-api.js`
+* `tempate-model.js`
 
 *Follow naming convention in folder structure above.*
 
